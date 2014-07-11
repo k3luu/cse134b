@@ -1,4 +1,4 @@
-<!DOCTYPE html 4.01 Transitional>
+<!DOCTYPE html>
 
 <html>
     <head>
@@ -6,20 +6,25 @@
     </head>
     
     <body>
-        <div>
+        <header>
+            <form action="addPage.html" method="get">
+            <form action="explore.html" method="get">
+            <form action="helper.html" method="get">
+                
             <button type="button" style = "padding: 30px 56px;">Home</button>
-            <button type="button" style = "padding: 30px;">Add to Library</button>
-            <button type="button" style = "padding: 30px 57px;">Explore</button>
+            <button type="submit" formaction = "addPage.html" style = "padding: 30px;">Add to Library</button>    
+            <button type="submit" formaction = "explore.html" style = "padding: 30px 57px;">Explore</button>
 
-            <button type="button" style = "margin-top: 40px; float: right; padding: 10px 20px;">Help</button>
-            <input type="button" style = "margin-top: 45px; float: right; padding: 30px;" value = "magnifying glass image">
-            <input type="search" size = 60 style = "margin-top: 45px; float: right;">
-        </div><br><br>
+            <button type="submit" formaction = "helper.html" style = "margin-top: 40px; float: right; padding: 10px 20px;">Help</button>
+            <button type="button" style = "margin-top: 40px; float: right; padding: 10px 17px;">Search</button>
+            <input type="search" style = "width: 300px; margin-top: 45px; float: right;">
+        </header>
+        <br><br>
 
         <div>
-        <table width = 800 style = "margin-left: 100px" cellspacing = "20px">
+        <table style = "width: 800px; margin-left: 100px" cellspacing = "20px">
             <tr>
-                <td height = 100>Most Recently Added: </td>
+                <td style = "height : 100px">Most Recently Added: </td>
                 <td> < </td>
                 <td style = "border: 3px solid black">
                     This is my gif 
@@ -33,7 +38,7 @@
                 <td > > </td>
             </tr>
             <tr>
-                <td height = 100>By Name: </td>
+                <td style = "height : 100px">By Name: </td>
                 <td > < </td>
                 <td style = "border: 3px solid black">
                     This is my gif
@@ -47,7 +52,7 @@
                 <td > > </td>
             </tr>
             <tr>
-                <td height = 100>Best Rated: </td>
+                <td style = "height : 100px">Best Rated: </td>
                 <td > < </td>
                 <td style = "border: 3px solid black">
                     This is my gif
