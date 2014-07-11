@@ -6,27 +6,43 @@
     </head>
     
     <body>
-        <header>
+        <header style = "display: inline">
+            <table style= "width:100%"><tr>
+            <td>
             <form action="index.html" method="get">
-            <form action="addPage.html" method="get">
-            <form action="explore.html" method="get">
-            <form action="helper.html" method="get">
+                <button type="submit" formaction = "index.html" style = "padding: 30px 52px;">Home</button>
+            </form>
+            </td>
                 
-            <button type="submit" formaction = "index.html" style = "padding: 30px 56px;">Home</button>
-            <button type="submit" formaction = "addPage.html" style = "padding: 30px;">Add to Library</button>    
-            <button type="submit" formaction = "explore.html" style = "padding: 30px 57px;">Explore</button>
-
-            <button type="submit" formaction = "helper.html" style = "margin-top: 40px; float: right; padding: 10px 20px;">Help</button>
+            <td>
+            <form action="addPage.html" method="get">
+                <button type="submit" formaction = "addPage.html" style = "padding: 30px;">Add to Library</button> 
+            </form>
+            </td>
+                
+            <td>
+            <form action="explore.html" method="get">
+                <button type="submit" formaction = "explore.html" style = "padding: 30px 48px;">Explore</button>
+            </form>
+            </td>
+            
+            <td>
+            <form action="helper.html" method="get">
+                <button type="submit" formaction = "helper.html" style = "margin-top: 40px; float: right; padding: 10px 20px;">Help</button>
+            </form>
+                    
             <button type="button" style = "margin-top: 40px; float: right; padding: 10px 17px;">Search</button>
             <input type="search" style = "width: 300px; margin-top: 45px; float: right;">
+            </td>
+            </tr></table>
         </header>
         <br><br>
 
         <div>
-        <table style = "width: 800px; margin-left: 100px" cellspacing = "20px">
+        <table style = "width: 800px; margin-left: 100px" >
             <tr>
                 <td style = "height : 100px">Most Recently Added: </td>
-                <td> < </td>
+                <td> &lt; </td>
                 <td style = "border: 3px solid black">
                     <a href= "viewMeme.html">This is my gif</a>
                 </td>
@@ -36,11 +52,11 @@
                 <td style = "border: 3px solid black">
                     <a href = "viewMeme.html">This is a meme</a>
                 </td>
-                <td > > </td>
+                <td > &gt; </td>
             </tr>
             <tr>
                 <td style = "height : 100px">By Name: </td>
-                <td > < </td>
+                <td > &lt; </td>
                 <td style = "border: 3px solid black">
                     <a href= "viewMeme.html">This is my gif</a>
                 </td>
@@ -50,11 +66,11 @@
                 <td style = "border: 3px solid black">
                     <a href = "viewMeme.html">This is a meme</a>
                 </td>
-                <td > > </td>
+                <td > &gt; </td>
             </tr>
             <tr>
                 <td style = "height : 100px">Best Rated: </td>
-                <td > < </td>
+                <td > &lt; </td>
                 <td style = "border: 3px solid black">
                     <a href= "viewMeme.html">This is my gif</a>
                 </td>
@@ -64,7 +80,7 @@
                 <td style = "border: 3px solid black">
                     <a href = "viewMeme.html">This is a meme</a>
                 </td>
-                <td > > </td>
+                <td > &gt; </td>
             </tr>
         </table>
         </div>
