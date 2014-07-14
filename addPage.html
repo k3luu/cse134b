@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Add A Meme</title>
-		<meta charset="UTF-8">
-    </head>
-    
-    <body>
-		
-	<!-- BELOW IS HEADER -->
-		<header role="banner">
-			<div id="header">
-				<div class="inner">
-					<span><a href="index.html">Home</a></span>
-					<span><a href="addPage.html">Add to Library</a></span>
-					<span><a href="explore.html">Explore</a></span>
-					<span><a href="">Search</a>	</span>		
-					<span><a href="helper.html">Help</a></span>
-				</div>
-			</div>     
-		</header>
-	<!-- ABOVE IS HEADER -->
-        
-		<section id="image">
-			<p>[Image of your Meme]</p>
-		</section>
-		
-		<section>
-			<div id="meme_info">
-				<p>Title: <input type="text"></p>
-				<p>*URL: <input type="text"></p>
-				<p>Rating: <input type="text"></p>
-				<p>Tags: <input type="text"></p>
-				<p>Notes: <input type="text"></p>
-				<p>Date Added: <input type="text"></p>			
-			</div>
-			
-			<div id="interaction">
-				<form action="viewMeme.html" method= "get">
-					<button type= "submit" formaction ="viewMeme.html">Done</button>
-				</form>
-				<form action="index.html" method="get">
-					<button type = "submit" formaction="index.html">Cancel</button>
-				</form>
-			</div>	
-			
-		</section>
-		
-		
-    </body>
+
+<head>
+    <title>Add A Meme</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <!-- BELOW IS HEADER -->
+    <header role="banner">
+        <div id="header">
+            <div class="inner">
+                <span><a href="index.html">Home</a></span>
+                <span><a href="addPage.html">Add to Library</a></span>
+                <span><a href="explore.html">Explore</a></span>
+                <span><a href="">Search</a>	</span>	
+                <span><a href="helper.html">Help</a></span>
+                <Span><a href="memeT.html">Team Page</a></Span> 
+            </div>
+        </div>
+    </header>
+    <!-- ABOVE IS HEADER -->
+
+    <section id="image">
+        <p>[Image of your Meme]</p>
+    </section>
+
+    <section>
+        <div id="meme_info">
+            <p>Title:
+                <input type="text">
+            </p>
+            <p>*URL:
+                <input type="text">
+            </p>
+            <p>Rating:
+                <input type="text">
+            </p>
+            <p>Tags:
+                <input type="text">
+            </p>
+            <p>Notes:
+                <input type="text">
+            </p>
+            <p>Date Added:
+                <input type="text">
+            </p>
+        </div>
+
+        <div id="interaction">
+            <form action="viewMeme.html" method="get">
+                <button type="submit" formaction="viewMeme.html">Done</button>
+            </form>
+            <form action="index.html" method="get">
+                <button type="submit" formaction="index.html">Cancel</button>
+            </form>
+        </div>
+
+    </section>
+
+
+</body>
+
 </html>
