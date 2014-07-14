@@ -1,284 +1,287 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>MEME TEAM</title>
-<h>MEME TEAM</h>
-<style>
-	h{
-		margin-left:auto;
-		margin-right:auto;
-		position:inline;
-		color: #d7ceb2;
-		text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
-		font: 70px 'BazarMedium';
-		letter-spacing: 6px;
-	}
-	td{
-	padding:15px;
-	}
-	html{ 
-		background: url(meme_background.jpg) no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
-	.team_names{
-		font-family: "Brush Script MT", cursive;
-		text-align: center;
-		text-shadow: 2px 2px #FFFFFF;
-		color: #00248F;
-		font-size:30px;
-	}
-	.circular_img{
-		display: block;
-		width:200px;
-		height:200px;
-		-webkit-border-radius: 50%;
- 		-moz-border-radius: 50%;
- 		box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-		-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-		-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	}
-    .black_overlay{
-        display: none;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        z-index:2;
-        -moz-opacity: 0.8;
-        opacity:.80;
-        filter: alpha(opacity=80);
-    }
-    .white_content {
-        display: none;
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        padding: 16px;
-        border: 8px solid black;
-        background-color: white;
-        z-index:3;
-        overflow: auto;
-    }
-    .nyan{
-    	display: block;  	
-    	bot:75%;
-    	opacity: 1.0;
-    	-moz-opacity: 1.0;
-    	margin-left: auto;
-    	margin-right: auto;
-    	}
-</style>
+    <meta charset="UTF-8">
+    <title>MEME TEAM</title>
+    <h>MEME TEAM</h>
+    <style>
+        h {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 25%;
+            color: #d7ceb2;
+            text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
+            font: 70px'BazarMedium';
+            letter-spacing: 6px;
+        }
+        td {
+            padding: 15px;
+        }
+        html {
+            background: url(meme_background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .team_names {
+            font-family: "Brush Script MT", cursive;
+            text-align: center;
+            text-shadow: 2px 2px #FFFFFF;
+            color: #00248F;
+            font-size: 30px;
+        }
+        .circular_img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+            -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+            -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        }
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 2;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+        .white_content {
+            display: none;
+            position: relative;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            padding: 16px;
+            border: 8px solid black;
+            background-color: white;
+            z-index: 3;
+            overflow: auto;
+        }
+        .nyan {
+            display: block;
+            bot: 75%;
+            opacity: 1.0;
+            -moz-opacity: 1.0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
+
 <body>
 
-<script type="text/javascript">
+    <script type="text/javascript">
+        /******************************************
+         * Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
+         * Visit Dynamic Drive DHTML code library (http://www.dynamicdrive.com/) for full source code
+         * Last updated Nov 9th, 05' by DD. This notice must stay intact for use
+         ******************************************/
 
-/******************************************
-* Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
-* Visit Dynamic Drive DHTML code library (http://www.dynamicdrive.com/) for full source code
-* Last updated Nov 9th, 05' by DD. This notice must stay intact for use
-******************************************/
-  
-  //Configure below to change URL path to the snow image
-  var snowsrc="http://www.slowbro.org/snyan.gif"
-  // Configure below to change number of snow to render
-  var no = 10;
-  // Configure whether snow should disappear after x seconds (0=never):
-  var hidesnowtime = 0;
-  // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
-  var snowdistance = "windowheight";
+         //Configure below to change URL path to the snow image
+        var snowsrc = "http://www.slowbro.org/snyan.gif"
+         // Configure below to change number of snow to render
+        var no = 10;
+         // Configure whether snow should disappear after x seconds (0=never):
+        var hidesnowtime = 0;
+         // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+        var snowdistance = "windowheight";
 
-///////////Stop Config//////////////////////////////////
+         ///////////Stop Config//////////////////////////////////
 
-  var ie4up = (document.all) ? 1 : 0;
-  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+        var ie4up = (document.all) ? 1 : 0;
+        var ns6up = (document.getElementById && !document.all) ? 1 : 0;
 
-	function iecompattest(){
-	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
-	}
+        function iecompattest() {
+            return (document.compatMode && document.compatMode != "BackCompat") ? document.documentElement : document.body
+        }
 
-  var dx, xp, yp;    // coordinate and position variables
-  var am, stx, sty;  // amplitude and step variables
-  var i, doc_width = 800, doc_height = 600; 
-  
-  if (ns6up) {
-    doc_width = self.innerWidth;
-    doc_height = self.innerHeight;
-  } else if (ie4up) {
-    doc_width = iecompattest().clientWidth;
-    doc_height = iecompattest().clientHeight;
-  }
+        var dx, xp, yp; // coordinate and position variables
+        var am, stx, sty; // amplitude and step variables
+        var i, doc_width = 800,
+            doc_height = 600;
 
-  dx = new Array();
-  xp = new Array();
-  yp = new Array();
-  am = new Array();
-  stx = new Array();
-  sty = new Array();
-  snowsrc=(snowsrc.indexOf("dynamicdrive.com")!=-1)? "snow.gif" : snowsrc
-  for (i = 0; i < no; ++ i) {  
-    dx[i] = 0;                        // set coordinate variables
-    xp[i] = Math.random()*(doc_width-50);  // set position variables
-    yp[i] = Math.random()*doc_height;
-    am[i] = Math.random()*20;         // set amplitude variables
-    stx[i] = 0.02 + Math.random()/10; // set step variables
-    sty[i] = 0.7 + Math.random();     // set step variables
-		if (ie4up||ns6up) {
-      if (i == 0) {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"><\/a><\/div>");
-      } else {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
-      }
-    }
-  }
+        if (ns6up) {
+            doc_width = self.innerWidth;
+            doc_height = self.innerHeight;
+        } else if (ie4up) {
+            doc_width = iecompattest().clientWidth;
+            doc_height = iecompattest().clientHeight;
+        }
 
-  function snowIE_NS6() {  // IE and NS6 main animation function
-    doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
-		doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
-    for (i = 0; i < no; ++ i) {  // iterate for every dot
-      yp[i] += sty[i];
-      if (yp[i] > doc_height-50) {
-        xp[i] = Math.random()*(doc_width-am[i]-30);
-        yp[i] = 0;
-        stx[i] = 0.02 + Math.random()/10;
-        sty[i] = 0.7 + Math.random();
-      }
-      dx[i] += stx[i];
-      document.getElementById("dot"+i).style.top=yp[i]+"px";
-      document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
-    }
-    snowtimer=setTimeout("snowIE_NS6()", 10);
-  }
+        dx = new Array();
+        xp = new Array();
+        yp = new Array();
+        am = new Array();
+        stx = new Array();
+        sty = new Array();
+        snowsrc = (snowsrc.indexOf("dynamicdrive.com") != -1) ? "snow.gif" : snowsrc
+        for (i = 0; i < no; ++i) {
+            dx[i] = 0; // set coordinate variables
+            xp[i] = Math.random() * (doc_width - 50); // set position variables
+            yp[i] = Math.random() * doc_height;
+            am[i] = Math.random() * 20; // set amplitude variables
+            stx[i] = 0.02 + Math.random() / 10; // set step variables
+            sty[i] = 0.7 + Math.random(); // set step variables
+            if (ie4up || ns6up) {
+                if (i == 0) {
+                    document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='" + snowsrc + "' border=\"0\"><\/a><\/div>");
+                } else {
+                    document.write("<div id=\"dot" + i + "\" style=\"POSITION: absolute; Z-INDEX: " + i + "; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='" + snowsrc + "' border=\"0\"><\/div>");
+                }
+            }
+        }
 
-	function hidesnow(){
-		if (window.snowtimer) clearTimeout(snowtimer)
-		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
-	}
-		
+        function snowIE_NS6() { // IE and NS6 main animation function
+            doc_width = ns6up ? window.innerWidth - 10 : iecompattest().clientWidth - 10;
+            doc_height = (window.innerHeight && snowdistance == "windowheight") ? window.innerHeight : (ie4up && snowdistance == "windowheight") ? iecompattest().clientHeight : (ie4up && !window.opera && snowdistance == "pageheight") ? iecompattest().scrollHeight : iecompattest().offsetHeight;
+            for (i = 0; i < no; ++i) { // iterate for every dot
+                yp[i] += sty[i];
+                if (yp[i] > doc_height - 50) {
+                    xp[i] = Math.random() * (doc_width - am[i] - 30);
+                    yp[i] = 0;
+                    stx[i] = 0.02 + Math.random() / 10;
+                    sty[i] = 0.7 + Math.random();
+                }
+                dx[i] += stx[i];
+                document.getElementById("dot" + i).style.top = yp[i] + "px";
+                document.getElementById("dot" + i).style.left = xp[i] + am[i] * Math.sin(dx[i]) + "px";
+            }
+            snowtimer = setTimeout("snowIE_NS6()", 10);
+        }
 
-if (ie4up||ns6up){
-    snowIE_NS6();
-		if (hidesnowtime>0)
-		setTimeout("hidesnow()", hidesnowtime*1000)
-		}
-
-</script>
-
-<div>
+        function hidesnow() {
+            if (window.snowtimer) clearTimeout(snowtimer)
+            for (i = 0; i < no; i++) document.getElementById("dot" + i).style.visibility = "hidden"
+        }
 
 
-<script type="text/javascript">
-var array = ["https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg",
-"https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg",
-"https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg",
-"https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg",
-"https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg",
-"https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg"];
-var names = ["Dhruv Kaushal", "Ryan Inghilterra",
- "Alex Varnau", "Kevin Liu", 
- "Jungyoon Chung", "Kathy Luu"];
-  var m = array.length, t, q;
-  // While there remain elements to shuffle…
-  while (m) {
+        if (ie4up || ns6up) {
+            snowIE_NS6();
+            if (hidesnowtime > 0)
+                setTimeout("hidesnow()", hidesnowtime * 1000)
+        }
+    </script>
 
-    //Pick a left element
-    q = Math.floor(Math.random() * m--);
-
-    //Swap
-    t = array[m];
-    array[m] = array[q];
-    array[q] = t;
-    t = names[m];
-    names[m] = names[q];
-    names[q] = t;
-    }
-    var k =0;
-  var s = "<table align='center'>";
-    for(var i =0; i<2;i++)
-    {
-    document.write("<tr>");
-    for(var j=0;j<3;j++)
-    {
-   s = s+"<td><a href = 'javascript:void(0)' onclick = 'lolyo(\""+array[k]+"\")'><img src="+array[k]+" class='circular_img' </img></a><p class='team_names'>"+names[k++]+"</p></td>";
-
-    }
-    s=s+"</tr>";
-    }
-    s=s+"</table>";
-    console.log(s);
-    
-    document.write(s);
-    console.log("what");
-</script>
-
-<script>
-function lolyo(i)
-{
-console.log("WWWWW");
-if(i =="https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg")
-document.getElementById('team1').style.display='block';
-if(i =="https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg")
-document.getElementById('team2').style.display='block';
-if(i =="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg")
-document.getElementById('team3').style.display='block';
-if(i =="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg")
-document.getElementById('team4').style.display='block';
-if(i =="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg")
-document.getElementById('team5').style.display='block';
-if(i =="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg")
-document.getElementById('team6').style.display='block';
-
-document.getElementById('fade').style.display='block';
-var sou =document.getElementById('Nyan_Cat');
-sou.play();
-}
-</script>
+    <div>
 
 
-</div>
-<div id="team1" class="white_content">
-<p> So this is Dhruv 
-my favorite meme is </p> 
-<img alt="Dog" src="http://i.imgur.com/v7Bgv.gif">
-</div>
+        <script type="text/javascript">
+            var array = ["https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg",
+                "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg",
+                "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg",
+                "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg",
+                "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg",
+                "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg"
+            ];
+            var names = ["Dhruv Kaushal", "Ryan Inghilterra",
+                "Alex Varnau", "Kevin Liu",
+                "Jungyoon Chung", "Kathy Luu"
+            ];
+            var m = array.length,
+                t, q;
+             // While there remain elements to shuffle…
+            while (m) {
 
-<div id="team2" class="white_content">
-The second personooo
-</div>
+                //Pick a left element
+                q = Math.floor(Math.random() * m--);
 
-<div id="team3" class="white_content">
-The third personooo
-</div>
+                //Swap
+                t = array[m];
+                array[m] = array[q];
+                array[q] = t;
+                t = names[m];
+                names[m] = names[q];
+                names[q] = t;
+            }
+            var k = 0;
+            var s = "<table align='center'>";
+            for (var i = 0; i < 2; i++) {
+                document.write("<tr>");
+                for (var j = 0; j < 3; j++) {
+                    s = s + "<td><a href = 'javascript:void(0)' onclick = 'lolyo(\"" + array[k] + "\")'><img src=" + array[k] + " class='circular_img' </img></a><p class='team_names'>" + names[k++] + "</p></td>";
 
-<div id="team4" class="white_content">
-The fourth personooo
-</div>
+                }
+                s = s + "</tr>";
+            }
+            s = s + "</table>";
+            console.log(s);
 
-<div id="team5" class="white_content">
-The fifth personooo
-</div>
+            document.write(s);
+            console.log("what");
+        </script>
 
-<div id="team6" class="white_content">
-The sixth personooo
-</div>
+        <script>
+            function lolyo(i) {
+                console.log("WWWWW");
+                if (i == "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg")
+                    document.getElementById('team1').style.display = 'block';
+                if (i == "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg")
+                    document.getElementById('team2').style.display = 'block';
+                if (i == "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg")
+                    document.getElementById('team3').style.display = 'block';
+                if (i == "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg")
+                    document.getElementById('team4').style.display = 'block';
+                if (i == "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg")
+                    document.getElementById('team5').style.display = 'block';
+                if (i == "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg")
+                    document.getElementById('team6').style.display = 'block';
 
-<div id="light" class="white_content">This is the lightbox content. <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
-<div id="fade" class="black_overlay">
-<audio id= "Nyan_Cat" loop>
-  <source src="Nyan_Cat.ogg" type="audio/ogg">
-</audio>
-<img alt="altt" src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/779/0002.gif" class="nyan">
+                document.getElementById('fade').style.display = 'block';
+                var sou = document.getElementById('Nyan_Cat');
+                sou.play();
+            }
+        </script>
 
-</div>
+
+    </div>
+    <div id="team1" class="white_content">
+        <p>So this is Dhruv my favorite meme is</p>
+        <img alt="Dog" src="http://i.imgur.com/v7Bgv.gif">
+    </div>
+
+    <div id="team2" class="white_content">
+        The second personooo
+    </div>
+
+    <div id="team3" class="white_content">
+        The third personooo
+    </div>
+
+    <div id="team4" class="white_content">
+        The fourth personooo
+    </div>
+
+    <div id="team5" class="white_content">
+        The fifth personooo
+    </div>
+
+    <div id="team6" class="white_content">
+        The sixth personooo
+    </div>
+
+    <div id="light" class="white_content">This is the lightbox content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+    </div>
+    <div id="fade" class="black_overlay">
+        <audio id="Nyan_Cat" loop>
+            <source src="Nyan_Cat.ogg" type="audio/ogg">
+        </audio>
+        <img alt="altt" src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/779/0002.gif" class="nyan">
+
+    </div>
 
 
 </body>
+
 </html>
