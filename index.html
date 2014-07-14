@@ -1,89 +1,47 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Meme Team</title>
-        <meta charset="UTF-8">
-    </head>
-    
-    <body>
-        <header style = "display: inline">
-            <table style= "width:100%"><tr>
-            <td>
-            <form action="index.html" method="get">
-                <button type="submit" formaction = "index.html" style = "padding: 30px 52px; cursor: pointer">Home</button>
-            </form>
-            </td>
-                
-            <td>
-            <form action="addPage.html" method="get">
-                <button type="submit" formaction = "addPage.html" style = "padding: 30px; cursor: pointer">Add to Library</button> 
-            </form>
-            </td>
-                
-            <td>
-            <form action="explore.html" method="get">
-                <button type="submit" formaction = "explore.html" style = "padding: 30px 48px; cursor: pointer">Explore</button>
-            </form>
-            </td>
-            
-            <td>
-            <form action="helper.html" method="get">
-                <button type="submit" formaction = "helper.html" style = "margin-top: 40px; float: right; padding: 10px 20px; cursor: pointer">Help</button>
-            </form>
-                    
-            <button type="button" style = "margin-top: 40px; float: right; padding: 10px 17px; cursor: pointer">Search</button>
-            <input type="search" style = "width: 300px; margin-top: 45px; float: right;">
-            </td>
-            </tr></table>
-        </header>
-        <br><br>
-
-        <div>
-        <table style = "width: 800px; margin-left: 100px" >
-            <tr>
-                <td style = "height : 100px">Most Recently Added: </td>
-                <td> &lt; </td>
-                <td style = "border: 3px solid black">
-                    <a href= "viewMeme.html">This is my gif</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td > &gt; </td>
-            </tr>
-            <tr>
-                <td style = "height : 100px">By Name: </td>
-                <td > &lt; </td>
-                <td style = "border: 3px solid black">
-                    <a href= "viewMeme.html">This is my gif</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td > &gt; </td>
-            </tr>
-            <tr>
-                <td style = "height : 100px">Best Rated: </td>
-                <td > &lt; </td>
-                <td style = "border: 3px solid black">
-                    <a href= "viewMeme.html">This is my gif</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td style = "border: 3px solid black">
-                    <a href = "viewMeme.html">This is a meme</a>
-                </td>
-                <td > &gt; </td>
-            </tr>
-        </table>
-        </div>
-    </body>
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>MemeMaster Homepage</title>
+	</head>
+	
+	<body>
+		<header role="banner">
+			<div id="MemeHeader">
+				<div class="inner">
+					<Span> <a href="index.html"> Home </a></Span> 
+					<Span> <a href="addPage.html"> Add to Library </a></Span> 
+					<Span> <a href="explore.html"> Explore </a></Span> 
+					<Span> Search Bar </Span>
+					<Span> <a href="helper.html"> Help </a></Span> 
+				</div>
+			</div>
+		</header>
+	
+		<section data-fixed>
+			<div class="row row3 callout">
+				<div class="outer">
+					<div class="inner" id="library">				
+						<h2 class="text-center">My Library</h2>
+						<div id = "most_recent">		
+							<h4> Most Recent Added Memes/Gifs </h4>
+							_Meme 1____Meme 2____Meme 3_
+							<br>
+						</div>
+						<div id = "highest_rated">
+							<h4> Highest Rated </h4>
+							_Meme 1____Meme 2____Meme 3_
+							<br>
+						</div>
+						<div id = "title_alpha">
+							<h4> By Title Memes/GIFS</h4>
+							_Meme 1____Meme 2____Meme 3_
+							<br> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+	</body>
 </html>

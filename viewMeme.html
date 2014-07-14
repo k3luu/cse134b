@@ -1,70 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Meme Team</title>
+        <title>View Your Meme</title>
 		<meta charset="UTF-8">
     </head>
     
     <body>
-        <header style = "display: inline">
-            <table style= "width:100%"><tr>
-            <td>
-            <form action="index.html" method="get">
-                <button type="submit" formaction = "index.html" style = "padding: 30px 52px; cursor: pointer">Home</button>
-            </form>
-            </td>
+    
+	<!-- BELOW IS HEADER -->
+		<header role="banner">
+			<div id="header">
+				<div class="inner">
+					<span><a href="index.html">Home</a></span>
+					<span><a href="addPage.html">Add to Library</a></span>
+					<span><a href="explore.html">Explore</a></span>
+					<span><a href="">Search</a>	</span>		
+					<span><a href="helper.html">Help</a></span>
+				</div>
+			</div>     
+		</header>
+	<!-- ABOVE IS HEADER -->
                 
-            <td>
-            <form action="addPage.html" method="get">
-                <button type="submit" formaction = "addPage.html" style = "padding: 30px; cursor: pointer">Add to Library</button> 
-            </form>
-            </td>
-                
-            <td>
-            <form action="explore.html" method="get">
-                <button type="submit" formaction = "explore.html" style = "padding: 30px 48px; cursor: pointer">Explore</button>
-            </form>
-            </td>
-            
-            <td>
-            <form action="helper.html" method="get">
-                <button type="submit" formaction = "helper.html" style = "margin-top: 40px; float: right; padding: 10px 20px; cursor: pointer">Help</button>
-            </form>
-                    
-            <button type="button" style = "margin-top: 40px; float: right; padding: 10px 17px; cursor: pointer">Search</button>
-            <input type="search" style = "width: 300px; margin-top: 45px; float: right;">
-            </td>
-            </tr></table>
-        </header>
-        <br><br>
-                
-        <table style="padding: 70px 220px;">
-			<tr>
-				<td style="padding:20px;">
-					<table style="border:1px solid black;">
-						<tr>
-							<td style="padding: 200px">
-								This is a meme
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td style="padding:20px;">
-					<table>
-						<tr><td>Title: </td></tr>
-						<tr><td>*URL: </td></tr>
-						<tr><td>Rating: </td></tr>
-						<tr><td>Tags: </td></tr>
-						<tr><td>Notes: </td></tr>
-						<tr><td>Date Added: </td></tr>				
-					</table>
-					<form action="addPage.html" method="get">
-                        <button type="submit" formaction= "addPage.html" style="float:right; margin-right:423px; padding: 10px 27px;">Edit</button> </form>
-					<button type="button" style="float:right; margin-right:423px; padding: 10px 20px;">Delete</button>
-				</td>
-			</tr>
+		<section>
+			<p>[Your meme image]</p>
+		</section>
+		
+		<section>
+			<div>
+				<p>Title:</p>
+				<p>*URL:</p>
+				<p>Rating:</p>
+				<p>Tags:</p>
+				<p>Notes:</p>
+				<p>Date Added:</p>	
+			</div>
 			
-		</table>
+			<div>
+				<form action="addPage.html" method="get">
+				<button type="submit" formaction= "addPage.html">Edit</button> </form>
+				<button type="button">Delete</button>
+			</div>
+		</section>
 		
     </body>
 </html>
