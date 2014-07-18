@@ -1,0 +1,39 @@
+ul {
+    margin: auto;
+    position: fixed;
+    width: 100%;
+    background: grey;
+}
+
+li {
+    display: inline-block;
+    float: left;
+    line-height:50px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+li a {
+    min-width: 140px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+li:hover a {
+    background: teal;
+    border-bottom: 3px solid black;
+}
+
+#currentPage {
+    background: teal; 
+    border-bottom: 3px solid black;
+}
+
+#searchBox{
+    size: 300px;   
+}
+
+#navSearchButton{
+    
+}

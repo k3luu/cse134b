@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>MEME TEAM</title>
-    <h>MEME TEAM</h>
     <style>
-        h {
+        h1 {
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            left: 25%;
+            left: 33%;
             color: #d7ceb2;
             text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
             font: 70px'BazarMedium';
@@ -20,11 +19,24 @@
             padding: 15px;
         }
         html {
-            background: url(meme_background.jpg) no-repeat center center fixed;
+            background: url(images/meme_background.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
+        }
+        .Bio_image{
+        	display:block;
+        	margin-left: auto;
+    		margin-right: auto;
+        	width:250px;
+        	height:250px;
+        }
+        .Bio_name{
+        	font-family: "Brush Script MT", cursive;
+            text-align: center;
+            text-shadow: 2px 2px #707070;
+            font-size: 50px;
         }
         .team_names {
             font-family: "Brush Script MT", cursive;
@@ -58,7 +70,7 @@
         }
         .white_content {
             display: none;
-            position: relative;
+            position: absolute;
             top: 25%;
             left: 25%;
             width: 50%;
@@ -81,7 +93,7 @@
 </head>
 
 <body>
-
+    <h1>MEME TEAM</h1>
     <script type="text/javascript">
         /******************************************
          * Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
@@ -178,13 +190,10 @@
 
 
         <script type="text/javascript">
-            var array = ["https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg",
-                "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg",
-                "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg",
-                "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg",
-                "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg",
-                "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg"
-            ];
+            var array = ["images/Dhruv_profile.jpg",
+            "images/Ryan_profile.jpg", "images/Alex_profile.jpg",
+            "images/Kevin_profile.jpg", "images/Jungyoon_profile.jpg",
+            "images/Kathy_profile.jpg"];
             var names = ["Dhruv Kaushal", "Ryan Inghilterra",
                 "Alex Varnau", "Kevin Liu",
                 "Jungyoon Chung", "Kathy Luu"
@@ -225,17 +234,17 @@
         <script>
             function lolyo(i) {
                 console.log("WWWWW");
-                if (i == "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1560718_10152184065848988_2071175532_n.jpg")
+                if (i == "images/Dhruv_profile.jpg")
                     document.getElementById('team1').style.display = 'block';
-                if (i == "https://scontent-a.xx.fbcdn.net/hphotos-xpa1/t1.0-9/10439508_857925857554930_8268261682010292162_n.jpg")
+                if (i == "images/Ryan_profile.jpg")
                     document.getElementById('team2').style.display = 'block';
-                if (i == "https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10325358_750447898319038_6334052849817618599_n.jpg")
+                if (i == "images/Alex_profile.jpg")
                     document.getElementById('team3').style.display = 'block';
-                if (i == "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10407604_10152558366098694_2119271008214068243_n.jpg")
+                if (i == "images/Kevin_profile.jpg")
                     document.getElementById('team4').style.display = 'block';
-                if (i == "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10534652_10152564520771948_4446530771871743814_n.jpg")
+                if (i == "images/Jungyoon_profile.jpg")
                     document.getElementById('team5').style.display = 'block';
-                if (i == "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/10488038_10152353336113241_2559105571970372848_n.jpg")
+                if (i == "images/Kathy_profile.jpg")
                     document.getElementById('team6').style.display = 'block';
 
                 document.getElementById('fade').style.display = 'block';
@@ -247,35 +256,81 @@
 
     </div>
     <div id="team1" class="white_content">
-        <p>So this is Dhruv my favorite meme is</p>
-        <img alt="Dog" src="http://i.imgur.com/v7Bgv.gif">
-    </div>
+<p class='Bio_name'>Dhruv Kaushal</p> 
+<p> Uhhhhhhh </p>
+<img alt="Dog" src="images/Dhruv_1.gif" class="Bio_image">
+<img alt="GooDogs" src="images/Dhruv_2.gif" class="Bio_image"> 
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team1').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
-    <div id="team2" class="white_content">
-        The second personooo
-    </div>
+<div id="team2" class="white_content">
+<p class='Bio_name'>Ryan Inghilterra</p>
+<p>
+I like hanging out with fat animals and eating California burritos. One time I got to pet a penguin.
+</p>
+<img class="Bio_image" alt="memee" src="images/Ryan_1.jpg">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team2').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
-    <div id="team3" class="white_content">
-        The third personooo
-    </div>
+<div id="team3" class="white_content">
+<p class='Bio_name'>Alex Varnau</p>
+<p>
+I like reddit and San Diego.
+</p>
+<img alt="Dog" src="images/Alex_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team3').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
-    <div id="team4" class="white_content">
-        The fourth personooo
-    </div>
+<div id="team4" class="white_content">
+<p class='Bio_name'>Kevin Liu</p>
+<p>
+I'm a very spontaneous and lazy person. I am all about sunsets.This bio can't really capture how majestic I am. 
+</p>
+<img alt="Dog" src="images/Kevin_1.gif" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team4').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
-    <div id="team5" class="white_content">
-        The fifth personooo
-    </div>
+<div id="team5" class="white_content">
+<p class='Bio_name'>Jungyoon Chung</p>
+<p>
+I love punny jokes and punny people. When computer programmers are hungry they take mega-bites.
+</p>
+<img alt="Dog" src="images/Jungyoon_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team5').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
-    <div id="team6" class="white_content">
-        The sixth personooo
-    </div>
+<div id="team6" class="white_content">
+<p class='Bio_name'>Kathy Luu</p>
+<p>
+Dogs dogs dogs. I have what people call an "RBF." Approach with caution. Extreme nerd; I'll go on for hours if you start talking about HP or Marvel. "Here may not be perfect but it is full of good things."
+</p>
+<img alt="Dog" src="images/Kathy_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team6').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
 
     <div id="light" class="white_content">This is the lightbox content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
     </div>
     <div id="fade" class="black_overlay">
         <audio id="Nyan_Cat" loop>
-            <source src="Nyan_Cat.ogg" type="audio/ogg">
+            <source src="Nyan_cat.ogg" type="audio/ogg">
         </audio>
         <img alt="altt" src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/779/0002.gif" class="nyan">
 
