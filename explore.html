@@ -29,11 +29,11 @@
             font-size: 100%;
             background-color: white;
         }
+        
         h1 {
             text-align: center;
             letter-spacing: 10px;
             font-size: 2em;
-
         }
     
         table {
@@ -63,8 +63,6 @@
             text-decoration: none;
             color: white;
         }
-        
-       
         table.tags td {
             border-radius: 5px;
             width: 20%;
@@ -73,10 +71,26 @@
             padding: 5px;
             border: 3px solid dodgerblue;
         }
+        
         #resultString {
             font-style: italic;
-        }       
+        }      
         
+        table.memes {
+            text-align: center;
+            table-layout: auto;
+        }
+        table.memes td {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        img.meme {
+            max-height: 225px;
+            max-width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+        }   
     </style>
     
     <script>
@@ -112,15 +126,26 @@
     </section>
 
     <section>
-        <h3>Results for tag <span id="resultString">[current tag]</span>:</h3>
+        <h3>Results for tag <span id="resultString">[click on a tag]</span>:</h3>
 
         <div id="memes">
-            <span><a href="viewMeme.html">[FIRST MEME]</a></span>
-            <span><a href="viewMeme.html">[SECOND MEME]</a></span>
-            <span><a href="viewMeme.html">[THIRD MEME]</a></span>
-            <span><a href="viewMeme.html">[FOURTH MEME]</a></span>
-            <span><a href="viewMeme.html">[FIFTH MEME]</a></span>
-            <span><a href="viewMeme.html">[...]</a></span>
+            <table class="memes">
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 1</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 2</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 3</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 4</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 5</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 6</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 7</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 8</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 9</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 10</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 11</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 12</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 13</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 14</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 15</a></td></tr>
+            </table>
         </div>
 
     </section>
