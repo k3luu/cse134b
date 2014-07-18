@@ -26,10 +26,12 @@
     <style>
         body {
             font-family: "Verdana";
+            font-size: 100%;
         }
-        h2 {
+        h1 {
             text-align: center;
-            letter-spacing: 3px;
+            letter-spacing: 10px;
+            font-size: 2em;
         }
     
         table {
@@ -63,25 +65,34 @@
             padding: 5px;
             border: 3px solid dodgerblue;
         }
-        
-            
+        #resultString {
+            font-style: italic;
+        }       
         
     </style>
+    
+    <script>
+    function searchTag(tagNum) {
+        var phrase = document.getElementById('tag' + tagNum).innerHTML;
+        var result = document.getElementById('resultString');
+        result.innerHTML = phrase;
+    }
+    </script>
 
     <section>
-        <h2>EXPLORE</h2>
+        <h1>EXPLORE</h1>
 
         <div id="tags">
             <table class="tags">
-            <tr><td><a href="test.html">cat</a></td><td><a href="test.html">dog</a></td><td><a href="test.html">mouse</a></td></tr>
-            <tr><td><a href="test.html">mouse</a></td><td><a href="test.html">cat</a></td><td><a href="test.html">dog</a></td></tr>
-                <tr><td><a href="test.html">dog</a></td><td><a href="test.html">mouse</a></td><td><a href="test.html">cat</a></td></tr>
+            <tr><td><a href="#" id="tag1" onclick="javascript:searchTag(1)">cat</a></td><td><a href="#">dog</a></td><td><a href="#">mouse</a></td></tr>
+            <tr><td><a href="#">mouse</a></td><td><a href="#">cat</a></td><td><a href="#">dog</a></td></tr>
+                <tr><td><a href="#">dog</a></td><td><a href="#">mouse</a></td><td><a href="#">cat</a></td></tr>
             </table>
         </div>
     </section>
 
     <section>
-        <h3>Results for t <i>[current tag]</i>:</h3>
+        <h3>Results for tag <span id="resultString">[current tag]</span>:</h3>
 
         <div id="memes">
             <span><a href="viewMeme.html">[FIRST MEME]</a></span>
