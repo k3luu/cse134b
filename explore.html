@@ -27,11 +27,13 @@
         body {
             font-family: "Verdana";
             font-size: 100%;
+            background-color: #9BCFEB;
         }
         h1 {
             text-align: center;
             letter-spacing: 10px;
             font-size: 2em;
+
         }
     
         table {
@@ -51,15 +53,21 @@
             color: white;
             text-decoration: none;
         }
+        table.tags td a:visited {
+            color: white;
+            background-color: deepskyblue;
+        }
         table.tags td a:hover {
             display: block;
             background-color: dodgerblue;
             text-decoration: none;
+            color: white;
         }
+        
        
         table.tags td {
             border-radius: 5px;
-            width: 33%;
+            width: 20%;
             background-color: deepskyblue;
             color: white;
             padding: 5px;
@@ -84,9 +92,21 @@
 
         <div id="tags">
             <table class="tags">
-            <tr><td><a href="#" id="tag1" onclick="javascript:searchTag(1)">cat</a></td><td><a href="#">dog</a></td><td><a href="#">mouse</a></td></tr>
-            <tr><td><a href="#">mouse</a></td><td><a href="#">cat</a></td><td><a href="#">dog</a></td></tr>
-                <tr><td><a href="#">dog</a></td><td><a href="#">mouse</a></td><td><a href="#">cat</a></td></tr>
+            <tr><td><a href="#" id="tag1" onclick="javascript:searchTag(1)">cat</a></td>
+                <td><a href="#" id="tag2" onclick="javascript:searchTag(2)">dog</a></td>
+                <td><a href="#" id="tag3" onclick="javascript:searchTag(3)">bunny</a></td>
+                <td><a href="#" id="tag4" onclick="javascript:searchTag(4)">giraffe</a></td>
+                <td><a href="#" id="tag5" onclick="javascript:searchTag(5)">mouse</a></td></tr>
+            <tr><td><a href="#" id="tag6" onclick="javascript:searchTag(6)">manbearpig</a></td>
+                <td><a href="#" id="tag7" onclick="javascript:searchTag(7)">turtle</a></td>
+                <td><a href="#" id="tag8" onclick="javascript:searchTag(8)">flan</a></td>
+                <td><a href="#" id="tag9" onclick="javascript:searchTag(9)">monkey</a></td>
+                <td><a href="#" id="tag10" onclick="javascript:searchTag(10)">hippo</a></td></tr>
+            <tr><td><a href="#" id="tag11" onclick="javascript:searchTag(11)">snake</a></td>
+                <td><a href="#" id="tag12" onclick="javascript:searchTag(12)">human</a></td>
+                <td><a href="#" id="tag13" onclick="javascript:searchTag(13)">rock</a></td>
+                <td><a href="#" id="tag14" onclick="javascript:searchTag(14)">frog</a></td>
+                <td><a href="#" id="tag15" onclick="javascript:searchTag(15)">triton</a></td></tr>
             </table>
         </div>
     </section>
