@@ -22,17 +22,66 @@
         </div>
     </header>
     <!-- ABOVE IS HEADER -->
+    
+    <style>
+        body {
+            font-family: "Verdana";
+        }
+        h2 {
+            text-align: center;
+            letter-spacing: 3px;
+        }
+    
+        table {
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        table.tags {
+            text-align: center;
+            table-layout: fixed;
+            border-spacing: 20px 10px;
+        }
+        table.tags td a:link {
+            display: block;
+            background-color: deepskyblue;
+            color: white;
+            text-decoration: none;
+        }
+        table.tags td a:hover {
+            display: block;
+            background-color: dodgerblue;
+            text-decoration: none;
+        }
+       
+        table.tags td {
+            border-radius: 5px;
+            width: 33%;
+            background-color: deepskyblue;
+            color: white;
+            padding: 5px;
+            border: 3px solid dodgerblue;
+        }
+        
+            
+        
+    </style>
 
     <section>
         <h2>EXPLORE</h2>
 
         <div id="tags">
-            <p>[list of tags...]</p>
+            <table class="tags">
+            <tr><td><a href="test.html">cat</a></td><td><a href="test.html">dog</a></td><td><a href="test.html">mouse</a></td></tr>
+            <tr><td><a href="test.html">mouse</a></td><td><a href="test.html">cat</a></td><td><a href="test.html">dog</a></td></tr>
+                <tr><td><a href="test.html">dog</a></td><td><a href="test.html">mouse</a></td><td><a href="test.html">cat</a></td></tr>
+            </table>
         </div>
     </section>
 
     <section>
-        <h3>Results for <i>[current tag]</i>:</h3>
+        <h3>Results for t <i>[current tag]</i>:</h3>
 
         <div id="memes">
             <span><a href="viewMeme.html">[FIRST MEME]</a></span>
