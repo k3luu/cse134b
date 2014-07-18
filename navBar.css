@@ -29,3 +29,11 @@ li:hover a {
     background: teal; 
     border-bottom: 3px solid black;
 }
+
+#searchBox{
+    size: 300px;   
+}
+
+#navSearchButton{
+    
+}
