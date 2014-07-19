@@ -5,16 +5,14 @@
 	<title>View Your Meme</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="navBar.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	<style type="text/css">
 		
 		#image {
-			background-color: yellow;
+			background-color: white;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: -20px;
-			width: 450px;
-			height: 450px;
 		}
 		#interaction {
 			width: 450px;
@@ -22,18 +20,13 @@
 			margin-right: auto;
 		}
 		#main_area {
-			padding-top: 100px;
-			padding-bottom: 100px;
-			text-align: center;
-			
-			/*
-			background-color: white;
-			margin: 0px 100px;
+			padding-top: 50px;
 			padding-bottom: 50px;
-			*/
+			width: 1000px;
+			text-align: center;
 		}
 		#meme_info {
-			align-content: left;
+			text-align: left;
 			width: 450px;
 			margin-left: auto;
 			margin-right: auto;
@@ -51,13 +44,35 @@
 			text-align: center;
 		}
 		body {
-			background-color: #048594;	
+			background-color: #ffffff;	
 		}
-		h4 {
-			font-family: "Avant Garde", Avantgarde, "Century Gothic", 
-				CenturyGothic, "AppleGothic", sans-serif;
+		span:hover:before {
+			content: "\2605";
+			position: absolute;
 		}
-        </style>
+		
+		h2 a:link {
+			background-color: gray;
+			border-radius: 5px;
+            color: white;
+			padding: 5px;
+            text-decoration: none;
+        }
+        h2 a:visited {
+            color: white;
+            background-color: gray;
+			border-radius: 5px;
+			padding: 5px;
+        }
+        h2 a:hover {
+            background-color: dodgerblue;
+			border-radius: 5px;
+			color: white;
+			padding: 5px;
+            text-decoration: none;
+        }
+	
+	</style>
 </head>
 
 <body>
@@ -78,18 +93,28 @@
     <div class="content">
     <section id="main_area">
 		
-		<h1 id="title">"Title isnt she lovely"</h1>
+		<h1 id="title">"Tony Stark - Meme Man"</h1>
 		
 		<div id="image">
-			<p>[Your image here]</p>
+			<img src="mememaster.jpg" alt="Tony_stark">
 		</div>
 
 		<div id="meme_info">
-			<h4>Rating: </h4>
-			<h4>Tags:</h4>
-			<h4>Notes:</h4>
-			<h4>URL:</h4>
-			<h4>Published:</h4>
+			<h2>Rating:
+				<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+			</h2>
+			<h2>Tags:
+				<a href="#" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
+				<a href="#" id="tag2" onclick="javascript:searchTag(1)">meme</a>
+				<a href="#" id="tag3" onclick="javascript:searchTag(1)">master</a>
+				<a href="#" id="tag4" onclick="javascript:searchTag(1)">epic</a>
+				<a href="#" id="tag5" onclick="javascript:searchTag(1)">funny</a>
+			</h2>
+			<h2>Notes:</h2>
+			<input readonly size="75" height="20" value="lahdeedah I am the meme master">
+			<h2>URL:</h2>
+				<input readonly size=50 value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
+			<h2>Published: <i>July 18th, 2014</i></h2>
 		</div>
 
 		<div id="interaction">

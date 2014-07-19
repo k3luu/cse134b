@@ -6,13 +6,13 @@
 	<title>Add A Meme</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="navBar.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<style type="text/css">
 		#image {
 			background-color: yellow;
-			margin-left: 140px;
-			width: 400px;
-			height: 400px;
+			margin-left: auto;
+			margin-right: auto;
 			display: inline-block;
 		}
 		#interaction {
@@ -21,8 +21,9 @@
 			margin-right: 200px;
 		}
 		#main_area {
+			padding-top: 100px;
+			padding-bottom: 100px;
 			width: 1000px;
-			height: 1000px;
 			text-align: center;
 			/*
 			background-color: white;
@@ -31,77 +32,100 @@
 			*/
 		}
 		#meme_info {
+			text-align: left;
 			background-color: white;
 			float: right;
 			margin-right: 100px;
 		}
 		body {
-			background-color: #048594;
+			background-color: #ffffff;
 		}
-		h4 {
-			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		
+		#rating {
+			unicode-bidi: bidi-override;
+			direction: rtl;
+			display: inline-block;
 		}
+		#rating > span {
+			display: inline-block;
+			position: relative;
+			width: 1.1em;
+		}
+		#rating > span:hover:before,
+		#rating > span:hover ~ span:before {
+			content: "\2605";
+			position: absolute;
+		}
+		
 	</style>
 </head>
 
 <body>
-    <div class= "menu">
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="addPage.html" class="currentPage">Add to Library</a></li> 
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="memeT.html">Team Page</a></li>
-            <li><a href="helper.html">Help</a></li>
-            <li><form>
-                <input type="text" class="searchBox" value placeholder = "I'm searching for..." />
-                <input type="image" class="searchButton" src="images/search.png" alt="Search"/>
-            </form></li>
-        </ul>
-    </div>
+	<div class="menu">
+		<ul>
+			<li><a href="index.html">Home</a>
+			</li>
+			<li><a href="addPage.html" class="currentPage">Add to Library</a>
+			</li>
+			<li><a href="explore.html">Explore</a>
+			</li>
+			<li><a href="memeT.html">Team Page</a>
+			</li>
+			<li><a href="helper.html">Help</a>
+			</li>
+			<li>
+				<form>
+					<input type="text" class="searchBox" value placeholder="I'm searching for..." />
+					<input type="image" class="searchButton" src="images/search.png" alt="Search" />
+				</form>
+			</li>
+		</ul>
+	</div>
 
-    <div class="content">
-	<!-- ABOVE IS HEADER -->
+	<div class="content">
+		<!-- ABOVE IS HEADER -->
 
-	<section id="main_area">
+		<section id="main_area">
 
-		<div id="image">
-			<p>[YOUR IMAGE HERE]</p>
-		</div>
+			<div id="image">
+				<img src="mememaster.jpg" alt="Tony_stark">
+			</div>
 
-		<div id="meme_info">
-			<h4>*Title:
+			<div id="meme_info">
+				<h2>*Title:
 					<input type="text">
-				</h4>
-			<h4>*URL:
+				</h2>
+				<h2>*URL:
+					<input type="text" name="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
+				</h2>
+				<h2 style="display: inline-block">Rating:</h2>
+				<div id="rating">
+					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				</div>		
+				<h2>Tags:
 					<input type="text">
-				</h4>
-			<h4>Rating:
+				</h2>
+				<h2>Notes:
 					<input type="text">
-				</h4>
-			<h4>Tags:
+				</h2>
+				<h2>Published:
 					<input type="text">
-				</h4>
-			<h4>Notes:
-					<input type="text">
-				</h4>
-			<h4>Published:
-					<input type="text">
-				</h4>
-		</div>
+				</h2>
+			</div>
 
 
-		<div id="interaction">
-			<form action="viewMeme.html" method="get">
-				<button type="submit" formaction="viewMeme.html">Done</button>
-			</form>
-			<form action="index.html" method="get">
-				<button type="submit" formaction="index.html">Cancel</button>
-			</form>
-		</div>
+			<div id="interaction">
+				<form action="viewMeme.html" method="get">
+					<button type="submit" formaction="viewMeme.html">Done</button>
+				</form>
+				<form action="index.html" method="get">
+					<button type="submit" formaction="index.html">Cancel</button>
+				</form>
+			</div>
 
 
-	</section>
-    </div>
+		</section>
+	</div>
 
 </body>
 
