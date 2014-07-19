@@ -1,22 +1,34 @@
 body{
+    margin: 0px;
+}
+
+.content{
+    padding: 50px;
+}
+
+.menu{
+    float: left;
+    padding: 0;
     margin: 0;
 }
 
-ul {
+.menu ul {
+    padding: 0;
+    margin: 0;
     position: fixed;
     min-width: 1200px;
     width: 100%;
     background: #758AA8;
 }
 
-li {
+.menu li {
     display: inline-block;
     float: left;
     line-height: 50px;
     font-family: sans-serif;
 }
 
-li a {
+.menu li a {
     min-width: 140px;
     display: block;
     text-align: center;
@@ -24,26 +36,26 @@ li a {
     text-decoration: none;
 }
 
-li:hover a {
+.menu li:hover a {
     background: #4C668C;
     border-bottom: 3px solid black;
 }
 
-.currentPage {
+.menu .currentPage {
     background: #4C668C;
     border-bottom: 3px solid black;
 }
 
-li form{
+.menu li form{
     margin-left: 100px;
     float:right;
 }
 
-#searchBox{
+.menu .searchBox{
     width: 320px;
     height: 24px;
 }
 
-#searchButton{
+.menu .searchButton{
     vertical-align: middle;
 }
