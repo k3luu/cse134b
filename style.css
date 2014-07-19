@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    font-family: "Palatino";
+    font-family: "AppleGothic";
 }
 
 .content{
@@ -9,11 +9,12 @@ body{
 
 h1 {
     text-align: center;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     font-size: 2em;
 }
 
 h3 {
-
+    font-size: 1.2em;
+    font-weight: 
 }
 
