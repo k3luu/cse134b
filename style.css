@@ -1,11 +1,11 @@
 @font-face {
-    font-family: myAppleGothic;
-    src: url(applegothic.ttf);
+    font-family: 'AppleGothic';
+    src: url('AppleGothic.ttf') format('truetype');
 }
 body{
-    margin: 0px;
+    font-family: 'AppleGothic';
+        margin: 0px;
     font-size: 100%;
-    font-family: myAppleGothic;
 }
 
 .content{
