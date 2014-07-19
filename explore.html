@@ -5,27 +5,10 @@
     <title>Meme Team - Explore</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="navBar.css">
-</head>
-
-<body>
-    <div class= "menu">
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="addPage.html">Add to Library</a></li> 
-            <li><a href="explore.html" class="currentPage">Explore</a></li>
-            <li><a href="memeT.html">Team Page</a></li>
-            <li><a href="helper.html">Help</a></li>
-            <li><form>
-                <input type="text" class="searchBox" value placeholder = "I'm searching for..." />
-                <input type="image" class="searchButton" src="images/search.png" alt="Search"/>
-            </form></li>
-        </ul>
-    </div>
-    <!-- ABOVE IS HEADER -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     
     <style>
         body {
-            font-family: "Verdana";
             font-size: 100%;
             background-color: white;
         }
@@ -92,6 +75,23 @@
             margin-left: auto;
         }   
     </style>
+</head>
+
+<body>
+    <div class= "menu">
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="addPage.html">Add to Library</a></li> 
+            <li><a href="explore.html" class="currentPage">Explore</a></li>
+            <li><a href="memeT.html">Team Page</a></li>
+            <li><a href="helper.html">Help</a></li>
+            <li><form>
+                <input type="text" class="searchBox" value placeholder = "I'm searching for..." />
+                <input type="image" class="searchButton" src="images/search.png" alt="Search"/>
+            </form></li>
+        </ul>
+    </div>
+    <!-- ABOVE IS HEADER -->
     
     <script>
     function searchTag(tagNum) {
@@ -103,8 +103,9 @@
 
     
     <div class="content">
+        
+    <section>
         <h1>EXPLORE</h1>
-
         <div id="tags">
             <table class="tags">
             <tr><td><a href="#" id="tag1" onclick="javascript:searchTag(1)">cat</a></td>
@@ -131,24 +132,25 @@
 
         <div id="memes">
             <table class="memes">
-                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 1</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 2</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 3</a></td></tr>
-                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 4</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 5</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 6</a></td></tr>
-                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 7</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 8</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 9</a></td></tr>
-                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 10</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 11</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 12</a></td></tr>
-                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 13</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme"><br>Meme 14</a></td>
-                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme"><br>Meme 15</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 1</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 2</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 3</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 4</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 5</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 6</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 7</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 8</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 9</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 10</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 11</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 12</a></td></tr>
+                <tr><td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 13</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 14</a></td>
+                    <td><a href="#"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 15</a></td></tr>
             </table>
         </div>
-
+    </section>
+        
     </div>
 
 

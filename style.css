@@ -1,0 +1,19 @@
+body{
+    margin: 0px;
+    font-family: "Palatino";
+}
+
+.content{
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 2em;
+}
+
+h3 {
+
+}
+
