@@ -2,48 +2,97 @@
 <html>
 
 <head>
-    <title>View Your Meme</title>
-    <meta charset="UTF-8">
+	<title>This Meme</title>
+	<meta charset="UTF-8">
+	
+	<style type="text/css">
+		
+		#main_area {
+			background-color: white;
+			margin: 0px 100px;
+			padding-bottom: 50px;
+		}
+		#title {
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+			color: white;
+			background: rgba(0,0,0,0.65);
+			border-radius: 5px;
+			margin-left: 290px;
+			padding: 10px;
+			display: inline-block;
+		}
+		#image {
+			background-color: yellow;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: -20px;
+			width: 450px;
+			height: 450px;
+		}
+		#meme_info {
+			align-content: left;
+			width: 450px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+		}
+		#interaction {
+			width: 450px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		body {
+			background-color: #048594;	
+		}
+		h4 {
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		}
+		
+	</style>
+	
 </head>
 
 <body>
 
-    <!-- BELOW IS HEADER -->
-    <header role="banner">
-        <div id="header">
-            <div class="inner">
-                <span><a href="index.html">Home</a></span>
-                <span><a href="addPage.html">Add to Library</a></span>
-                <span><a href="explore.html">Explore</a></span>
-                <span><a href="">Search</a>	</span>	
-                <span><a href="helper.html">Help</a></span>
-                <span> <a href="memeT.html">Team Page</a></span> 
-            </div>
-        </div>
-    </header>
-    <!-- ABOVE IS HEADER -->
+	<!-- BELOW IS HEADER -->
+	<header role="banner">
+		<div id="header">
+			<div class="inner">
+				<span><a href="index.html">Home</a></span>
+				<span><a href="addPage.html">Add to Library</a></span>
+				<span><a href="explore.html">Explore</a></span>
+				<span><a href="">Search</a>	</span>	
+				<span><a href="helper.html">Help</a></span>
+				<span> <a href="memeT.html">Team Page</a></span> 
+			</div>
+		</div>
+	</header>
+	<!-- ABOVE IS HEADER -->
 
-    <section id="image">
-        <p>[Your meme image]</p>
-    </section>
+	<section id="main_area">
+		
+		<h1 id="title">"Title isnt she lovely"</h1>
+		
+		<div id="image">
+			<p>[Your image here]</p>
+		</div>
 
-    <section>
-        <div id="info">
-            <p>Title:</p>
-            <p>*URL:</p>
-            <p>Rating:</p>
-            <p>Tags:</p>
-            <p>Notes:</p>
-            <p>Date Added:</p>
-        </div>
+		<div id="meme_info">
+			<h4>Rating: </h4>
+			<h4>Tags:</h4>
+			<h4>Notes:</h4>
+			<h4>URL:</h4>
+			<h4>Published:</h4>
+		</div>
 
-        <div id="interaction">
-            <form action="addPage.html" method="get">
-                <button type="submit" formaction="addPage.html">Edit</button>
-            </form>
-            <button type="button">Delete</button>
-        </div>
-    </section>
+		<div id="interaction">
+			<form action="addPage.html" method="get">
+				<button type="submit" formaction="addPage.html">Edit</button>
+			</form>
+			<button type="button">Delete</button>
+		</div>
+	</section>
 
 </body>
 

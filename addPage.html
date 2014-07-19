@@ -2,64 +2,100 @@
 <html>
 
 <head>
-    <title>Add A Meme</title>
-    <meta charset="UTF-8">
+	<title>Add A Meme</title>
+	<meta charset="UTF-8">
+
+	<style type="text/css">
+		
+		#main_area {
+			background-color: white;
+			margin: 0px 100px;
+			padding: 50px;
+			
+		}
+		#image {
+			background-color: yellow;
+			margin-left: 140px;
+			width: 400px;
+			height: 400px;
+			display: inline-block;
+		}
+		#meme_info {
+			background-color: white;
+			float: right;
+			margin-right: 100px;
+		}
+		#interaction {
+			background-color: white;
+			float: right;
+			margin-right: 200px;
+		}
+		body {
+			background-color: #048594;	
+		}
+		h4 {
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+		}
+	</style>
+
 </head>
 
 <body>
 
-    <!-- BELOW IS HEADER -->
-    <header role="banner">
-        <div id="header">
-            <div class="inner">
-                <span><a href="index.html">Home</a></span>
-                <span><a href="addPage.html">Add to Library</a></span>
-                <span><a href="explore.html">Explore</a></span>
-                <span><a href="">Search</a>	</span>	
-                <span><a href="helper.html">Help</a></span>
-                <Span><a href="memeT.html">Team Page</a></Span> 
-            </div>
-        </div>
-    </header>
-    <!-- ABOVE IS HEADER -->
+	<!-- BELOW IS HEADER -->
+	<header role="banner">
+		<div id="header">
+			<div class="inner">
+				<span><a href="index.html">Home</a></span>
+				<span><a href="addPage.html">Add to Library</a></span>
+				<span><a href="explore.html">Explore</a></span>
+				<span><a href="">Search</a>	</span>	
+				<span><a href="helper.html">Help</a></span>
+				<Span><a href="memeT.html">Team Page</a></Span> 
+			</div>
+		</div>
+	</header>
+	<!-- ABOVE IS HEADER -->
 
-    <section id="image">
-        <p>[Image of your Meme]</p>
-    </section>
+	<section id="main_area">
 
-    <section>
-        <div id="meme_info">
-            <p>Title:
-                <input type="text">
-            </p>
-            <p>*URL:
-                <input type="text">
-            </p>
-            <p>Rating:
-                <input type="text">
-            </p>
-            <p>Tags:
-                <input type="text">
-            </p>
-            <p>Notes:
-                <input type="text">
-            </p>
-            <p>Date Added:
-                <input type="text">
-            </p>
-        </div>
+		<div id="image">
+			<p>[YOUR IMAGE HERE]</p>
+		</div>
 
-        <div id="interaction">
-            <form action="viewMeme.html" method="get">
-                <button type="submit" formaction="viewMeme.html">Done</button>
-            </form>
-            <form action="index.html" method="get">
-                <button type="submit" formaction="index.html">Cancel</button>
-            </form>
-        </div>
+		<div id="meme_info">
+			<h4>*Title:
+				<input type="text">
+			</h4>
+			<h4>*URL:
+				<input type="text">
+			</h4>
+			<h4>Rating:
+				<input type="text">
+			</h4>
+			<h4>Tags:
+				<input type="text">
+			</h4>
+			<h4>Notes:
+				<input type="text">
+			</h4>
+			<h4>Published:
+				<input type="text">
+			</h4>
+		</div>
+		
+		<div id="interaction">
+			<form action="viewMeme.html" method="get">
+				<button type="submit" formaction="viewMeme.html">Done</button>
+			</form>
+			<form action="index.html" method="get">
+				<button type="submit" formaction="index.html">Cancel</button>
+			</form>
+		</div>
 
-    </section>
-
+		
+	</section>
+	
 
 </body>
 
