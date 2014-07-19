@@ -4,22 +4,22 @@
 <head>
     <title>Add A Meme</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="navBar.css">
 </head>
 
 <body>
-
-    <!-- BELOW IS HEADER -->
     <header role="banner">
-        <div id="header">
-            <div class="inner">
-                <span><a href="index.html">Home</a></span>
-                <span><a href="addPage.html">Add to Library</a></span>
-                <span><a href="explore.html">Explore</a></span>
-                <span><a href="">Search</a>	</span>	
-                <span><a href="helper.html">Help</a></span>
-                <Span><a href="memeT.html">Team Page</a></Span> 
-            </div>
-        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="addPage.html" class="currentPage">Add to Library</a></li> 
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="memeT.html">Team Page</a></li>
+            <li><a href="helper.html">Help</a></li>
+            <li><form>
+                <input type="text" id="searchBox" value placeholder = "I'm searching for..." />
+                <input type="image" id="searchButton" src="images/search.png" alt="Search"/>
+            </form></li>
+        </ul>
     </header>
     <!-- ABOVE IS HEADER -->
 

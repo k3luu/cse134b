@@ -5,6 +5,7 @@
 <head>
     <title>Meme Team - Help</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="navBar.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
@@ -28,18 +29,18 @@
 </head>
 
 <body>
-    <!-- header below-->
     <header role="banner">
-        <div id="header">
-            <div class="inner">
-                <span><a href="index.html">Home</a></span>
-                <span><a href="addPage.html">Add to Library</a></span>
-                <span><a href="explore.html">Explore</a></span>
-                <span><a href="">Search</a>	</span>
-                <span><a href="helper.html">Help</a></span>
-                <span><a href="memeT.html">Team Page</a></span> 
-            </div>
-        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="addPage.html">Add to Library</a></li> 
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="memeT.html">Team Page</a></li>
+            <li><a href="helper.html" class="currentPage">Help</a></li>
+            <li><form>
+                <input type="text" id="searchBox" value placeholder = "I'm searching for..." />
+                <input type="image" id="searchButton" src="images/search.png" alt="Search"/>
+            </form></li>
+        </ul>
     </header>
     <!-- header above -->
 
