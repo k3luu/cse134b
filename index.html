@@ -12,26 +12,28 @@
             margin-left: 50px;
             text-align: left;
         }
-        
         table {
             border: none;
             margin-left: auto;
             margin-right: auto;
         }
-        table.memes {
+        .memes {
             text-align: center;
             table-layout: auto;
         }
-        table.memes td {
+        .memes td {
             text-align: center;
             padding: 20px;
         }
-        img.meme {
+        .memes img{
             max-height: 225px;
             max-width: 300px;
             margin-right: auto;
             margin-left: auto;
-        }   
+        }
+        .arrows{
+            cursor: pointer;   
+        }
     </style>
 </head>
 
@@ -41,7 +43,7 @@
             <li><a href="index.html" class="currentPage">Home</a></li>
             <li><a href="addPage.html">Add to Library</a></li>
             <li><a href="explore.html">Explore</a></li>
-			<li><a href="helper.html">Help</a></li>
+            <li><a href="helper.html">Help</a></li>
             <li><a href="memeT.html">Team Page</a></li>
             <li>
                 <form>
@@ -53,79 +55,68 @@
     </div>
 
     <div class="content">
-        <section id="myLibrary">
-            <h1>MY LIBRARY</h1>
-            <hr>
+        <h1>MY LIBRARY</h1>
+        <hr>
 
-            <div id="existingMemes">
-                <section id="most_recent">
-                    <h3>Most Recently Added: </h3>
-                    <table class="memes">
-                        <tr>
-                            <td>&lt;</td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/meme_master.jpg" class="meme" alt="meme"><br/>Meme Master</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br/>Heaving Breathing Cat</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/download.jpeg" class="meme" alt="meme"><br/>Asian Meme Master</a>
-                            </td>
-                            <td>&gt;</td>
-                        </tr>
-                    </table>
-                    <br>
-                </section>
-                <section id="highest_rated">
-                    <h3>Highest Rated: </h3>
-                    <table class="memes">
-                        <tr>
-                            <td>&lt;</td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/pokemon_master.jpg" class="meme" alt="meme"><br/>Pokemon Master</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/troll.jpg" class="meme" alt="meme"><br/>Troll</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/willy.jpg" class="meme" alt="meme"><br/>Willy Wonka</a>
-                            </td>
-                            <td>&gt;</td>
-                        </tr>
-                    </table>
-                    <br>
-                </section>
-                <section id="title_alpha">
-                    <h3>Alphabetically, By Title:</h3>
-                    <table class="memes">
-                        <tr>
-                            <td>&lt;</td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/Alex_1.jpg" class="meme" alt="meme"><br/>SpongeBob</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/Dhruv_1.gif" class="meme" alt="meme"><br/>Attitude Pug</a>
-                            </td>
-                            <td>
-                                <a href="viewMeme.html">
-                                    <img src="images/Kevin_1.gif" class="meme" alt="meme"><br/>Bully Goat</a>
-                            </td>
-                            <td>&gt;</td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
-
-        </section>
+        <div id="existingMemes">
+            <section id="most_recent">
+                <h3>Most Recently Added: </h3>
+                <table class="memes">
+                    <tr>
+                        <td><span class="arrows">&lt;</span></td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/meme_master.jpg" class="meme" alt="meme"><br/>Meme Master</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br/>Heaving Breathing Cat</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/download.jpeg" class="meme" alt="meme"><br/>Asian Meme Master</a>
+                        </td>
+                        <td><span class="arrows">&gt;</span></td>
+                    </tr>
+                </table>
+                <br>
+            </section>
+            <section id="highest_rated">
+                <h3>Highest Rated: </h3>
+                <table class="memes">
+                    <tr>
+                        <td><span class="arrows">&lt;</span></td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" alt="meme"><br/>Pokemon Master</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/troll.jpg" class="meme" alt="meme"><br/>Troll</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/willy.jpg" class="meme" alt="meme"><br/>Willy Wonka</a>
+                        </td>
+                        <td><span class="arrows">&gt;</span></td>
+                    </tr>
+                </table>
+                <br>
+            </section>
+            <section id="title_alpha">
+                <h3>Alphabetically, By Title:</h3>
+                <table class="memes">
+                    <tr>
+                        <td><span class="arrows">&lt;</span></td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/Alex_1.jpg" class="meme" alt="meme"><br/>SpongeBob</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/Dhruv_1.gif" class="meme" alt="meme"><br/>Attitude Pug</a>
+                        </td>
+                        <td>
+                            <a href="viewMeme.html"><img src="images/Kevin_1.gif" class="meme" alt="meme">
+                                <br/>Bully Goat</a>
+                        </td>
+                        <td><span class="arrows">&gt;</span></td>
+                    </tr>
+                </table>
+            </section>
+        </div>
     </div>
 
 </body>
