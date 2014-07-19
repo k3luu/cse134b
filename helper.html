@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="navBar.css">
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 
     <style type="text/css">
         body {
@@ -20,21 +22,31 @@
         .answer {
             margin-left: 20pt;
         }
+        element.style {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div class="menu">
         <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="addPage.html">Add to Library</a></li> 
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="memeT.html">Team Page</a></li>
-            <li><a href="helper.html" class="currentPage">Help</a></li>
-            <li><form>
-                <input type="text" class="searchBox" value placeholder = "I'm searching for..." />
-                <input type="image" class="searchButton" src="images/search.png" alt="Search"/>
-            </form></li>
+            <li><a href="index.html" class="currentPage">Home</a>
+            </li>
+            <li><a href="addPage.html">Add to Library</a>
+            </li>
+            <li><a href="explore.html">Explore</a>
+            </li>
+            <li><a href="memeT.html">Team Page</a>
+            </li>
+            <li><a href="helper.html">Help</a>
+            </li>
+            <li>
+                <form>
+                    <input type="text" class="searchBox" value placeholder="I'm searching for..." />
+                    <input type="image" class="searchButton" src="images/search.png" alt="Search" />
+                </form>
+            </li>
         </ul>
     </div>
 
@@ -43,7 +55,7 @@
             <h1>FAQ:</h1>
             <div>
                 <h4 class="question">How does Meme Team work?</h4>
-                <span class="answer">Meme Team is dedicated webpage that caiters to all your Meme needs<br></span>
+                <span class="answer" style="display:block;">Meme Team is dedicated webpage that caiters to all your Meme needs<br></span>
             </div>
             <div>
                 <h4 class="question">How do I add/save a Meme to my library?</h4>
