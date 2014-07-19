@@ -5,15 +5,9 @@
 
 	<title>Add A Meme</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="navBar.css">
 
 	<style type="text/css">
-		
-		#main_area {
-			background-color: white;
-			margin: 0px 100px;
-			padding: 50px;
-			
-		}
 		#image {
 			background-color: yellow;
 			margin-left: 140px;
@@ -21,18 +15,30 @@
 			height: 400px;
 			display: inline-block;
 		}
-		#meme_info {
-			background-color: white;
-			float: right;
-			margin-right: 100px;
-		}
 		#interaction {
 			background-color: white;
 			float: right;
 			margin-right: 200px;
 		}
+		#main_area {
+			width: 1000px;
+			height: 1000px;
+			padding-top: 100px;
+			padding-bottom: 100px;
+			text-align: center;
+			/*
+			background-color: white;
+			margin: 0px 100px;
+			padding: 50px;
+			*/
+		}
+		#meme_info {
+			background-color: white;
+			float: right;
+			margin-right: 100px;
+		}
 		body {
-			background-color: #048594;	
+			background-color: #048594;
 		}
 		h4 {
 			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
@@ -43,24 +49,28 @@
 
 <body>
 
-    <title>Add A Meme</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="navBar.css">
-
-    <header role="banner">
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="addPage.html" class="currentPage">Add to Library</a></li> 
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="memeT.html">Team Page</a></li>
-            <li><a href="helper.html">Help</a></li>
-            <li><form>
-                <input type="text" id="searchBox" value placeholder = "I'm searching for..." />
-                <input type="image" id="searchButton" src="images/search.png" alt="Search"/>
-            </form></li>
-        </ul>
-    </header>
-    <!-- ABOVE IS HEADER -->
+	<!-- BELOW IS HEADER -->
+	<header role="banner">
+		<ul>
+			<li><a href="index.html">Home</a>
+			</li>
+			<li><a href="addPage.html" class="currentPage">Add to Library</a>
+			</li>
+			<li><a href="explore.html">Explore</a>
+			</li>
+			<li><a href="memeT.html">Team Page</a>
+			</li>
+			<li><a href="helper.html">Help</a>
+			</li>
+			<li>
+				<form>
+					<input type="text" id="searchBox" value placeholder="I'm searching for..." />
+					<input type="image" id="searchButton" src="images/search.png" alt="Search" />
+				</form>
+			</li>
+		</ul>
+	</header>
+	<!-- ABOVE IS HEADER -->
 
 	<section id="main_area">
 
@@ -70,25 +80,26 @@
 
 		<div id="meme_info">
 			<h4>*Title:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 			<h4>*URL:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 			<h4>Rating:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 			<h4>Tags:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 			<h4>Notes:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 			<h4>Published:
-				<input type="text">
-			</h4>
+					<input type="text">
+				</h4>
 		</div>
-		
+
+
 		<div id="interaction">
 			<form action="viewMeme.html" method="get">
 				<button type="submit" formaction="viewMeme.html">Done</button>
@@ -98,9 +109,9 @@
 			</form>
 		</div>
 
-		
+
 	</section>
-	
+
 
 </body>
 
