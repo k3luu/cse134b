@@ -4,44 +4,40 @@
 <head>
     <meta charset="utf-8">
     <title>MemeMaster Homepage</title>
+    <link rel="stylesheet" type="text/css" href="navBar.css">
 </head>
 
 <body>
     <header role="banner">
-        <div id="MemeHeader">
-            <div class="inner">
-                <span><a href="index.html">Home</a></span> 
-                <span><a href="addPage.html">Add to Library</a></span> 
-                <span><a href="explore.html">Explore</a></span> 
-                <span>Search Bar</span>
-                <span><a href="helper.html">Help</a></span> 
-                <span><a href="memeT.html">Team Page</a></span> 
-            </div>
-        </div>
+        <ul>
+            <li><a href="index.html" class="currentPage">Home</a></li> 
+            <li><a href="addPage.html">Add to Library</a></li> 
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="memeT.html">Team Page</a></li>
+            <li><a href="helper.html">Help</a></li>
+            <li><form>
+                <input type="text" id="searchBox" value placeholder = "I'm searching for..." />
+                <input type="image" id="searchButton" src="images/search.png" alt="Search"/>
+            </form></li>
+        </ul>
     </header>
 
-    <section data-fixed>
-        <div class="row row3 callout">
-            <div class="outer">
-                <div class="inner" id="library">
-                    <h2 class="text-center">My Library</h2>
-                    <div id="most_recent">
-                        <h4> Most Recent Added Memes/Gifs </h4>
-                        _Meme 1____Meme 2____Meme 3_
-                        <br>
-                    </div>
-                    <div id="highest_rated">
-                        <h4> Highest Rated </h4>
-                        _Meme 1____Meme 2____Meme 3_
-                        <br>
-                    </div>
-                    <div id="title_alpha">
-                        <h4> By Title Memes/GIFS</h4>
-                        _Meme 1____Meme 2____Meme 3_
-                        <br>
-                    </div>
-                </div>
-            </div>
+    <section id="library">
+        <h2>My Library</h2>
+        <hr>
+        <div id="most_recent">
+            <h4 class="subHeaders"> Most Recent Added Memes/Gifs </h4>
+            _Meme 1____Meme 2____Meme 3_
+            <br>
+        </div>
+        <div id="highest_rated">
+            <h4> Highest Rated </h4>
+            _Meme 1____Meme 2____Meme 3_
+            <br>
+        </div>
+        <div id="title_alpha">
+            <h4> By Title Memes/GIFS</h4>
+            _Meme 1____Meme 2____Meme 3_
         </div>
     </section>
 
