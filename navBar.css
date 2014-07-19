@@ -1,39 +1,45 @@
+
 ul {
-    margin: auto;
-    position: fixed;
+    position: absolute;
     width: 100%;
-    background: grey;
+    background: #758AA8;
 }
 
 li {
     display: inline-block;
     float: left;
-    line-height:50px;
-    text-align: center;
+    line-height: 50px;
     font-family: sans-serif;
 }
 
 li a {
     min-width: 140px;
     display: block;
+    text-align: center;
     color: white;
     text-decoration: none;
 }
 
 li:hover a {
-    background: teal;
+    background: #4C668C;
     border-bottom: 3px solid black;
 }
 
-#currentPage {
-    background: teal; 
+.currentPage {
+    background: #4C668C;
     border-bottom: 3px solid black;
+}
+
+li form{
+    margin-left: 100px;
+    float:right;
 }
 
 #searchBox{
-    size: 300px;   
+    width: 320px;
+    height: 24px;
 }
 
-#navSearchButton{
-    
+#searchButton{
+    vertical-align: middle;
 }
