@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEME TEAM</title>
+    <style>
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 33%;
+            color: #d7ceb2;
+            text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
+            font: 70px'BazarMedium';
+            letter-spacing: 6px;
+        }
+        td {
+            padding: 15px;
+        }
+        .Bio_image{
+        	display:block;
+        	margin-left: auto;
+    		margin-right: auto;
+        	width:250px;
+        	height:250px;
+        }
+        .Bio_name{
+        	font-family: "Brush Script MT", cursive;
+            text-align: center;
+            text-shadow: 2px 2px #707070;
+            font-size: 50px;
+        }
+        .team_names {
+            font-family: "Brush Script MT", cursive;
+            text-align: center;
+            text-shadow: 2px 2px #FFFFFF;
+            color: #00248F;
+            font-size: 30px;
+        }
+        .circular_img {
+            display: block;
+            width: 175px;
+            height: 175px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+            -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+            -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        }
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 2;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            padding: 16px;
+            border: 8px solid black;
+            background-color: white;
+            z-index: 3;
+            overflow: auto;
+        }
+        .nyan {
+            display: block;
+            bot: 75%;
+            opacity: 1.0;
+            -moz-opacity: 1.0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .positioning0{
+        	position: absolute;
+        	left: 40%;
+        	top: 45%;
+        	-webkit-animation:ani0 5s, ani00 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        .positioning1{
+        	position: absolute;
+        	left: 41%;
+        	top: 45%;
+        	-webkit-animation:ani1 5s, ani01 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        .positioning2{
+        	position: absolute;
+        	left: 42%;
+        	top: 45%;
+        	-webkit-animation:ani2 5s, ani02 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        .positioning3{
+        	position: absolute;
+        	left: 43%;
+        	top: 45%;
+        	-webkit-animation:ani3 5s, ani03 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        .positioning4{
+        	position: absolute;
+        	left: 44%;
+        	top: 45%;
+        	-webkit-animation:ani4 5s, ani04 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        .positioning5{
+        	position: absolute;
+        	left: 45%;
+        	top: 45%;
+        	-webkit-animation:ani5 5s, ani05 20s infinite linear;
+        	-webkit-animation-delay: 0s, 5s;
+        	-webkit-animation-fill-mode: forwards;
+        }
+        @-webkit-keyframes ani0{
+        	0%	{left:40%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani1{
+        	0%	{left:41%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani2{
+        	0%	{left:42%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani3{
+        	0%	{left:43%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani4{
+        	0%	{left:44%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani5{
+        	0%	{left:45%; top:45%;animation-timing-function: ease-in-out;}
+        	
+        	100%{left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani00{
+        	0%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	16.66%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	33.33%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	50%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	66.66%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	83.3%{
+        	left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	100%{
+        	left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani01{
+        	0%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	16.66%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	33.33%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	50%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	66.66%{
+        	left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	83.3%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	100%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+
+        }
+        @-webkit-keyframes ani02{
+
+        	0%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	16.66%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	33.33%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	50%{
+        	left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	66.66%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	83.3%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	100%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani03{
+        	0%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	16.66%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	33.33%{left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	50%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	66.66%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	83.3%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	100%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani04{
+        	0%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	16.66%{
+        	left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	33.33%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	50%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	66.66%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	83.3%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	100%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        }
+        @-webkit-keyframes ani05{
+        	0%{left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        	16.66%{left:26.78%; top:30%;animation-timing-function: ease-in-out;}
+        	33.33%{left:40%; top:15%;animation-timing-function: ease-in-out;}
+        	50%{left:53.22%; top:30%;animation-timing-function: ease-in-out;}
+        	66.66%{left:53.22%; top:60%;animation-timing-function: ease-in-out;}
+        	83.3%{left:40%; top:75%;animation-timing-function: ease-in-out;}
+        	100%{
+        	left:26.78%; top:60%;animation-timing-function: ease-in-out;}
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>MEME TEAM</h1>
+
+    <div>
+
+
+        <script type="text/javascript">
+            var array = ["images/Dhruv_profile.jpg",
+            "images/Ryan_profile.jpg", "images/Alex_profile.jpg",
+            "images/Kevin_profile.jpg", "images/Jungyoon_profile.jpg",
+            "images/Kathy_profile.jpg"];
+            var names = ["Dhruv Kaushal", "Ryan Inghilterra",
+                "Alex Varnau", "Kevin Liu",
+                "Jungyoon Chung", "Kathy Luu"
+            ];
+            var s;
+            var m = array.length,
+                t, q;
+             // While there remain elements to shuffle…
+            while (m) {
+
+                //Pick a left element
+                q = Math.floor(Math.random() * m--);
+
+                //Swap
+                t = array[m];
+                array[m] = array[q];
+                array[q] = t;
+                t = names[m];
+                names[m] = names[q];
+                names[q] = t;
+            }
+            var k = 0;
+            var y = 25;
+            for (var i = 0; i < 6; i++)
+            {
+            	s = "<div class=\"positioning"+ k+"\">";
+				s = s+ "<a href = 'javascript:void(0)' onclick = 'lolyo(\"" + array[k] + "\")'><img src=" + array[k] + " class='circular_img' </img></a><p class='team_names'>" + names[k++] + "</p>";
+            	//s = s+ "<img class=\"circular_img\" alt =\"Picture\" src =\"" + array[k++] + "\">";
+            	s = s + "</div>";
+            	console.log(s);
+				document.write(s);
+            	var pos = document.styleSheets[0].cssRules;
+            	pos[9].style.left = y+5;
+            	y +=5;
+			}
+
+            console.log("what");
+        </script>
+
+        <script>
+            function lolyo(i) {
+                console.log("WWWWW");
+                if (i == "images/Dhruv_profile.jpg")
+                    document.getElementById('team1').style.display = 'block';
+                if (i == "images/Ryan_profile.jpg")
+                    document.getElementById('team2').style.display = 'block';
+                if (i == "images/Alex_profile.jpg")
+                    document.getElementById('team3').style.display = 'block';
+                if (i == "images/Kevin_profile.jpg")
+                    document.getElementById('team4').style.display = 'block';
+                if (i == "images/Jungyoon_profile.jpg")
+                    document.getElementById('team5').style.display = 'block';
+                if (i == "images/Kathy_profile.jpg")
+                    document.getElementById('team6').style.display = 'block';
+
+                document.getElementById('fade').style.display = 'block';
+                var sou = document.getElementById('Nyan_Cat');
+                sou.play();
+            }
+        </script>
+
+
+    </div>
+<div id="team1" class="white_content">
+<p class='Bio_name'>Dhruv Kaushal</p> 
+<p> Uhhhhhhh </p>
+<img alt="Dog" src="images/Dhruv_1.gif" class="Bio_image">
+<img alt="GooDogs" src="images/Dhruv_2.gif" class="Bio_image"> 
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team1').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="team2" class="white_content">
+<p class='Bio_name'>Ryan Inghilterra</p>
+<p>
+I like hanging out with fat animals and eating California burritos. One time I got to pet a penguin.
+</p>
+<img class="Bio_image" alt="memee" src="images/Ryan_1.jpg">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team2').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="team3" class="white_content">
+<p class='Bio_name'>Alex Varnau</p>
+<p>
+I like reddit and San Diego.
+</p>
+<img alt="Dog" src="images/Alex_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team3').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="team4" class="white_content">
+<p class='Bio_name'>Kevin Liu</p>
+<p>
+I'm a very spontaneous and lazy person. I am all about sunsets.This bio can't really capture how majestic I am. 
+</p>
+<img alt="Dog" src="images/Kevin_1.gif" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team4').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="team5" class="white_content">
+<p class='Bio_name'>Jungyoon Chung</p>
+<p>
+I love punny jokes and punny people. When computer programmers are hungry they take mega-bites.
+</p>
+<img alt="Dog" src="images/Jungyoon_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team5').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="team6" class="white_content">
+<p class='Bio_name'>Kathy Luu</p>
+<p>
+Dogs dogs dogs. I have what people call an "RBF." Approach with caution. Extreme nerd; I'll go on for hours if you start talking about HP or Marvel. "Here may not be perfect but it is full of good things."
+</p>
+<img alt="Dog" src="images/Kathy_1.jpg" class="Bio_image">
+<a href = "javascript:void(0)" onclick = 
+"document.getElementById('team6').style.display='none';
+document.getElementById('fade').style.display='none';
+document.getElementById('Nyan_Cat').pause();">Back</a>
+</div>
+
+<div id="fade" class="black_overlay">
+        <audio id="Nyan_Cat" loop>
+            <source src="Nyan_cat.ogg" type="audio/ogg">
+        </audio>
+        <img alt="altt" src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/779/0002.gif" class="nyan">
+
+    </div>
+
+
+
+
+</body>
+
+</html>
