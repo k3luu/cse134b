@@ -1,9 +1,6 @@
-@font-face {
-    font-family: 'AppleGothic';
-    src: url('AppleGothic.ttf') format('truetype');
-}
+
 body{
-    font-family: 'AppleGothic';
+    font-family: 'Apple Gothic', 'Segoe UI Light', Helvetica, sans-serif;
         margin: 0px;
     font-size: 100%;
 }
