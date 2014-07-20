@@ -6,36 +6,51 @@
     <title>MEME TEAM</title>
     <style>
         h1 {
-            margin-left: auto;
-            margin-right: auto;
+            text-align: center;
+            
             position: relative;
-            left: 33%;
-            color: #d7ceb2;
-            text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
-            font: 70px'BazarMedium';
+            color: #000000;
+            font-family: 'AppleGothic', 'Segoe UI Light', Helvetica, sans-serif;
+            font-size: 50px;
             letter-spacing: 6px;
+        }
+         html {
+            background: url(http://img693.imageshack.us/img693/8885/newpictureok.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
         }
         td {
             padding: 15px;
         }
         .Bio_image{
         	display:block;
+        	margin-top:-10px;
         	margin-left: auto;
     		margin-right: auto;
         	width:250px;
         	height:250px;
         }
+        .info{
+        	text-align:center;
+        	margin-bottom: 10px;
+        	font: bold;
+        	padding-bottom: 10px;
+        }
         .Bio_name{
+        	margin-top:-5px;
+        	margin-bottom:-5px;
         	font-family: "Brush Script MT", cursive;
             text-align: center;
-            text-shadow: 2px 2px #707070;
             font-size: 50px;
+            z-index: 5;
         }
         .team_names {
-            font-family: "Brush Script MT", cursive;
+            font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
             text-align: center;
-            text-shadow: 2px 2px #FFFFFF;
-            color: #00248F;
+            text-shadow: 2px 2px D9D9D9;
+            color: #000000;
             font-size: 30px;
         }
         .circular_img {
@@ -59,28 +74,22 @@
             z-index: 2;
             -moz-opacity: 0.8;
             opacity: .80;
-            filter: alpha(opacity=80);
         }
         .white_content {
             display: none;
             position: absolute;
-            top: 25%;
+            top: 15%;
             left: 25%;
+			margin-left:auto;
+			margin-right:auto;
             width: 50%;
-            height: 50%;
+            height: 75%;
             padding: 16px;
-            border: 8px solid black;
+            border: 10px solid black;
+            border-radius: 25px;
             background-color: white;
             z-index: 3;
             overflow: auto;
-        }
-        .nyan {
-            display: block;
-            bot: 75%;
-            opacity: 1.0;
-            -moz-opacity: 1.0;
-            margin-left: auto;
-            margin-right: auto;
         }
         .positioning0{
         	position: absolute;
@@ -301,82 +310,71 @@
 
     </div>
 <div id="team1" class="white_content">
-<p class='Bio_name'>Dhruv Kaushal</p> 
-<p> Uhhhhhhh </p>
+<p class="Bio_name">Dhruv Kaushal</p> 
+<p class="info"> Dogs are better than cats </p>
 <img alt="Dog" src="images/Dhruv_1.gif" class="Bio_image">
 <img alt="GooDogs" src="images/Dhruv_2.gif" class="Bio_image"> 
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team1').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="team2" class="white_content">
 <p class='Bio_name'>Ryan Inghilterra</p>
-<p>
+<p class="info">
 I like hanging out with fat animals and eating California burritos. One time I got to pet a penguin.
 </p>
 <img class="Bio_image" alt="memee" src="images/Ryan_1.jpg">
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team2').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="team3" class="white_content">
 <p class='Bio_name'>Alex Varnau</p>
-<p>
+<p class="info">
 I like reddit and San Diego.
 </p>
 <img alt="Dog" src="images/Alex_1.jpg" class="Bio_image">
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team3').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="team4" class="white_content">
 <p class='Bio_name'>Kevin Liu</p>
-<p>
+<p class="info">
 I'm a very spontaneous and lazy person. I am all about sunsets.This bio can't really capture how majestic I am. 
 </p>
 <img alt="Dog" src="images/Kevin_1.gif" class="Bio_image">
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team4').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="team5" class="white_content">
 <p class='Bio_name'>Jungyoon Chung</p>
-<p>
+<p class="info">
 I love punny jokes and punny people. When computer programmers are hungry they take mega-bites.
 </p>
 <img alt="Dog" src="images/Jungyoon_1.jpg" class="Bio_image">
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team5').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="team6" class="white_content">
 <p class='Bio_name'>Kathy Luu</p>
-<p>
+<p class="info">
 Dogs dogs dogs. I have what people call an "RBF." Approach with caution. Extreme nerd; I'll go on for hours if you start talking about HP or Marvel. "Here may not be perfect but it is full of good things."
 </p>
 <img alt="Dog" src="images/Kathy_1.jpg" class="Bio_image">
 <a href = "javascript:void(0)" onclick = 
 "document.getElementById('team6').style.display='none';
-document.getElementById('fade').style.display='none';
-document.getElementById('Nyan_Cat').pause();">Back</a>
+document.getElementById('fade').style.display='none';">Back</a>
 </div>
 
 <div id="fade" class="black_overlay">
-        <audio id="Nyan_Cat" loop>
-            <source src="Nyan_cat.ogg" type="audio/ogg">
-        </audio>
-        <img alt="altt" src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/779/0002.gif" class="nyan">
-
     </div>
 
 
