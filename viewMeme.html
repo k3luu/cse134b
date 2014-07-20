@@ -41,15 +41,44 @@
 		body {
 			background-color: #ffffff;
 		}
-		span:hover:before {
-			content: "\2605";
-			position: absolute;
-		}
-		
-		h2 a {
+		h3 a {
 			background-color: gray;
 			border-radius: 5px;
-			padding: 2px;
+			padding: 1px 5px;
+		}
+		.classname {
+			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			background-color: transparent;
+			-webkit-border-top-left-radius: 6px;
+			-moz-border-radius-topleft: 6px;
+			border-top-left-radius: 6px;
+			-webkit-border-top-right-radius: 6px;
+			-moz-border-radius-topright: 6px;
+			border-top-right-radius: 6px;
+			-webkit-border-bottom-right-radius: 6px;
+			-moz-border-radius-bottomright: 6px;
+			border-bottom-right-radius: 6px;
+			-webkit-border-bottom-left-radius: 6px;
+			-moz-border-radius-bottomleft: 6px;
+			border-bottom-left-radius: 6px;
+			text-indent: 0px;
+			display: inline-block;
+			color: #ffffff;
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			font-weight: bold;
+			font-style: normal;
+			height: 25px;
+			line-height: 25px;
+			width: 66px;
+			text-decoration: none;
+			text-align: center;
+		}
+		.classname:active {
+			position: relative;
+			top: 1px;
 		}
 		
 	</style>
@@ -66,7 +95,7 @@
 			</li>
 			<li><a href="helper.html">Help</a>
 			</li>
-			<li><a href="memeT.html">Team Page</a>
+			<li><a href="memeTnew.html">Team Page</a>
 			</li>
 			<li>
 				<form>
@@ -82,7 +111,7 @@
         <hr>
 		<section id="main_area">
 
-			<h1 id="title">"Tony Stark - Meme Man"</h1>
+			<h3 id="title">"Tony Stark - Meme Man"</h3>
 
 			<div id="image">
 				<img src="images/mememaster.jpg" alt="Tony_stark">
@@ -92,13 +121,14 @@
 				<h2>Rating:
 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 				</h2>
-				<h2>Tags:
+				<h2>Tags:</h2>
+				<h3>
 					<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
 					<a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
 					<a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a>
 					<a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a>
 					<a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a>
-				</h2>
+				</h3>
 				<h2>Notes:</h2>
 					<input readonly size="75" value="lahdeedah I am the meme master">
 				<h2>URL:</h2>
@@ -106,12 +136,12 @@
 				<h2>Published: <i>July 18th, 2014</i></h2>
 			</div>
 
+			
 			<div id="interaction">
-				<form action="addPage.html" method="get">
-					<button type="submit" formaction="addPage.html">Edit</button>
-				</form>
-				<button type="button">Delete</button>
+				<a href="addPage.html" class="classname">Edit</a>
+				<a href="#" class="classname">Delete</a>
 			</div>
+			
 		</section>
 	</div>
 
