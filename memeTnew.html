@@ -6,11 +6,10 @@
     <title>MEME TEAM</title>
     <style>
         h1 {
-            text-align: center;
-            
+            text-align: center;           
             position: relative;
             color: #000000;
-            font-family: 'AppleGothic', 'Segoe UI Light', Helvetica, sans-serif;
+            font-family: bold 'AppleGothic', 'Segoe UI Light', Helvetica, sans-serif;
             font-size: 50px;
             letter-spacing: 6px;
         }
@@ -25,7 +24,8 @@
             padding: 15px;
         }
         .Bio_image{
-        	display:block;
+        	display: block;
+        	align:center;
         	margin-top:-10px;
         	margin-left: auto;
     		margin-right: auto;
@@ -63,6 +63,10 @@
             -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
             -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
         }
+        .links{
+        	position:absolute;
+        	top:97%;
+        }
         .black_overlay {
             display: none;
             position: absolute;
@@ -74,6 +78,42 @@
             z-index: 2;
             -moz-opacity: 0.8;
             opacity: .80;
+        }
+        .button {
+			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			background-color: transparent;
+			-webkit-border-top-left-radius: 6px;
+			-moz-border-radius-topleft: 6px;
+			border-top-left-radius: 6px;
+			-webkit-border-top-right-radius: 6px;
+			-moz-border-radius-topright: 6px;
+			border-top-right-radius: 6px;
+			-webkit-border-bottom-right-radius: 6px;
+			-moz-border-radius-bottomright: 6px;
+			border-bottom-right-radius: 6px;
+			-webkit-border-bottom-left-radius: 6px;
+			-moz-border-radius-bottomleft: 6px;
+			border-bottom-left-radius: 6px;
+			text-indent: 0px;
+			display: inline-block;
+			color: #ffffff;
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			font-weight: bold;
+			font-style: normal;
+			height: 25px;
+			line-height: 25px;
+			width: 66px;
+			text-decoration: none;
+			text-align: center;
+			margin-left: 80%;
+			margin-top: 5%;
+		}
+		.button:active {
+			position: relative;
+			top: 1px;
         }
         .white_content {
             display: none;
@@ -314,7 +354,7 @@
 <p class="info"> Dogs are better than cats </p>
 <img alt="Dog" src="images/Dhruv_1.gif" class="Bio_image">
 <img alt="GooDogs" src="images/Dhruv_2.gif" class="Bio_image"> 
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team1').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -325,7 +365,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 I like hanging out with fat animals and eating California burritos. One time I got to pet a penguin.
 </p>
 <img class="Bio_image" alt="memee" src="images/Ryan_1.jpg">
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team2').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -336,7 +376,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 I like reddit and San Diego.
 </p>
 <img alt="Dog" src="images/Alex_1.jpg" class="Bio_image">
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team3').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -347,7 +387,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 I'm a very spontaneous and lazy person. I am all about sunsets.This bio can't really capture how majestic I am. 
 </p>
 <img alt="Dog" src="images/Kevin_1.gif" class="Bio_image">
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team4').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -358,7 +398,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 I love punny jokes and punny people. When computer programmers are hungry they take mega-bites.
 </p>
 <img alt="Dog" src="images/Jungyoon_1.jpg" class="Bio_image">
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team5').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -369,7 +409,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 Dogs dogs dogs. I have what people call an "RBF." Approach with caution. Extreme nerd; I'll go on for hours if you start talking about HP or Marvel. "Here may not be perfect but it is full of good things."
 </p>
 <img alt="Dog" src="images/Kathy_1.jpg" class="Bio_image">
-<a href = "javascript:void(0)" onclick = 
+<a href = "javascript:void(0)" class="button" onclick = 
 "document.getElementById('team6').style.display='none';
 document.getElementById('fade').style.display='none';">Back</a>
 </div>
@@ -379,7 +419,7 @@ document.getElementById('fade').style.display='none';">Back</a>
 
 
 
-
+<a href="index.html" class="links">MemeMaster</a>
 </body>
 
 </html>
