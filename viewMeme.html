@@ -9,9 +9,11 @@
 
 	<style type="text/css">
 		#image {
-			background-color: white;
 			margin-left: auto;
 			margin-right: auto;
+			padding-top: 25px;
+			width: 700px;
+			height: 400px;
 		}
 		#interaction {
 			width: 450px;
@@ -46,6 +48,11 @@
 			border-radius: 5px;
 			padding: 1px 5px;
 		}
+		img {
+			border: 3px solid black;
+			max-width: 100%;
+			max-height: 100%;
+		}
 		.classname {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -79,6 +86,9 @@
 		.classname:active {
 			position: relative;
 			top: 1px;
+		}
+		.textbox {
+			width: 400px;
 		}
 		
 	</style>
@@ -118,10 +128,10 @@
 			</div>
 
 			<div id="meme_info">
-				<h2>Rating:
+				<h3>Rating:
 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-				</h2>
-				<h2>Tags:</h2>
+				</h3>
+				<h3>Tags:</h3>
 				<h3>
 					<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
 					<a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
@@ -129,11 +139,11 @@
 					<a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a>
 					<a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a>
 				</h3>
-				<h2>Notes:</h2>
-					<input readonly size="75" value="lahdeedah I am the meme master">
-				<h2>URL:</h2>
-					<input readonly size=50 value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
-				<h2>Published: <i>July 18th, 2014</i></h2>
+				<h3>Notes:</h3>
+					<input class="textbox" readonly value="lahdeedah I am the meme master">
+				<h3>URL:</h3>
+					<input class="textbox" readonly value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
+				<h3>Published: <i>July 18th, 2014</i></h3>
 			</div>
 
 			
