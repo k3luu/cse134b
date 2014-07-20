@@ -8,50 +8,56 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<style type="text/css">
+		
 		#image {
 			margin-left: auto;
 			margin-right: auto;
-			padding-top: 25px;
-			width: 700px;
-			height: 400px;
+			display: inline-block;
+			width: 500px;
+			height:500px;
 		}
 		#interaction {
-			width: 450px;
-			margin-left: auto;
-			margin-right: auto;
+			float: right;
+			margin-right: 150px;
+			margin-top: 30px;
 		}
 		#main_area {
-			padding-bottom: 50px;
 			width: 1000px;
 			text-align: center;
 		}
 		#meme_info {
+			float: right;
 			text-align: left;
-			width: 450px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 20px;
 		}
 		#title {
-			background: rgba(0, 0, 0, 0.65);
-			border-radius: 5px;
-			color: white;
-			display: inline-block;
+			color: black;
+			font-size: 20pt;
 			padding: 10px;
 			text-align: center;
 		}
-		body {
-			background-color: #ffffff;
-		}
-		h3 a {
-			background-color: gray;
+		td a {
 			border-radius: 5px;
-			padding: 1px 5px;
+            background-color: #B6CBDD;
+            color: white;
+            border: 3px solid #4C668C;
+			padding: 0px 2px;
 		}
 		img {
 			border: 3px solid black;
 			max-width: 100%;
 			max-height: 100%;
+		}
+		span {
+			font-size: 16pt;	
+		}
+		table {
+			width: 400px;
+		}
+		table input {
+			width: 200px;
+		}
+		table tr td {
+			padding: 5px 0px;
 		}
 		.classname {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -88,7 +94,7 @@
 			top: 1px;
 		}
 		.textbox {
-			width: 400px;
+			width: 200px;
 		}
 		
 	</style>
@@ -128,28 +134,47 @@
 			</div>
 
 			<div id="meme_info">
-				<h3>Rating:
-					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-				</h3>
-				<h3>Tags:</h3>
-				<h3>
-					<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
+				<table>
+					<tr>
+						<td>Rating:</td>
+						<td>
+							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Tags:</td>
+						<td>
+							<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
 					<a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
 					<a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a>
 					<a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a>
 					<a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a>
-				</h3>
-				<h3>Notes:</h3>
-					<input class="textbox" readonly value="lahdeedah I am the meme master">
-				<h3>URL:</h3>
-					<input class="textbox" readonly value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
-				<h3>Published: <i>July 18th, 2014</i></h3>
-			</div>
-
-			
-			<div id="interaction">
-				<a href="addPage.html" class="classname">Edit</a>
-				<a href="#" class="classname">Delete</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Notes:</td>
+						<td>
+							<input class="textbox" readonly value="lahdeedah I am the meme master">
+						</td>
+					</tr>
+					<tr>
+						<td>*URL:</td>
+						<td>
+							<input class="textbox" readonly value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
+						</td>
+					</tr>
+					<tr>
+						<td>Published:</td>
+						<td>
+							<i>July 18th, 2014</i>
+						</td>
+					</tr>
+				</table>
+				
+				<div id="interaction">
+					<a href="addPage.html" class="classname">Edit</a>
+					<a href="#" class="classname">Delete</a>
+				</div>
 			</div>
 			
 		</section>
