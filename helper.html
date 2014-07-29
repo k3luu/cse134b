@@ -5,10 +5,8 @@
 <head>
     <title>Meme Team - Help</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="navBar.css">
-
     <link rel="stylesheet" type="text/css" href="style.css">
-
+	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 
     <style type="text/css">
         h4 {
@@ -23,7 +21,30 @@
         .answer {
             padding-left: 18px;
         }
+        .container {
+            border: 0;
+            text-align: left;
+            background: #DCE3E8;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .label {
+            font-weight: bold;
+        }
+        ul {
+            list-style: none;
+        }
+        ul.category {
+            width: 100px;
+            margin: 15px 120px 15px 0;
+            float: left;
+        }
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
     </style>
+
 
     <script>
         function expandCollapsible(text) {
@@ -53,13 +74,10 @@
             </li>
             <li><a href="memeTnew.html">Team Page</a>
             </li>
-
-            <li>
-                <form>
+                <form style= "float: right;">
                     <input type="text" class="searchBox" value placeholder="I'm searching for..." />
                     <input type="image" class="searchButton" src="images/search.png" alt="Search" />
                 </form>
-            </li>
         </ul>
     </div>
 
@@ -71,7 +89,7 @@
             <h4>FAQ</h4>
             <div class="collapsible">
                 <h3 class="question" onClick="expandCollapsible('answer1');">How does Meme Team work?</h3>
-                <span class="answer" id="answer1" style="display:none">Meme Team is dedicated webpage that caiters to all your Meme needs<br></span>
+                <span class="answer" id="answer1" style="display:none">Meme Team is dedicated webpage that caters to all your Meme needs<br></span>
             </div>
             <div class="collapsible">
                 <h3 class="question" onClick="expandCollapsible('answer2');">How do I add/save a Meme to my library?</h3>
@@ -94,6 +112,21 @@
         <section id="tutorial_video">
             <h4> Tutorial Video</h4>
             <iframe width="420" height="315" src="https://www.youtube.com/embed/wZZ7oFKsKzY" style="border:none" allowfullscreen></iframe>
+        </section>
+        <br>
+        <hr>
+        <section id="extras">
+            <div class="container">
+                <ul class="category">
+                    <li class="label">Popular Meme Sites</li>
+                    <li>
+                        <a href="http://www.memestache.com/">memestache</a>
+                    </li>
+                    <li>
+                        <a href="https://www.9gag.com/">9gag</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
 
