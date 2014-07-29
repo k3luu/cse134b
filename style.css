@@ -6,10 +6,10 @@ body {
 }
 
 .content {
-    padding: 50px 20px;
+    padding-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    width:960px;
+    width:70%;
 }
 
 h1 {
@@ -33,7 +33,6 @@ h3 {
     padding: 0;
     margin: 0;
     position: absolute;
-    min-width: 1200px;
     width: 100%;
     background: #758AA8;
 }
@@ -62,16 +61,111 @@ h3 {
     border-bottom: 3px solid black;
 }
 
-.menu li form{
-    margin-left: 100px;
-    float:right;
+.menu form{
+    line-height: 50px;
+    padding-right: 50px;
+    white-space: nowrap;
 }
 
 .menu .searchBox{
     width: 320px;
-    height: 24px;
+    height: 24px; 
 }
 
 .menu .searchButton{
     vertical-align: middle;
+}
+
+@media screen and (max-width : 1125px){
+    
+    .content {
+        padding-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width:80%;
+    }
+    
+    .menu form{
+        position: relative;
+        right: 15%;   
+    }
+    
+    .menu .searchBox{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width : 768px){
+    
+    .content {
+        padding-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        width:90%;
+    }
+    
+    .menu li{
+        width: 20%;
+        white-space: nowrap;
+    }
+    
+    .menu li a{
+        min-width: 0;    
+    }
+    
+    .menu form{
+        padding-right: 50px;
+        right: 0;
+    }
+    
+    .menu .searchBox{
+        width: 320px;
+    }
+}
+
+@media screen and (max-width : 600px){
+    
+    .content {
+        padding-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+    }
+    
+    .menu ul li{
+        width: 100%;   
+    }
+    
+    .menu li a{
+        min-width: 0;    
+    }
+    
+    .menu form{
+        padding-right: 50px;
+        right: 0;
+    }
+    
+    .menu .searchBox{
+        width: 320px;
+    }
+}
+
+
+
+@media screen and (max-width : 480px){
+    
+    .content {
+        padding-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+    }
+    
+    .menu ul li{
+        width: 100%;   
+    }
+    
+    .menu .searchBox{
+        width: 220px;
+    }
 }
