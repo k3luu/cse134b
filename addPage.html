@@ -8,13 +8,14 @@
 	<link rel="stylesheet" type="text/css" href="navBar.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+	<!-- CSS CODE -->
 	<style type="text/css">
 		#image {
 			margin-left: auto;
 			margin-right: auto;
 			display: inline-block;
 			width: 500px;
-			height:500px;
+			height: 500px;
 		}
 		#interaction {
 			float: right;
@@ -29,22 +30,32 @@
 			float: right;
 			text-align: left;
 		}
-		#rating {
+		.rating {
 			unicode-bidi: bidi-override;
 			direction: rtl;
 			display: inline-block;
 		}
-		#rating > span {
+		.rating > span {
 			display: inline-block;
 			font-size: 16pt;
 			position: relative;
 			width: 1.1em;
 		}
-		#rating > span:hover:before,
-		#rating > span:hover ~ span:before {
+		.rating > span:hover:before,
+		.rating > span:hover ~ span:before {
 			content: "\2605";
 			position: absolute;
 		}
+		.rating > span:checked ~ span:before {
+			content: "\2605";
+			position: absolute;
+		}
+
+		
+		
+		
+		
+		
 		img {
 			border: 3px solid black;
 			height: auto;
@@ -59,7 +70,7 @@
 		table tr td {
 			padding: 5px 0px;
 		}
-		.classname {
+		.button {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -93,12 +104,55 @@
 			position: relative;
 			top: 1px;
 		}
-		
 	</style>
+
+	<!-- JAVASCRIPT CODE -->
+	<script>
+		function checkForm() {
+			var nameField = document.forms["page"]["title"].value;
+			var urlField = document.forms["link"]["url"].value;
+
+			if (nameField.length == 0 || nameField == "") {
+				alert("Please fill out all fields marked with an asterisk (*).");
+				return false;
+			} else if (urlField.length == 0 || urlField == "") {
+				alert("Please fill out all fields marked with an asterisk (*).");
+				return false;
+			}
+
+			alert("Accepted!");
+			return true;
+		}
+
+		function getTitle() {
+
+		}
+
+		function today() {
+			function makeArray() {
+				for (i = 0; i < makeArray.arguments.length; i++)
+					this[i + 1] = makeArray.arguments[i];
+			}
+
+			var months = new makeArray('January', 'February', 'March',
+				'April', 'May', 'June', 'July', 'August',
+				'September', 'October', 'November',
+				'December');
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth() + 1;
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+
+			document.write(day + " " + months[month] + " " + year);
+		}
+	</script>
 
 </head>
 
 <body>
+
+	<!-- TOOL/HOME BAR -->
 	<div class="menu">
 		<ul>
 			<li><a href="index.html">Home</a>
@@ -120,10 +174,11 @@
 		</ul>
 	</div>
 
+	<!-- MAIN AREA & INTERACTION -->
 	<div class="content">
 		<h1>ADD A MEME</h1>
-		<hr><br>
-		<!-- ABOVE IS HEADER -->
+		<hr>
+		<br>
 
 		<div id="main_area">
 
@@ -136,19 +191,23 @@
 					<tr>
 						<td>*Title:</td>
 						<td>
-							<input type="text">
+							<form name="page">
+								<input type="text" name="title">
+							</form>
 						</td>
 					</tr>
 					<tr>
 						<td>*URL:</td>
 						<td>
-							<input type="text" value="[Some URL]">
+							<form name="link">
+								<input type="text" name="url">
+							</form>
 						</td>
 					</tr>
 					<tr>
 						<td>Rating:</td>
 						<td>
-							<div id="rating">
+							<div class="rating">
 								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 							</div>
 						</td>
@@ -162,23 +221,25 @@
 					<tr>
 						<td>Notes:</td>
 						<td>
-							<input type="text" value="Enter some notes">
+							<input type="text" name="note" placeholder="Write something about this meme...">
 						</td>
 					</tr>
 					<tr>
 						<td>Published:</td>
 						<td>
-							<input type="text" value="Today's Date - needs javascript">
+							<script>
+								today();
+							</script>
 						</td>
 					</tr>
 
 				</table>
-				
+
 				<div id="interaction">
-					<a href="viewMeme.html" class="classname">Done</a>
-					<a href="index.html" class="classname">Cancel</a>
+					<a href="viewMeme.html" class="button" onclick="return checkForm()">Done</a>
+					<a href="index.html" class="button">Cancel</a>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
