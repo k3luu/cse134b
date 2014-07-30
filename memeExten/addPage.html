@@ -9,42 +9,29 @@
 	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="addPage.js"></script>
 	<style type="text/css">
-        #main_area {
-            padding-left: 10px;
-			width: 100%;
-		}
-        #image {
-			display: inline-block;
-		}
-        #image img {
-			border: 3px solid black;
-			height: auto;
-            max-width: 500px;
-			max-height: 500px;
-		}
-		#meme_info {
-            padding-left: 50px;
+		#image {
 			margin-left: auto;
 			margin-right: auto;
 			display: inline-block;
+			width: 500px;
+			height: 500px;
+		}
+		#interaction {
+			float: right;
+			margin-right: 150px;
+			margin-top: 30px;
+		}
+		#main_area {
+			width: auto;
+			text-align: center;
+		}
+		#meme_info {
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			float: right;
 			text-align: left;
-            vertical-align: top;
 		}
-        #interaction {
-            float: left;
-		}
-        
-        table {
-			display: inline;
-			width: 100%;
-		}
-		table input {
-			width: 100%;
-		}
-		table tr td {
-			padding: 5px 0px;
-		}
-        
 		.starRating {
 			display: inline-block;
 			position: relative;
@@ -85,6 +72,22 @@
 		}
 		.starRating:hover input:hover + label {
 			background: url('images/stars1.png') repeat-x 0 -48px;
+		}
+		img {
+			border: 3px solid black;
+			height: auto;
+			max-width: 100%;
+		}
+		table {
+			display: inline;
+			margin-left: auto;
+			width: 400px;
+		}
+		table input {
+			width: 200px;
+		}
+		table tr td {
+			padding: 5px 0px;
 		}
 		.button {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -192,23 +195,14 @@
 			</li>
 			<li><a href="memeTnew.html">Team Page</a>
 			</li>
-<<<<<<< HEAD
 			<li>
 				<form style="float: right;">
-					<input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
+					<input type="text" class="searchBox" value placeholder="I'm searching for..." />
 					<input type="image" class="searchButton" src="images/search.png" alt="Search" />
 				</form>
 			</li>
 		</ul>
 	</div>
-=======
-		</ul>
-        <form style= "float: right;">
-            <input type="text" class="searchBox" value placeholder="I'm searching for..." />
-            <input type="image" class="searchButton" src="images/search.png" alt="Search" />
-        </form>
-    </div>
->>>>>>> be29f06912349c177b5faed1aacb9bea0003b879
 
 	<!-- MAIN AREA & INTERACTION -->
 	<div class="content">
@@ -219,7 +213,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img src="images/pickapic.jpg" alt="Tony_stark">
+				<img src="images/pickapic.jpg" id="imagePlaceholder" alt="Tony_stark">
 			</div>
 
 			<div id="meme_info">

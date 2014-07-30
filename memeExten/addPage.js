@@ -4,5 +4,7 @@ chrome.runtime.onMessage.addListener(
             var contents = request.contents;
             var string = document.getElementById('newImageUrl');
             string.value = contents.url;
+            var image = document.getElementById('imagePlaceholder');
+            image.src = contents.url;
         }
     });
