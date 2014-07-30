@@ -14,7 +14,7 @@ function onClickHandler(info, tab) {
     var contents = {}
     contents.url = info.srcUrl;
     
-    var url = "addMeme.html";  
+    var url = "addPage.html";  
     chrome.windows.create({ url: url}, function() {
         chrome.runtime.sendMessage({ contents: contents}, function(response) {});
 });
