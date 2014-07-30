@@ -40,8 +40,8 @@ h3 {
 
 .menu li {
     display: inline-block;
-    float: left;
     line-height: 50px;
+    float: left;
 }
 
 .menu li a {
