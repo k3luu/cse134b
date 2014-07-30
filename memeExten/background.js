@@ -15,7 +15,7 @@ function onClickHandler(info, tab) {
     contents.url = info.srcUrl;
     
     var url = "addPage.html";  
-    chrome.windows.create({ url: url}, function() {
+    chrome.tabs.create({ url: url}, function() {
         chrome.runtime.sendMessage({ contents: contents}, function(response) {});
 });
 }
