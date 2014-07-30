@@ -172,6 +172,19 @@
 
 			document.write(day + " " + months[month] + " " + year);
 		}
+		
+		
+		
+		function loadImage() {
+			var foo = document.getElementById("newImageUrl").value;
+			if(foo == '') {
+				document.getElementById("image").innerHTML = "<img src='images/placeholder.png' alt=''/>";
+			}
+			else {
+				document.getElementById("image").innerHTML = "<img src='" +foo+"' alt=''/>";
+			}
+		}
+		
 	</script>
 
 
@@ -207,7 +220,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img src="images/pickapic.jpg" alt="Tony_stark">
+				<img src="images/placeholder.png">
 			</div>
 
 			<div id="meme_info">
@@ -224,7 +237,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)">
+								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)" onchange="loadImage()">
 							</form>
 						</td>
 					</tr>
