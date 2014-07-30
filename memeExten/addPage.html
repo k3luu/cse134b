@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Add A Meme</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+    <script src="addPage.js"></script>
+	<style type="text/css">
+		#image {
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			width: 500px;
+			height: 500px;
+		}
+		#interaction {
+			float: right;
+			margin-right: 150px;
+			margin-top: 30px;
+		}
+		#main_area {
+			width: auto;
+			text-align: center;
+		}
+		#meme_info {
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
+			float: right;
+			text-align: left;
+		}
+		.starRating {
+			display: inline-block;
+			position: relative;
+			height: 24px;
+			background: url('images/stars1.png') repeat-x 0 0;
+			vertical-align: bottom;
+		}
+		.starRating div {
+			float: left;
+			position: relative;
+			height: 24px;
+		}
+		.starRating input {
+			position: relative;
+			z-index: 1;
+			width: 24px;
+			height: 24px;
+			margin: 0;
+			padding: 0;
+			opacity: 0;
+		}
+		.starRating label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 24px;
+		}
+		.starRating span {
+			display: none;
+		}
+		.starRating input:checked + label,
+		.starRating:hover input:checked:hover + label {
+			background: url('images/stars1.png') repeat-x 0 -24px;
+		}
+		.starRating:hover input:checked + label {
+			background: transparent;
+		}
+		.starRating:hover input:hover + label {
+			background: url('images/stars1.png') repeat-x 0 -48px;
+		}
+		img {
+			border: 3px solid black;
+			height: auto;
+			max-width: 100%;
+		}
+		table {
+			display: inline;
+			margin-left: auto;
+			width: 400px;
+		}
+		table input {
+			width: 200px;
+		}
+		table tr td {
+			padding: 5px 0px;
+		}
+		.button {
+			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			box-shadow: inset -50px -50px 0px 50px #5f8ec7;
+			background-color: transparent;
+			-webkit-border-top-left-radius: 6px;
+			-moz-border-radius-topleft: 6px;
+			border-top-left-radius: 6px;
+			-webkit-border-top-right-radius: 6px;
+			-moz-border-radius-topright: 6px;
+			border-top-right-radius: 6px;
+			-webkit-border-bottom-right-radius: 6px;
+			-moz-border-radius-bottomright: 6px;
+			border-bottom-right-radius: 6px;
+			-webkit-border-bottom-left-radius: 6px;
+			-moz-border-radius-bottomleft: 6px;
+			border-bottom-left-radius: 6px;
+			text-indent: 0px;
+			display: inline-block;
+			color: #ffffff;
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			font-weight: bold;
+			font-style: normal;
+			height: 25px;
+			line-height: 25px;
+			width: 66px;
+			text-decoration: none;
+			text-align: center;
+		}
+		.classname:active {
+			position: relative;
+			top: 1px;
+		}
+	</style>
+
+	<!-- JAVASCRIPT CODE -->
+	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script>
+		function checkForm() {
+			var nameField = document.forms["page"]["title"].value;
+			var urlField = document.forms["link"]["url"].value;
+
+			if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
+				alert("Please fill out all fields marked with an asterisk (*).");
+				return false;
+			}
+
+			return true;
+		}
+
+		function submitenter(myfield, e) {
+			var keycode;
+			if (window.event) keycode = window.event.keyCode;
+			else if (e) keycode = e.which;
+			else return true;
+
+			if (keycode == 13) {
+				var bool = checkForm();
+				
+				if(bool)
+					document.getElementById('done').click();
+					
+				return false;
+			} else
+				return true;
+		}
+
+		function today() {
+			function makeArray() {
+				for (i = 0; i < makeArray.arguments.length; i++)
+					this[i + 1] = makeArray.arguments[i];
+			}
+
+			var months = new makeArray('January', 'February', 'March',
+				'April', 'May', 'June', 'July', 'August',
+				'September', 'October', 'November',
+				'December');
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth() + 1;
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+
+			document.write(day + " " + months[month] + " " + year);
+		}
+	</script>
+
+
+</head>
+
+<body>
+
+	<!-- TOOL/HOME BAR -->
+	<div class="menu">
+		<ul>
+			<li><a href="index.html">Home</a>
+			</li>
+			<li><a href="addPage.html" class="currentPage">Add to Library</a>
+			</li>
+			<li><a href="explore.html">Explore</a>
+			</li>
+			<li><a href="helper.html">Help</a>
+			</li>
+			<li><a href="memeTnew.html">Team Page</a>
+			</li>
+			<li>
+				<form style="float: right;">
+					<input type="text" class="searchBox" value placeholder="I'm searching for..." />
+					<input type="image" class="searchButton" src="images/search.png" alt="Search" />
+				</form>
+			</li>
+		</ul>
+	</div>
+
+	<!-- MAIN AREA & INTERACTION -->
+	<div class="content">
+		<h1>ADD A MEME</h1>
+		<hr>
+		<br>
+
+		<div id="main_area">
+
+			<div id="image">
+				<img src="images/pickapic.jpg" id="imagePlaceholder" alt="Tony_stark">
+			</div>
+
+			<div id="meme_info">
+				<table>
+					<tr>
+						<th>*Title:</th>
+						<td>
+							<form name="page">
+								<input type="text" id="title" name="title" onKeyPress="return submitenter(this,event)">
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<th>*URL:</th>
+						<td>
+							<form name="link">
+								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)">
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<th>&nbsp;Rating:</th>
+						<td>
+
+							<div class="starRating">
+								<div>
+									<div>
+										<div>
+											<div>
+												<input id="rating1" type="radio" name="rating" value="1">
+												<label for="rating1"><span>1</span>
+												</label>
+											</div>
+											<input id="rating2" type="radio" name="rating" value="2">
+											<label for="rating2"><span>2</span>
+											</label>
+										</div>
+										<input id="rating3" type="radio" name="rating" value="3">
+										<label for="rating3"><span>3</span>
+										</label>
+									</div>
+									<input id="rating4" type="radio" name="rating" value="4">
+									<label for="rating4"><span>4</span>
+									</label>
+								</div>
+								<input id="rating5" type="radio" name="rating" value="5">
+								<label for="rating5"><span>5</span>
+								</label>
+							</div>
+
+						</td>
+					</tr>
+					<tr>
+						<th>&nbsp;Tags:</th>
+						<td>
+							<input type="text" name="tag" onKeyPress="return submitenter(this,event)">
+						</td>
+					</tr>
+					<tr>
+						<th>&nbsp;Notes:</th>
+						<td>
+							<input type="text" name="note" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)">
+						</td>
+					</tr>
+					<tr>
+						<th>&nbsp;Published:</th>
+						<td>
+							<script>
+								today();
+							</script>
+						</td>
+					</tr>
+
+				</table>
+
+				<div id="interaction">
+					<a href="viewMeme.html" id="done" class="button" onclick="return checkForm()">Done</a>
+					<a href="index.html" class="button">Cancel</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
