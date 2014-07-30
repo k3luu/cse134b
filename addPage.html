@@ -146,7 +146,11 @@
 			else return true;
 
 			if (keycode == 13) {
-				checkForm();
+				var bool = checkForm();
+				
+				if(bool)
+					document.getElementById('done').click();
+					
 				return false;
 			} else
 				return true;
@@ -264,13 +268,13 @@
 					<tr>
 						<th>&nbsp;Tags:</th>
 						<td>
-							<input type="text" name="tag">
+							<input type="text" name="tag" onKeyPress="return submitenter(this,event)">
 						</td>
 					</tr>
 					<tr>
 						<th>&nbsp;Notes:</th>
 						<td>
-							<input type="text" name="note" placeholder="Write something about this meme...">
+							<input type="text" name="note" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)">
 						</td>
 					</tr>
 					<tr>
@@ -285,7 +289,7 @@
 				</table>
 
 				<div id="interaction">
-					<a href="viewMeme.html" type="button" class="button" onclick="return checkForm()">Done</a>
+					<a href="viewMeme.html" id="done" class="button" onclick="return checkForm()">Done</a>
 					<a href="index.html" class="button">Cancel</a>
 				</div>
 
