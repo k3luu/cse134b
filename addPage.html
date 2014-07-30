@@ -21,45 +21,65 @@
 			margin-top: 30px;
 		}
 		#main_area {
-			width: 1000px;
+			width: auto;
 			text-align: center;
 		}
 		#meme_info {
+			margin-left: auto;
+			margin-right: auto;
+			display: inline-block;
 			float: right;
 			text-align: left;
 		}
-		.rating {
-			unicode-bidi: bidi-override;
-			direction: rtl;
+		.starRating {
 			display: inline-block;
-		}
-		.rating > span {
-			display: inline-block;
-			font-size: 16pt;
 			position: relative;
-			width: 1.1em;
+			height: 24px;
+			background: url('images/stars1.png') repeat-x 0 0;
+			vertical-align: bottom;
 		}
-		.rating > span:hover:before,
-		.rating > span:hover ~ span:before {
-			content: "\2605";
+		.starRating div {
+			float: left;
+			position: relative;
+			height: 24px;
+		}
+		.starRating input {
+			position: relative;
+			z-index: 1;
+			width: 24px;
+			height: 24px;
+			margin: 0;
+			padding: 0;
+			opacity: 0;
+		}
+		.starRating label {
 			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 24px;
 		}
-		.rating > span:checked ~ span:before {
-			content: "\2605";
-			position: absolute;
+		.starRating span {
+			display: none;
 		}
-
-		
-		
-		
-		
-		
+		.starRating input:checked + label,
+		.starRating:hover input:checked:hover + label {
+			background: url('images/stars1.png') repeat-x 0 -24px;
+		}
+		.starRating:hover input:checked + label {
+			background: transparent;
+		}
+		.starRating:hover input:hover + label {
+			background: url('images/stars1.png') repeat-x 0 -48px;
+		}
 		img {
 			border: 3px solid black;
 			height: auto;
 			max-width: 100%;
 		}
 		table {
+			display: inline;
+			margin-left: auto;
 			width: 400px;
 		}
 		table input {
@@ -105,26 +125,31 @@
 	</style>
 
 	<!-- JAVASCRIPT CODE -->
-	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js">
-		 
+	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script>
 		function checkForm() {
 			var nameField = document.forms["page"]["title"].value;
 			var urlField = document.forms["link"]["url"].value;
 
-			if (nameField.length == 0 || nameField == "") {
-				alert("Please fill out all fields marked with an asterisk (*).");
-				return false;
-			} else if (urlField.length == 0 || urlField == "") {
+			if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
 				alert("Please fill out all fields marked with an asterisk (*).");
 				return false;
 			}
 
-			alert("Accepted!");
 			return true;
 		}
 
-		function getTitle() {
+		function submitenter(myfield, e) {
+			var keycode;
+			if (window.event) keycode = window.event.keyCode;
+			else if (e) keycode = e.which;
+			else return true;
 
+			if (keycode == 13) {
+				checkForm();
+				return false;
+			} else
+				return true;
 		}
 
 		function today() {
@@ -147,6 +172,7 @@
 		}
 	</script>
 
+
 </head>
 
 <body>
@@ -164,10 +190,12 @@
 			</li>
 			<li><a href="memeTnew.html">Team Page</a>
 			</li>
-				<form style= "float: right;">
+			<li>
+				<form style="float: right;">
 					<input type="text" class="searchBox" value placeholder="I'm searching for..." />
 					<input type="image" class="searchButton" src="images/search.png" alt="Search" />
 				</form>
+			</li>
 		</ul>
 	</div>
 
@@ -186,43 +214,67 @@
 			<div id="meme_info">
 				<table>
 					<tr>
-						<td>*Title:</td>
+						<th>*Title:</th>
 						<td>
 							<form name="page">
-								<input type="text" name="title">
+								<input type="text" id="title" name="title" onKeyPress="return submitenter(this,event)">
 							</form>
 						</td>
 					</tr>
 					<tr>
-						<td>*URL:</td>
+						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" name="url">
+								<input type="text" name="url" onKeyPress="return submitenter(this,event)">
 							</form>
 						</td>
 					</tr>
 					<tr>
-						<td>Rating:</td>
+						<th>&nbsp;Rating:</th>
 						<td>
-							<div class="rating">
-								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+
+							<div class="starRating">
+								<div>
+									<div>
+										<div>
+											<div>
+												<input id="rating1" type="radio" name="rating" value="1">
+												<label for="rating1"><span>1</span>
+												</label>
+											</div>
+											<input id="rating2" type="radio" name="rating" value="2">
+											<label for="rating2"><span>2</span>
+											</label>
+										</div>
+										<input id="rating3" type="radio" name="rating" value="3">
+										<label for="rating3"><span>3</span>
+										</label>
+									</div>
+									<input id="rating4" type="radio" name="rating" value="4">
+									<label for="rating4"><span>4</span>
+									</label>
+								</div>
+								<input id="rating5" type="radio" name="rating" value="5">
+								<label for="rating5"><span>5</span>
+								</label>
 							</div>
+
 						</td>
 					</tr>
 					<tr>
-						<td>Tags:</td>
+						<th>&nbsp;Tags:</th>
 						<td>
 							<input type="text" name="tag">
 						</td>
 					</tr>
 					<tr>
-						<td>Notes:</td>
+						<th>&nbsp;Notes:</th>
 						<td>
 							<input type="text" name="note" placeholder="Write something about this meme...">
 						</td>
 					</tr>
 					<tr>
-						<td>Published:</td>
+						<th>&nbsp;Published:</th>
 						<td>
 							<script>
 								today();
@@ -233,7 +285,7 @@
 				</table>
 
 				<div id="interaction">
-					<a href="viewMeme.html" class="button" onclick="return checkForm()">Done</a>
+					<a href="viewMeme.html" type="button" class="button" onclick="return checkForm()">Done</a>
 					<a href="index.html" class="button">Cancel</a>
 				</div>
 
