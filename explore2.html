@@ -1,0 +1,183 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <title>Meme Team - Explore</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="navBar.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <style>
+        body {
+            font-size: 100%;
+            background-color: white;
+        }
+        table {
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        table.tags {
+            text-align: center;
+            table-layout: fixed;
+            border-spacing: 20px 10px;
+        }
+        .toggledOff {
+            display: block;
+            background-color: #B6CBDD;
+            color: white;
+        }
+        .toggledOn { 
+            display: block; 
+            background-color: #4C668C;
+            color: white;
+        }
+        table.tags td a:link {
+            text-decoration: none;
+        }
+        table.tags td a:hover {
+            text-decoration: underline;
+        }
+        table.tags td {
+            border-radius: 5px;
+            width: 20%;
+            background-color: #B6CBDD;
+            color: white;
+            padding: 5px;
+            border: 3px solid #4C668C;
+        }
+        
+        #resultString {
+            font-style: italic;
+        }      
+        
+        table.memes {
+            text-align: center;
+            table-layout: auto;
+        }
+        table.memes td {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #memes {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #memes ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0;
+        }
+        
+        #memes ul li {
+            width: 30%;
+            float: left;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        img.meme {
+            max-height: 225px;
+            max-width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+            border: 3px solid black;
+        }   
+    </style>
+</head>
+
+<body>
+    <div class= "menu">
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="addPage.html">Add to Library</a></li> 
+            <li><a href="explore.html" class="currentPage">Explore</a></li>
+			<li><a href="helper.html">Help</a></li>
+            <li><a href="memeTnew.html">Team Page</a></li>
+            <li><form>
+                <input type="text" class="searchBox" value placeholder = "I'm searching for..." />
+                <input type="image" class="searchButton" src="images/search.png" alt="Search"/>
+            </form></li>
+        </ul>
+    </div>
+    <!-- ABOVE IS HEADER -->
+    
+    <script>
+    function searchTag(tagNum) {
+        var phrase = document.getElementById('tag' + tagNum).innerHTML;
+        var result = document.getElementById('resultString');
+        result.innerHTML = phrase;
+        toggleColor(tagNum); 
+    }
+    
+    function toggleColor(tagNum) {
+        var element = document.getElementById('tag' + tagNum);
+        if (element.className == 'toggledOff')
+        {
+            element.className = 'toggledOn';
+        } else if (element.className == 'toggledOn')
+        {
+            element.className = 'toggledOff';
+        }
+    }
+        
+    </script>
+
+    
+    <div class="content">
+        
+        <h1>EXPLORE</h1>
+        <hr>
+        <div id="tags">
+            <table class="tags">
+            <tr><td><a href="#" id="tag1" class="toggledOff" onclick="javascript:searchTag(1)">cat</a></td>
+                <td><a href="#" id="tag2" class="toggledOff" onclick="javascript:searchTag(2)">dog</a></td>
+                <td><a href="#" id="tag3" class="toggledOff" onclick="javascript:searchTag(3)">bunny</a></td>
+                <td><a href="#" id="tag4" class="toggledOff" onclick="javascript:searchTag(4)">giraffe</a></td>
+                <td><a href="#" id="tag5" class="toggledOff" onclick="javascript:searchTag(5)">mouse</a></td></tr>
+            <tr><td><a href="#" id="tag6" class="toggledOff" onclick="javascript:searchTag(6)">manbearpig</a></td>
+                <td><a href="#" id="tag7" class="toggledOff" onclick="javascript:searchTag(7)">turtle</a></td>
+                <td><a href="#" id="tag8" class="toggledOff" onclick="javascript:searchTag(8)">flan</a></td>
+                <td><a href="#" id="tag9" class="toggledOff" onclick="javascript:searchTag(9)">monkey</a></td>
+                <td><a href="#" id="tag10" class="toggledOff" onclick="javascript:searchTag(10)">hippo</a></td></tr>
+            <tr><td><a href="#" id="tag11" class="toggledOff" onclick="javascript:searchTag(11)">snake</a></td>
+                <td><a href="#" id="tag12" class="toggledOff" onclick="javascript:searchTag(12)">human</a></td>
+                <td><a href="#" id="tag13" class="toggledOff" onclick="javascript:searchTag(13)">rock</a></td>
+                <td><a href="#" id="tag14" class="toggledOff" onclick="javascript:searchTag(14)">frog</a></td>
+                <td><a href="#" id="tag15" class="toggledOff" onclick="javascript:searchTag(15)">triton</a></td></tr>
+            </table>
+        </div>
+
+    <section>
+        <h3>Results for tag <span id="resultString">[click on a tag]</span> (and other selected tags, if any):</h3>
+
+        <div id="memes">
+            <ul>
+                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 1</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 2</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 3</a></li>
+                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 4</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 5</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 6</a></li>
+                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 7</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 8</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 9</a></li>
+                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 10</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 11</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 12</a></li>
+                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 13</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 14</a></li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 15</a></li>
+            </ul>
+        </div>
+    </section>
+        
+    </div>
+
+
+</body>
+
+</html>
