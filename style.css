@@ -28,14 +28,14 @@ h3 {
     float: left;
     padding: 0;
     margin: 0;
+    width: 100%;
+    background: #758AA8;
+    position: absolute;
 }
 
 .menu ul {
     padding: 0;
     margin: 0;
-    position: absolute;
-    width: 100%;
-    background: #758AA8;
 }
 
 .menu li {
@@ -62,10 +62,11 @@ h3 {
     border-bottom: 3px solid black;
 }
 
-.menu form{
+.menu form {
     line-height: 50px;
     padding-right: 50px;
     white-space: nowrap;
+    float: right;
 }
 
 .menu .searchBox{
@@ -85,12 +86,11 @@ h3 {
     }
     
     .menu form{
-        position: relative;
-        right: 15%;   
+        padding-right: 50px;
     }
     
     .menu .searchBox{
-        width: 500px;
+        width: 600px;
     }
 }
 
