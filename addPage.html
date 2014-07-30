@@ -7,35 +7,34 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-    <script src="addPage.js"></script>
+	<script src="addPage.js"></script>
 	<style type="text/css">
-        #main_area {
-            text-align: center;
+		#main_area {
+			text-align: center;
 			width: 100%;
 		}
-        #image {
+		#image {
 			display: inline-block;
 		}
-        #image img {
+		#image img {
 			border: 3px solid black;
 			height: auto;
-            max-width: 500px;
+			max-width: 500px;
 			max-height: 500px;
 		}
 		#meme_info {
-            padding: 50px;
+			padding: 50px;
 			margin-left: auto;
 			margin-right: auto;
 			display: inline-block;
 			text-align: left;
-            vertical-align: top;
+			vertical-align: top;
 		}
-        #interaction {
-            padding: 20px;
-            text-align: center;
+		#interaction {
+			padding: 20px;
+			text-align: center;
 		}
-        
-        table {
+		table {
 			display: inline;
 			width: 100%;
 		}
@@ -45,7 +44,6 @@
 		table tr td {
 			padding: 5px 0px;
 		}
-        
 		.starRating {
 			display: inline-block;
 			position: relative;
@@ -146,10 +144,10 @@
 
 			if (keycode == 13) {
 				var bool = checkForm();
-				
-				if(bool)
+
+				if (bool)
 					document.getElementById('done').click();
-					
+
 				return false;
 			} else
 				return true;
@@ -173,19 +171,35 @@
 
 			document.write(day + " " + months[month] + " " + year);
 		}
-		
-		
-		
+
+
+
 		function loadImage() {
-			var foo = document.getElementById("newImageUrl").value;
-			if(foo == '') {
-				document.getElementById("image").innerHTML = "<img src='images/placeholder.png' alt=''/>";
+
+			function ValidURL(str) {
+				//var str = document.getElementById("newImageURL").value;
+				var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+					'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+					'((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+					'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+					'(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+					'(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+				if (!pattern.test(str)) {
+					return false;
+				} else {
+					return true;
+				}
 			}
-			else {
-				document.getElementById("image").innerHTML = "<img src='" +foo+"' alt=''/>";
+
+			var foo = document.getElementById("newImageUrl").value;
+			if (foo == '') {
+				document.getElementById("image").innerHTML = "<img src='images/placeholder.png' alt=''/>";
+			} else if (ValidURL(foo)) {
+				document.getElementById("image").innerHTML = "<img src='" + foo + "' alt=''/>";
+			} else {
+				document.getElementById("image").innerHTML = "<img src='images/brokenImage.png' alt=''/>"
 			}
 		}
-		
 	</script>
 
 
@@ -207,11 +221,11 @@
 			<li><a href="memeTnew.html">Team Page</a>
 			</li>
 		</ul>
-        <form style= "float: right;">
-            <input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
-            <input type="image" class="searchButton" src="images/search.png" alt="Search" />
-        </form>
-    </div>
+		<form style="float: right;">
+			<input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
+			<input type="image" class="searchButton" src="images/search.png" alt="Search" />
+		</form>
+	</div>
 	<!-- MAIN AREA & INTERACTION -->
 	<div class="content">
 		<h1>ADD A MEME</h1>
