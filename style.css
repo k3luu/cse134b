@@ -7,6 +7,7 @@ body {
 
 .content {
     padding-top: 50px;
+    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     width:70%;
@@ -80,8 +81,6 @@ h3 {
     
     .content {
         padding-top: 100px;
-        margin-left: auto;
-        margin-right: auto;
         width:80%;
     }
     
@@ -99,8 +98,6 @@ h3 {
     
     .content {
         padding-top: 100px;
-        margin-left: auto;
-        margin-right: auto;
         width:90%;
     }
     
@@ -127,8 +124,6 @@ h3 {
     
     .content {
         padding-top: 300px;
-        margin-left: auto;
-        margin-right: auto;
         width:100%;
     }
     
@@ -156,8 +151,6 @@ h3 {
     
     .content {
         padding-top: 300px;
-        margin-left: auto;
-        margin-right: auto;
         width:100%;
     }
     
