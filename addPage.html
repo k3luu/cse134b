@@ -9,29 +9,42 @@
 	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="addPage.js"></script>
 	<style type="text/css">
-		#image {
-			margin-left: auto;
-			margin-right: auto;
+        #main_area {
+            padding-left: 10px;
+			width: 100%;
+		}
+        #image {
 			display: inline-block;
-			width: 500px;
-			height: 500px;
 		}
-		#interaction {
-			float: right;
-			margin-right: 150px;
-			margin-top: 30px;
-		}
-		#main_area {
-			width: auto;
-			text-align: center;
+        #image img {
+			border: 3px solid black;
+			height: auto;
+            max-width: 500px;
+			max-height: 500px;
 		}
 		#meme_info {
+            padding-left: 50px;
 			margin-left: auto;
 			margin-right: auto;
 			display: inline-block;
-			float: right;
 			text-align: left;
+            vertical-align: top;
 		}
+        #interaction {
+            float: left;
+		}
+        
+        table {
+			display: inline;
+			width: 100%;
+		}
+		table input {
+			width: 100%;
+		}
+		table tr td {
+			padding: 5px 0px;
+		}
+        
 		.starRating {
 			display: inline-block;
 			position: relative;
@@ -72,22 +85,6 @@
 		}
 		.starRating:hover input:hover + label {
 			background: url('images/stars1.png') repeat-x 0 -48px;
-		}
-		img {
-			border: 3px solid black;
-			height: auto;
-			max-width: 100%;
-		}
-		table {
-			display: inline;
-			margin-left: auto;
-			width: 400px;
-		}
-		table input {
-			width: 200px;
-		}
-		table tr td {
-			padding: 5px 0px;
 		}
 		.button {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
