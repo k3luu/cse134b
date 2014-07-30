@@ -5,7 +5,7 @@
     <title>Meme Team - Explore</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <style>
         body {
             font-size: 100%;
@@ -54,28 +54,12 @@
         table.memes {
             text-align: center;
             table-layout: auto;
+            width: 90%;
         }
         table.memes td {
             text-align: center;
             padding: 20px;
-        }
-        
-        #memes {
-            width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #memes ul {
-            list-style-type: none;
-            padding: 0px;
-            margin: 0;
-        }
-        
-        #memes ul li {
             width: 30%;
-            float: left;
-            padding: 10px;
-            text-align: center;
         }
         
         img.meme {
@@ -154,23 +138,23 @@
         <h3>Results for tag <span id="resultString">[click on a tag]</span> (and other selected tags, if any):</h3>
 
         <div id="memes">
-            <ul>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 1</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 2</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 3</a></li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 4</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 5</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 6</a></li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 7</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 8</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 9</a></li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 10</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 11</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 12</a></li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 13</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"><br>Meme 14</a></li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"><br>Meme 15</a></li>
-            </ul>
+            <table class="memes">
+                <tr><td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 1</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 2</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 3</td></tr>
+                <tr><td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 4</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 5</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 6</td></tr>
+                <tr><td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 7</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 8</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 9</td></tr>
+                <tr><td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 10</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 11</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 12</td></tr>
+                <tr><td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 13</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br>Meme 14</td>
+                    <td><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br>Meme 15</td></tr>
+            </table>
         </div>
     </section>
         

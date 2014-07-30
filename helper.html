@@ -5,15 +5,17 @@
 <head>
     <title>Meme Team - Help</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="navBar.css">
-
     <link rel="stylesheet" type="text/css" href="style.css">
-
+	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 
     <style type="text/css">
         h4 {
             font-size: 1.5em;
             padding-left: 0;
+        }
+        .content{
+            padding-left: 10px;   
+            padding-right: 10px;   
         }
         .collapsible h3 {
             cursor: pointer;
@@ -76,13 +78,10 @@
             </li>
             <li><a href="memeTnew.html">Team Page</a>
             </li>
-
-            <li>
-                <form>
+                <form style= "float: right;">
                     <input type="text" class="searchBox" value placeholder="I'm searching for..." />
                     <input type="image" class="searchButton" src="images/search.png" alt="Search" />
                 </form>
-            </li>
         </ul>
     </div>
 
@@ -115,8 +114,8 @@
         </section>
         <br>
         <section id="tutorial_video">
-            <h4> Tutorial Video</h4>
-            <iframe width="420" height="315" src="https://www.youtube.com/embed/wZZ7oFKsKzY" style="border:none" allowfullscreen></iframe>
+            <h4> Tutorial PDF</h4>
+            <a href= "memeMaster_Tutorial.pdf"> memeMaster_Tutorial </a>
         </section>
         <br>
         <hr>
