@@ -7,35 +7,44 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 	<style type="text/css">
-		#image {
-			position: relative;
-			display: inline-block;
-			width: 500px;
-			height: 500px;
-		}
-		#interaction {
-			float: right;
-			margin-right: 150px;
-			margin-top: 30px;
-		}
 		#main_area {
-			width: auto;
-			text-align: center;
+            text-align: center;
+			width: 100%;
 		}
-		#meme_info {
-			margin-left: auto;
-			margin-right: auto;
-			display: inline-block;
-			position: relative;
-			text-align: left;
-		}
-		#title {
+        #title {
 			color: black;
 			font-size: 20pt;
 			padding: 10px;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
+		}
+        #image {
+			display: inline-block;
+		}
+        #image img {
+			border: 3px solid black;
+			height: auto;
+            max-width: 400px;
+			max-height: 400px;
+		}
+		#meme_info {
+            padding: 50px;
+			display: inline-block;
+			text-align: left;
+            vertical-align: top;
+		}
+        #interaction {
+            padding: 20px;
+            text-align: center;
+		}
+        
+        table {
+			display: inline;
+			width: 100%;
+		}
+		table input {
+			width: 100%;
+		}
+		table tr td {
+			padding: 5px 0px;
 		}
 		td a {
 			border-radius: 5px;
@@ -44,23 +53,10 @@
             border: 3px solid #4C668C;
 			padding: 0px 2px;
 		}
-		img {
-			border: 3px solid black;
-			max-width: 100%;
-			max-height: 100%;
-		}
 		span {
 			font-size: 16pt;	
 		}
-		table {
-			width: 400px;
-		}
-		table input {
-			width: 200px;
-		}
-		table tr td {
-			padding: 5px 0px;
-		}
+        
 		.classname {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -94,9 +90,6 @@
 		.classname:active {
 			position: relative;
 			top: 1px;
-		}
-		.textbox {
-			width: 200px;
 		}
 		
 	</style>
