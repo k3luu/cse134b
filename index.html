@@ -151,13 +151,11 @@
                     }
                 })
             }else{
-                //query.ascending("title");   
+                query.ascending("title");   
             
                 query.find({
                     success: 
                     function(alpha){
-                        //lowercase, then sort
-                        
                         allAImages = alpha;
                         for(var i=0; i< 3; i++){
                             var meme = alpha[curr + i];
