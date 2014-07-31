@@ -195,73 +195,13 @@
 				return true;
 		}
 
-		function today() {
-			function makeArray() {
-				for (i = 0; i < makeArray.arguments.length; i++)
-					this[i + 1] = makeArray.arguments[i];
-			}
-
-			var months = new makeArray('January', 'February', 'March',
-				'April', 'May', 'June', 'July', 'August',
-				'September', 'October', 'November',
-				'December');
-			var date = new Date();
-			var day = date.getDate();
-			var month = date.getMonth() + 1;
-			var yy = date.getYear();
-			var year = (yy < 1000) ? yy + 1900 : yy;
-
-			document.write(day + " " + months[month] + " " + year);
-		}
-
-
-
-		function loadImage() {
-
-			function ValidURL(str) {
-				//var str = document.getElementById("newImageURL").value;
-				var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-					'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-					'((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-					'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-					'(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-					'(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-				if (!pattern.test(str)) {
-					return false;
-				} else {
-					return true;
-				}
-			}
-
-			function myCallback(url, answer) {
-				if (!answer)
-					alert("Image does not exist from the URL. Please try again.");
-			}
-
-			function IsValidImageUrl(url, callback) {
-				var img = new Image();
-				img.onerror = function () {
-					callback(url, false);
-				}
-				img.onload = function () {
-					callback(url, true);
-				}
-				img.src = url;
-			}
-
-			var foo = document.getElementById("newImageUrl").value;
-
-			IsValidImageUrl(foo, myCallback);
-
-			if (foo == '') {
-				document.getElementById("image").innerHTML = "<img src='images/placeholder.png' alt=''/>";
-				return false;
-			} else if (ValidURL(foo)) {
-				document.getElementById("image").innerHTML = "<img src='" + foo + "' alt=''/>";
-				return true;
-			} else {
-				document.getElementById("image").innerHTML = "<img src='images/brokenImage.png'alt=''/>";
-				return false;
+		function getInfo() {
+			var str = "some info";
+			window.onload = function () {
+				document.getElementById("title").value = str;
+				document.getElementById("newImageUrl").value = "www.com";
+				document.getElementById("tag").value = str;
+				document.getElementById("notes").value = str;
 			}
 		}
 	</script>
@@ -285,7 +225,7 @@
 			</li>
 		</ul>
 		<form style="float: right;">
-			<input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
+			<input type="search" class="searchBox" name="query" placeholder="I'm searching for..." autofocus/>
 			<input type="image" class="searchButton" src="images/search.png" alt="Search" />
 		</form>
 	</div>
@@ -308,6 +248,8 @@
 						<td>
 							<form name="page">
 								<input type="text" id="title" name="title" onKeyPress="return submitenter(this,event)">
+								<script>
+								</script>
 							</form>
 						</td>
 					</tr>
@@ -315,7 +257,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)" onchange="loadImage()">
+								<input type="text" id="newImageUrl" name="url" readonly>
 							</form>
 						</td>
 					</tr>
@@ -354,23 +296,23 @@
 					<tr>
 						<th>&nbsp;Tags:</th>
 						<td>
-							<input type="text" name="tag" onKeyPress="return submitenter(this,event)">
+							<input type="text" id="tag" name="tag" onKeyPress="return submitenter(this,event)">
 						</td>
 					</tr>
 					<tr>
 						<th id="noteslabel">&nbsp;Notes:</th>
 						<td>
-							<textarea name="note" id="notes" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)"></textarea>
+							<textarea name="note" id="notes" onKeyPress="return submitenter(this,event)">how bout now</textarea>
 						</td>
 					</tr>
 					<tr>
 						<th>&nbsp;Published:</th>
-						<td>
-							<script>
-								today();
-							</script>
+						<td>//meme date
 						</td>
 					</tr>
+					<script>
+						getInfo();
+					</script>
 
 				</table>
 
