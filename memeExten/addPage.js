@@ -56,6 +56,14 @@ function submitenter(myfield, e) {
 
 function addPageDone()
 {
+    var nameField = document.forms["page"]["title"].value;
+ var urlField = document.forms["link"]["url"].value;
+			
+ if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
+	alert("Please fill out all fields marked with an asterisk (*).");
+		return false;
+		}
+    
  	console.log("Inside");
 //	var Meme = Parse.Object.extend("Meme");
 //	var meme = new Meme();
@@ -134,7 +142,7 @@ function submitenter(myfield, e) {
 			var urlField = document.forms["link"]["url"].value;
 			
 			if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
-				alert("Please fill out all fields marked with an asterisk (*).");
+				//alert("Please fill out all fields marked with an asterisk (*).");
 				return false;
 			}
 
