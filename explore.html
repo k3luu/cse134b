@@ -47,68 +47,53 @@
         #resultString {
             font-style: italic;
         } 
-        
-        #memes {
-            width: 100%;
-            margin: 10px;
-        }
-        #memes ul {
-            list-style-type: none;
-            padding: 10px 0;
-            margin: 0;
-            text-align: center;
+    ul.rig {
+    list-style: none;
+    margin-left: -2.5%; /
+    }
+    ul.rig li {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 0 2.5% 2.5%;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    box-shadow: 0 0 5px #ddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    }
+    ul.rig li img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 10px;
+    }
 
-        }
+    /* class for 3 columns */
+    ul.rig.columns-3 li {
+    width: 30.83%; /* this value + 2.5 should = 33% */
+    }
+     
+    @media (max-width: 480px) {
+    ul.grid-nav li {
+    display: block;
+    margin: 0 0 5px;
+    }
+    ul.grid-nav li a {
+    display: block;
+    }
+    ul.rig {
+    margin-left: 0;
+    }
+    ul.rig li {
+    width: 100% !important; /* over-ride all li styles */
+    margin: 0 0 20px;
+    }
+    }
+       
         
-        #memes ul li {
-            width: 30%;
-            text-align: center;
-            display: inline-block;
-        }
-        
-        img.meme {
-            max-height: 200px;
-            max-width: 200px;
-            border: 3px solid black;
-        }   
-        
-         @media screen and (max-width : 1125px){
-            img.meme {
-                max-height: 175px;
-                max-width: 175px;
-            }
-        }
-        @media screen and (max-width : 768px){
-            img.meme {
-                max-height: 150px;
-                max-width: 150px;
-            }
-        }
-        @media screen and (max-width : 600px){
-            table.tags {
-                font-size: 9pt;
-            }
-            #memes ul li {
-                width: 50%;
-            }
-            .meme {
-                max-height: 225px;
-                max-width: 225px;
-            }
-        }
-        @media screen and (max-width : 480px){
-            table.tags {
-                font-size: 7pt;
-            }
-            #memes ul li {
-                width: 50%;
-            }
-            img.meme {
-                max-height: 175px;
-                max-width: 175px;
-            }
-        }
-        
+  
     </style>
     <script>
 
@@ -119,16 +104,20 @@
             query.find({
                 success:
                 function(images){
-                    var tagImg = images;
-                    //var highest = images;
-                    //var alpha = images;
-
-                    //alert("Successfully retrieved " +images.length+" images");
-                    for(var i=0; i<tagImg.length; i++){
-                        var meme = tagImg[i];
-                        var actualImage = meme.get("file");
-                        var imgURL = actualImage.url();
-                        document.getElementById("tagImg"+i).src = imgURL;
+                   
+                    var list = document.getElementById("memesList");
+                    for(var i=0; i<images.length && i<200; i++){
+                        var listItem = document.createElement("li");
+                        var linkItem = document.createElement("a");
+                        linkItem.href = "viewMeme.html#"+images[i].id;
+                        linkItem.class = "meme";
+                        linkItem.innerHTML = images[i].get("title");
+                        var imageItem = document.createElement("img");
+                        var imageFile = images[i].get("file");
+                        imageItem.src = imageFile.url();
+                        linkItem.appendChild(imageItem);
+                        listItem.appendChild(linkItem);
+                        list.appendChild(listItem);
                     }
 
 
@@ -208,34 +197,14 @@
                 <td><a href="#" id="tag15" class="toggledOff" onclick="javascript:searchTag(15)">triton</a></td></tr>
             </table>
         </div>
+        
+        
 
     <section id = "results">
         <h3>Results for tag <span id="resultString">[click on a tag]</span> (and other selected tags, if any):</h3>
 
         <div id="memes">
-            <ul>
-                <li>
-                    <a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="tagImg0"  alt="meme"></a><br/>Meme 0</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class ="meme" id="tagImg1" alt="meme"></a><br/>Meme 1</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class= "meme" id="tagImg2" alt="meme"></a><br/>Meme 2 </li>
-
-                <li>
-                    <a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="tagImg3"  alt="meme"></a><br/>Meme 3</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class ="meme" id="tagImg4" alt="meme"></a><br/>Meme 4</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class= "meme" id="tagImg5" alt="meme"></a><br/>Meme 5 </li>
-
-                <li>
-                    <a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="tagImg6"  alt="meme"></a><br/>Meme 6</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class ="meme" id="tagImg7" alt="meme"></a><br/>Meme 7</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class= "meme" id="tagImg8" alt="meme"></a><br/>Meme 8 </li>
-                <li>
-                    <a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="tagImg9"  alt="meme"></a><br/>Meme 9</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class ="meme" id="tagImg10" alt="meme"></a><br/>Meme 10</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class= "meme" id="tagImg11" alt="meme"></a><br/>Meme 11 </li>
-                <li>
-                    <a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="tagImg12"  alt="meme"></a><br/>Meme 12</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class ="meme" id="tagImg13" alt="meme"></a><br/>Meme 13</li>
-                    <li><a href="viewMeme.html"><img src="images/placeholder.png" class= "meme" id="tagImg14" alt="meme"></a><br/>Meme 14 </li>
+            <ul class="rig columns-3" id="memesList">
             </ul>
         </div>
     </section>
