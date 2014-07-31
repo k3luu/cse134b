@@ -183,6 +183,8 @@
                         document.getElementById("memeImage").src = fileSource.url();
                         document.getElementById("pubDate").innerHTML = meme.createdAt;
                         document.getElementById("editButton").href = "editMeme.html#"+objectID;
+                        var rate = meme.get("rating");
+                        document.getElementById("rating"+rate).checked = true;
                     },
                     error: function(object, error) {
                         //error
