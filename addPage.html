@@ -218,27 +218,29 @@
 
 		console.log("Inside the eL load");
 
-    	var files = evt.target.files; 
+		var filesInput = document.getElementById("files");
         
-		document.getElementById("ImgP").src = objURL;
+		filesInput.addEventListener("change", function(event){
             
-            var files = event.target.files; //FileList object
-            var output = document.getElementById("result");
-            
-		var file = files[0];
+            var files = event.target.files[0]; //FileList object
+
+                      
+                var picReader = new FileReader();
                 
-             var reader = new FileReader();
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
 
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-
-
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
+					document.getElementById("imagePlaceholder").src = picFile.result;
+           
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
                                            
            
     }
@@ -279,7 +281,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img id="imgP" src="images/placeholder.png" alt="no picture available">
+				<img id="imgP" src="images/placeholder.png" id="imagePlaceholder" alt="no picture available">
 			</div>
 
 			<div id="meme_info">

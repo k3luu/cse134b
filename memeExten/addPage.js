@@ -67,8 +67,25 @@ function addPageDone()
 	//meme.set("file", localStorage.getItem("urll"));
 	//meme.save();
 	console.log("Done?");
-	
-	
+	var star = 0;
+	if(document.getElementById("rating5").checked) {
+		star = 5;
+	}
+	else if(document.getElementById("rating4").checked) {
+		star = 4;
+	}
+	else if(document.getElementById("rating3").checked) {
+		star = 3;
+	}
+	else if(document.getElementById("rating2").checked) {
+		star = 2;
+	}
+	else if(document.getElementById("rating1").checked) {
+		star = 1;
+	}
+	else {
+		star = 0;
+	}	
 
 
 
@@ -77,8 +94,8 @@ function addPageDone()
     yml.setRequestHeader("X-Parse-Application-Id", "8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ");
     yml.setRequestHeader("X-Parse-REST-API-Key", "AUVrB3v6VV2utjGmJifyWeBaZHIDbfdvR7NM30VA");
     yml.setRequestHeader("Content-Type", "application/json");
-    var s = '{"title": "'+document.getElementById("title").value + '","url": "'+document.getElementById("newImageUrl").value+ 
-    '", "tag": "'+ document.getElementById("tag").value +'", "file":{"name": "'+localStorage.getItem("urll")+
+    var s = '{"title": "'+document.getElementById("title").value + '","rating": "'+ star+ '","url": "'+document.getElementById("newImageUrl").value+ 
+    '", "tag": "'+ document.getElementById("tag").value +'", "notes": "'+ document.getElementById("note").value + '","file":{"name": "'+localStorage.getItem("urll")+
     '", "__type": "File"}}';
     yml.send(s);
     console.log(s);
