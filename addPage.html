@@ -147,27 +147,55 @@
 		
 		
 		
-		function handleFileSelect(fil) {
-    var file = document.getElementById("files"); // FileList object
-
+		function handleFileSelect() {
+event.preventDefault();
     var Meme = Parse.Object.extend("Meme");
 	var meme = new Meme();
 
 	meme.set("title", document.getElementById("title").value);
-
+	meme.set("notes", document.getElementById("notes").value);
 	meme.set("tag", document.getElementById("tag").value);
-	var file = new Parse.File("Test.png", { base64: fil });
-	file.save();
-	meme.save().then(function() {
-	console.log("YOOO");
+	
+	var star = "0";
+	if(document.getElementById("rating5").checked) {
+		star = "5";
+	}
+	else if(document.getElementById("rating4").checked) {
+		star = "4";
+	}
+	else if(document.getElementById("rating3").checked) {
+		star = "3";
+	}
+	else if(document.getElementById("rating2").checked) {
+		star = "2";
+	}
+	else if(document.getElementById("rating1").checked) {
+		star = "1";
+	}
+	else {
+		star = "0";
+	}	
+	
+	meme.set("rating", star);
+	var file = new Parse.File("Test.png", { base64:  localStorage.getItem("file")});
+
+	file.save().then(function() {
+
+	
 		meme.set("file", file);
-  	file.save();
+  	meme.save().then(function(){
+  	
+  	var thisPage = window.location.href;
+  	window.location = thisPage.replace("addPage.html", "index.html");
+  	},function(error) {
+console.log(error);}
+);
 }, function(error) {
-  // The file either could not be read, or could not be saved to Parse.
+console.log(error);
 });
 
 	
- window.location.replace("viewMeme.html");
+
   }
 
  // document.getElementById('files').addEventListener('change', handleFileSelect, false);
@@ -214,36 +242,41 @@
 		}
 
 
-		function loadImage(evt) {
+	
 
-		console.log("Inside the eL load");
-
-		var filesInput = document.getElementById("files");
+		window.onload = function()
+        {  
+         var filesInput = document.getElementById("files");
         
-		filesInput.addEventListener("change", function(event){
             
-            var files = event.target.files[0]; //FileList object
+ 
+        	var filesInput = document.getElementById("files");
 
+			filesInput.addEventListener("change", function(event){
+            var file = event.target.files[0];
                       
                 var picReader = new FileReader();
                 
                 picReader.addEventListener("load",function(event){
-                    
-                    var picFile = event.target;
-
-					document.getElementById("imagePlaceholder").src = picFile.result;
-           
+                    var imgP;
+                    var picFile = event.target.result;
+					console.log(picFile);
+					imgP = document.getElementById("imagePlaceholder");
+					imgP.src = picFile;
+					localStorage.setItem("file", picFile);
+           			console.log(document.getElementById("imagePlaceholder"));
                 
                 });
                 
                  //Read the image
                 picReader.readAsDataURL(file);
-            }                               
-           
-        });
                                            
            
-    }
+        });
+        }
+                                           
+           
+    
 			
 		
 	</script>
@@ -281,7 +314,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img id="imgP" src="images/placeholder.png" id="imagePlaceholder" alt="no picture available">
+				<img src="images/placeholder.png" id="imagePlaceholder" alt="no picture available">
 			</div>
 
 			<div id="meme_info">
@@ -298,7 +331,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="file" id="files" name="files[]" onchange="loadImage()"/>
+								<input type="file" id="files"/>
 							</form>
 						</td>
 					</tr>
@@ -358,7 +391,7 @@
 				</table>
 
 				<div id="interaction">
-					<button id="done" class="button" onclick="loadImage()">Done</button>
+					<button id="done" class="button" onclick="handleFileSelect()">Done</button>
 					<a href="index.html" class="button">Cancel</a>
 				</div>
 
