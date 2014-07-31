@@ -11,7 +11,7 @@
             margin-left: 56px;
             text-align: left;
         }
-        table {
+        /*table {
             border: 0;
             text-align: center;
             table-layout: auto;
@@ -38,7 +38,85 @@
         }
         .arrows{
             cursor: pointer;   
+        }*/
+        
+        .memes div {
+            padding: 0;
+            margin: 0;
         }
+        .memes ul {
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+            text-align: center;
+            background: #DCE3E8;
+        }
+        
+        .memes ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+        .memes ul li:first-child, #memes ul li:last-child{
+            vertical-align: bottom;
+        }
+        .meme {
+            display: block;
+            border: 3px solid black; 
+            max-height: 200px;
+            max-width: 200px;
+        } 
+        .arrows{
+            display: inline-block;
+            cursor: pointer;  
+            font-size: xx-large;
+        }
+        .memes a:link {
+            text-decoration: none;
+        }
+        .memes a:hover {
+            background-color: white;
+        }
+        @media screen and (max-width : 1125px){
+            .meme {
+                max-height: 145px;
+                max-width: 145px;
+            }
+        }
+        @media screen and (max-width : 768px){
+            .memes{
+            font-size: 10pt;
+            }
+            .meme {
+                max-height: 100px;
+                max-width: 100px;
+            }
+        }
+        @media screen and (max-width : 600px){
+            #existingMemes h3 {
+                text-align: center;
+            }
+            .memes ul li {
+                width: 48%;
+            }
+            .meme {
+                max-height: 225px;
+                max-width: 300px;
+            }
+        }
+        @media screen and (max-width : 480px){
+            #existingMemes h3 {
+                text-align: center;
+            }
+            .memes ul li {
+                width: 50%;
+            }
+            .meme {
+                max-height: 200px;
+                max-width: 200px;
+            }
+        }
+            
+        
     </style>
 </head>
 
@@ -64,9 +142,41 @@
         <hr>
 
         <div id="existingMemes">
-            <br>
-            <h3>Most Recently Added </h3>
-            <table>
+            <div class="memes">
+                
+                <br>
+                <h3>Most Recently Added </h3>
+                <ul>
+                    <li><a href="" class="arrows">&lt;</a></li>
+                    <li><a href="viewMeme.html"><img src="images/meme_master.jpg" class="meme" alt="meme"></a><br/>Meme Master</li>
+                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Heaving Breathing Cat</li>
+                    <li><a href="viewMeme.html"><img src="images/download.jpeg" class="meme" alt="meme"></a><br/>Asian Meme Master</li>
+                    <li><a href="" class="arrows">&gt;</a></li>
+                </ul>
+
+                <br>
+                <h3>Highest Rated </h3>
+                <div class="memes">
+                <ul>
+                    <li><a href="" class="arrows">&lt;</a></li>
+                    <li>
+                        <a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" alt="meme"></a><br/>Pokemon Master</li>
+                    <li><a href="viewMeme.html"><img src="images/troll.jpg" class="meme" alt="meme"></a><br/>Troll</li>
+                    <li><a href="viewMeme.html"><img src="images/willy.jpg" class="meme" alt="meme"></a><br/>Willy Wonka</li>
+                    <li><a href="" class="arrows">&gt;</a></li>
+                </ul>
+                    
+                <br>
+                <h3>Alphabetically, By Title</h3>
+                <ul>
+                    <li><a href="" class="arrows">&lt;</a></li>
+                    <li><a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" alt="meme"></a><br/>Pokemon Master</li>
+                    <li><a href="viewMeme.html"><img src="images/Kevin_1.gif" class="meme" alt="meme"></a><br/>Bully Goat</li>
+                    <li><a href="viewMeme.html"><img src="images/Alex_1.jpg" class="meme" alt="meme"></a><br/>SpongeBob</li>
+                    <li><a href="" class="arrows">&gt;</a></li>
+                </ul>
+            </div>
+            <!--table>
                 <tr class="memes">
                     <td><span class="arrows">&lt;</span></td>
                     <td>
@@ -125,10 +235,10 @@
                     </td>
                     <td><span class="arrows">&gt;</span></td>
                 </tr>
-            </table>
+            </table-->
         </div>
     </div>
-
+        </div>
 </body>
 
 </html>
