@@ -6,8 +6,7 @@
 	<title>Add A Meme</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="parse-1.2.19.min.js"></script>
-    <script src="addPage.js"></script>
+    
 	<style type="text/css">
 		#image {
 			margin-left: auto;
@@ -125,57 +124,7 @@
 		}
 	</style>
 
-	<!-- JAVASCRIPT CODE -->
-	<script src="parse-1.2.19.min.js"></script>
-	<script>
-		function checkForm() {
-			var nameField = document.forms["page"]["title"].value;
-			var urlField = document.forms["link"]["url"].value;
 
-			if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
-				alert("Please fill out all fields marked with an asterisk (*).");
-				return false;
-			}
-
-			return true;
-		}
-
-		function submitenter(myfield, e) {
-			var keycode;
-			if (window.event) keycode = window.event.keyCode;
-			else if (e) keycode = e.which;
-			else return true;
-
-			if (keycode == 13) {
-				var bool = checkForm();
-				
-				if(bool)
-					document.getElementById('done').click();
-					
-				return false;
-			} else
-				return true;
-		}
-
-		function today() {
-			function makeArray() {
-				for (i = 0; i < makeArray.arguments.length; i++)
-					this[i + 1] = makeArray.arguments[i];
-			}
-
-			var months = new makeArray('January', 'February', 'March',
-				'April', 'May', 'June', 'July', 'August',
-				'September', 'October', 'November',
-				'December');
-			var date = new Date();
-			var day = date.getDate();
-			var month = date.getMonth() + 1;
-			var yy = date.getYear();
-			var year = (yy < 1000) ? yy + 1900 : yy;
-
-			document.write(day + " " + months[month] + " " + year);
-		}
-	</script>
 
 
 </head>
@@ -222,7 +171,7 @@
 						<th>*Title:</th>
 						<td>
 							<form name="page">
-								<input type="text" id="title" name="title" onKeyPress="return submitenter(this,event)">
+								<input type="text" id="title" name="title">
 							</form>
 						</td>
 					</tr>
@@ -230,7 +179,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)">
+								<input type="text" id="newImageUrl" name="url">
 							</form>
 						</td>
 					</tr>
@@ -269,28 +218,26 @@
 					<tr>
 						<th>&nbsp;Tags:</th>
 						<td>
-							<input type="text" name="tag" onKeyPress="return submitenter(this,event)">
+							<input type="text" id="tag" name="tag">
 						</td>
 					</tr>
 					<tr>
 						<th>&nbsp;Notes:</th>
 						<td>
-							<input type="text" name="note" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)">
+							<input type="text" name="note" id="note" placeholder="Write something about this meme...">
 						</td>
 					</tr>
 					<tr>
 						<th>&nbsp;Published:</th>
-						<td>
-							<script>
-								today();
-							</script>
+						<td id="date">
 						</td>
 					</tr>
 
 				</table>
 
 				<div id="interaction">
-					<a href="viewMeme.html" id="done" class="button" onclick="return checkForm()">Done</a>
+<input type="button" id="donee" class="button" value="click">
+
 					<a href="index.html" class="button">Cancel</a>
 				</div>
 
@@ -299,5 +246,5 @@
 	</div>
 
 </body>
-
+<script src="addPage.js"></script>
 </html>

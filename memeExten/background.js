@@ -17,6 +17,8 @@ function onClickHandler(info, tab) {
         yml.responseType = 'json';
         yml.onload = function() {
             console.log(yml.response.url);
+            localStorage.setItem("urll", yml.response.name);
+            console.log(localStorage.getItem("urll"));
         };
         yml.open('POST', 'https://api.parse.com/1/files/test.jpg');
         yml.setRequestHeader("X-Parse-Application-Id", "8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ");
