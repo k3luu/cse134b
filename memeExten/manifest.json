@@ -2,7 +2,7 @@
   "name": "Add to memeMaster library",
   "description": "right click meme/gif add to library",
   "version": "0.0.1",
-  "permissions": ["contextMenus", "downloads"],
+  "permissions": ["contextMenus", "downloads", "http://*/*", "https://*/*"],
   "background": {
     "persistent": false,
     "scripts": ["background.js"]
