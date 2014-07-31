@@ -181,7 +181,7 @@
 				        parseTags(meme.get("tag"));
                         var fileSource = meme.get("file");
                         document.getElementById("memeImage").src = fileSource.url();
-                        document.getElementById("pubDate").innerHTML = meme.get("createdAt");
+                        document.getElementById("pubDate").innerHTML = meme.createdAt;
                     },
                     error: function(object, error) {
                         //error
@@ -231,6 +231,7 @@
                 }
             });
         }
+        
 	</script>
 
 </head>
@@ -312,7 +313,7 @@
 					<tr>
 						<td>URL:</td>
 						<td>
-							<input class="textbox" id="url" />
+							<input class="textbox" id="url" readonly/>
 						</td>
 					</tr>
 					<tr>
@@ -320,6 +321,16 @@
 						<td id="pubDate">
 						</td>
 					</tr>
+                    <tr>
+                        <td><div id="edit_title">
+                            <input id="newTitle" type="text" value="Edit Title" />
+                            </div>
+                        </td>
+                        <td><div id="add_tags">
+                            <input id="newTags" type="text" value="Add Tags" />
+                            </div>
+                        </td>
+                    </tr>
 
 				</table>
 
