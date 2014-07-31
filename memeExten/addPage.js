@@ -52,25 +52,6 @@ function submitenter(myfield, e) {
 		return true;
 }
 
-function today() {
-	function makeArray() {
-		for (i = 0; i < makeArray.arguments.length; i++)
-			this[i + 1] = makeArray.arguments[i];
-	}
-
-	var months = new makeArray('January', 'February', 'March',
-		'April', 'May', 'June', 'July', 'August',
-		'September', 'October', 'November',
-		'December');
-	var date = new Date();
-	var day = date.getDate();
-	var month = date.getMonth() + 1;
-	var yy = date.getYear();
-	var year = (yy < 1000) ? yy + 1900 : yy;
-
-	document.write(day + " " + months[month] + " " + year);
-}
-
 
 
 function addPageDone()
@@ -109,6 +90,43 @@ function addPageDone()
 //document.getElementById("newImageUrl").addEventListener("onKeyPress", submitenter(this, event));
 //document.getElementById("tag").addEventListener("onKeyPress", submitenter(this, event));
 //document.getElementById("note").addEventListener("onKeyPress", submitenter(this, event));
-document.getElementById("donee").addEventListener("click", addPageDone);
-document.getElementById("date").value = today();
+document.getElementById("done").addEventListener("click", addPageDone);
 
+		
+function submitenter(myfield, e) {
+			var keycode;
+			if (window.event) keycode = window.event.keyCode;
+			else if (e) keycode = e.which;
+			else return true;
+
+			if (keycode == 13) {
+				var bool = checkForm();
+
+				if (bool)
+					document.getElementById('done').click();
+
+				return false;
+			} else
+				return true;
+		}
+
+
+	function checkForm() {
+
+			var nameField = document.forms["page"]["title"].value;
+			var urlField = document.forms["link"]["url"].value;
+			
+			if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
+				alert("Please fill out all fields marked with an asterisk (*).");
+				return false;
+			}
+
+			alert("Your meme has been successfully added to your library!");
+			return true;
+		}
+
+	window.onload = function(){
+		document.getElementById("done").onclick = function() {
+			checkForm();
+		};
+	}

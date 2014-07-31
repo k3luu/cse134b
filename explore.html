@@ -5,7 +5,7 @@
     <title>Meme Team - Explore</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <style>
         table {
             border: none;
@@ -89,7 +89,7 @@
             #memes ul li {
                 width: 50%;
             }
-            img.meme {
+            .meme {
                 max-height: 225px;
                 max-width: 225px;
             }
@@ -108,6 +108,36 @@
         }
         
     </style>
+    <script>
+
+
+        window.onload = function(){
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            query.find({
+                success:
+                function(images){
+                    var tagImg = images;
+                    //var highest = images;
+                    //var alpha = images;
+
+                    //alert("Successfully retrieved " +images.length+" images");
+                    for(var i=0; i<tagImg.length; i++){
+                        var meme = tagImg[i];
+                        var actualImage = meme.get("file");
+                        var imgURL = actualImage.url();
+                        document.getElementById("tagImg"+i).src = imgURL;
+                    }
+
+
+                },
+                error: function(){
+                    alert("Error");
+                }
+            })
+        };
+        </script>
+
 </head>
 
 <body>
@@ -126,7 +156,9 @@
     </div>
     <!-- ABOVE IS HEADER -->
     
-    <script>
+    <script type="text/javascript">
+	Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
+
     function searchTag(tagNum) {
         var phrase = document.getElementById('tag' + tagNum).innerHTML;
         var result = document.getElementById('resultString');
@@ -145,6 +177,8 @@
         }
     }
         
+
+
     </script>
 
     
@@ -178,19 +212,26 @@
 
         <div id="memes">
             <ul>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 1</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 2</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 3</li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 4</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 5</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 6</li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 7</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 8</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 9</li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 10</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 11</li>
-                    <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 12</li>
-                <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 13</li>
+                <li>
+                    <a href="viewMeme.html"><img class="meme" id="tagImg0"  alt="meme"></a><br/>Meme 0</li>
+                    <li><a href="viewMeme.html"><img class ="meme" id="tagImg1" alt="meme"></a><br/>Meme 1</li>
+                    <li><a href="viewMeme.html"><img class= "meme" id="tagImg2" alt="meme"></a><br/>Meme 2 </li>
+
+                <li>
+                    <a href="viewMeme.html"><img class="meme" id="tagImg3"  alt="meme"></a><br/>Meme 3</li>
+                    <li><a href="viewMeme.html"><img class ="meme" id="tagImg4" alt="meme"></a><br/>Meme 4</li>
+                    <li><a href="viewMeme.html"><img class= "meme" id="tagImg5" alt="meme"></a><br/>Meme 5 </li>
+
+                <li>
+                    <a href="viewMeme.html"><img class="meme" id="tagImg6"  alt="meme"></a><br/>Meme 0</li>
+                    <li><a href="viewMeme.html"><img class ="meme" id="tagImg7" alt="meme"></a><br/>Meme 1</li>
+                    <li><a href="viewMeme.html"><img class= "meme" id="tagImg8" alt="meme"></a><br/>Meme 2 </li>
+                <li>
+                    <a href="viewMeme.html"><img class="meme" id="tagImg9"  alt="meme"></a><br/>Meme 0</li>
+                    <li><a href="viewMeme.html"><img class ="meme" id="tagImg10" alt="meme"></a><br/>Meme 1</li>
+                    <li><a href="viewMeme.html"><img class= "meme" id="tagImg12" alt="meme"></a><br/>Meme 2 </li>
+                <li>
+                    <a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 13</li>
                     <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Meme 14</li>
                     <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat.jpg" class="meme" alt="meme"></a><br/>Meme 15</li>
             </ul>

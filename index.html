@@ -44,9 +44,9 @@
         .memes a:link {
             text-decoration: none;
         }
-        .memes a:hover {
+        /*.memes a:hover {
             background-color: white;
-        }
+        }*/
         
         @media screen and (max-width : 1125px){
             .meme {
@@ -92,55 +92,60 @@
     </style>
     
     <script>
-        var recentIndex;
-        var highestIndex;
-        var alphaIndex;
+        var recentIndex = 0;
+        var highestIndex = 0;
+        var alphaIndex = 0;
         
         window.onload = function(){
+            
+            getImage(recentIndex,"recent");
+            getImage(highestIndex, "highest");
+            getImage(alphaIndex, "alpha");
+           
+        };
+        
+        function getImage(curr, str) {
             var Meme = Parse.Object.extend("Meme");
             var query = new Parse.Query(Meme);
+            if(str == "recent")
+                query.descending("createdAt");
             query.find({
                 success: 
                 function(images){
-                    var recent = images;
-                    var highest = images;
-                    var alpha = images;
-                    
-                    alert("Successfully retrieved " +images.length+" images");
-                    for(var i=0; i<recent.length; i++){
-                        var meme = recent[i];
+                    for(var i=0; i< 3; i++){
+                        var meme = images[curr + i];
                         var actualImage = meme.get("file");
                         var imgURL = actualImage.url();
-                        document.getElementById("recent"+i).src = imgURL;
+                       
+                        document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                        document.getElementById(str+i).src = imgURL;
                     }
-                    
-                    for(var i=0; i<highest.length; i++){
-                        var meme = highest[i];
-                        var actualImage = meme.get("file");
-                        var imgURL = actualImage.url();
-                        document.getElementById("highest"+i).src = imgURL;
-                    }
-                    
-                    for(var i=0; i<alpha.length; i++){
-                        var meme = alpha[i];
-                        var actualImage = meme.get("file");
-                        var imgURL = actualImage.url();
-                        document.getElementById("alpha"+i).src = imgURL;
-                    }
-                        
                 },
                 error: function(){
                     alert("Error");
                 }
             })
-        };
-        
-        function getPrev(){
-                
         }
         
-        function getNext(){
-            
+        function getPrev(which){
+            if(which == "recent"){
+                recentIndex -= 3;
+            } else if (which == "highest"){
+                highestIndex -= 3;
+            } else {
+                alphaIndex -= 3;
+            }  
+        }
+        
+        function getNext(which){
+            if(which == "recent"){
+                recentIndex += 3;
+                getImage(recentIndex);
+            } else if (which == "highest"){
+                highestIndex += 3;
+            } else {
+                alphaIndex += 3;
+            }
         }
     </script>
     
@@ -178,33 +183,32 @@
                 <br>
                 <h3>Most Recently Added </h3>
                 <ul>
-                    <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
-                    <li><a href="viewMeme.html"><img class="meme" id="recent0" alt="meme"></a><br/>Meme Master</li>
-                    <li><a href="viewMeme.html"><img class="meme" id="recent1" alt="meme"></a><br/>Heaving Breathing Cat</li>
-                    <li><a href="viewMeme.html"><img src="images/download.jpeg" class="meme" id="recent2" alt="meme"></a><br/>Asian Meme Master</li>
-                    <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
+                    <li><a href="" onClick="getPrev('recent');" class="arrows">&lt;</a></li>
+                    <li id="recentTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="recent0" alt="meme"></a></li>
+                    <li id="recentTitle1"><a href="viewMeme.html" ><img src="images/placeholder.png" class="meme" id="recent1" alt="meme"></a></li>
+                    <li id="recentTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="recent2" alt="meme"></a></li>
+                    <li><a href="" onClick="getNext('recent');" class="arrows">&gt;</a></li>
                 </ul>
                 
                 <br>
                 <h3>Highest Rated </h3>
                 <div class="memes">
                     <ul>
-                        <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
-                        <li>
-                            <a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" id="highest0" alt="meme"></a><br/>Pokemon Master</li>
-                        <li><a href="viewMeme.html"><img src="images/troll.jpg" class="meme" id="highest1" alt="meme"></a><br/>Troll</li>
-                        <li><a href="viewMeme.html"><img src="images/willy.jpg" class="meme" id="highest2" alt="meme"></a><br/>Willy Wonka</li>
-                        <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
+                        <li><a href="" onClick="getPrev('highest');" class="arrows">&lt;</a></li>
+                        <li id="highestTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest0" alt="meme"></a></li>
+                        <li id="highestTitle1"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest1" alt="meme"></a></li>
+                        <li id="highestTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest2" alt="meme"></a></li>
+                        <li><a href="" onClick="getNext('highest');" class="arrows">&gt;</a></li>
                     </ul>
 
                     <br>
                     <h3>Alphabetically, By Title</h3>
                     <ul>
-                        <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
-                        <li><a href="viewMeme.html"><img src="images/Dhruv_1.gif" class="meme" id="alpha0" alt="meme"></a><br/>Angry Pug</li>
-                        <li><a href="viewMeme.html"><img src="images/Kevin_1.gif" class="meme" id="alpha1" alt="meme"></a><br/>Bully Goat</li>
-                        <li><a href="viewMeme.html"><img src="images/Alex_1.jpg" class="meme" id="alpha2" alt="meme"></a><br/>SpongeBob</li>
-                        <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
+                        <li><a href="" onClick="getPrev('alpha');" class="arrows">&lt;</a></li>
+                        <li id="alphaTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha0" alt="meme"></a></li>
+                        <li id="alphaTitle1"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha1" alt="meme"></a></li>
+                        <li id="alphaTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha2" alt="meme"></a></li>
+                        <li><a href="" onClick="getNext('alpha');" class="arrows">&gt;</a></li>
                     </ul>
                 </div>
             </div>
