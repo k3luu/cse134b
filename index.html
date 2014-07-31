@@ -114,6 +114,8 @@
             var query = new Parse.Query(Meme);
             if(str == "recent")
                 query.descending("createdAt");
+            else if(str == "highest")
+                query.descending("rating");
             query.find({
                 success: 
                 function(images){
