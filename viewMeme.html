@@ -182,6 +182,9 @@
                         var fileSource = meme.get("file");
                         document.getElementById("memeImage").src = fileSource.url();
                         document.getElementById("pubDate").innerHTML = meme.createdAt;
+                        document.getElementById("editButton").href = "editMeme.html#"+objectID;
+                        var rate = meme.get("rating");
+                        document.getElementById("rating"+rate).checked = true;
                     },
                     error: function(object, error) {
                         //error
@@ -205,31 +208,6 @@
                 listItem.appendChild(linkItem);
                 listContainer.appendChild(listItem);
             }
-        }
-        
-        function updateParse() {
-            var Meme = Parse.Object.extend("Meme");
-            var query = new Parse.Query(Meme);
-            query.get(objectID, {
-                success: function(meme) {
-                    //set
-                    meme.set("title", document.getElementById("title"));
-                    meme.set("url", document.getElementById("url"));
-                    meme.set("notes", document.getElementById("notes"));
-                    var tagList = document.getElementsByName("tagList");
-                    var newTag = "";
-                    for(i=0; i<tagList.length; i++)
-                    {
-                        newTag += tagList[i];
-                        newTag += " ";
-                    }
-                    meme.set("tags", newTag);
-                    meme.save();
-                },
-                error: function(object, error) {
-                    //error
-                }
-            });
         }
         
 	</script>
@@ -277,23 +255,23 @@
 									<div>
 										<div>
 											<div>
-												<input id="rating1" type="radio" name="rating" value="1">
+												<input id="rating1" type="radio" name="rating" value="1" disabled>
 												<label for="rating1"><span>1</span>
 												</label>
 											</div>
-											<input id="rating2" type="radio" name="rating" value="2">
+											<input id="rating2" type="radio" name="rating" value="2" disabled>
 											<label for="rating2"><span>2</span>
 											</label>
 										</div>
-										<input id="rating3" type="radio" name="rating" value="3">
+										<input id="rating3" type="radio" name="rating" value="3" disabled>
 										<label for="rating3"><span>3</span>
 										</label>
 									</div>
-									<input id="rating4" type="radio" name="rating" value="4">
+									<input id="rating4" type="radio" name="rating" value="4" disabled>
 									<label for="rating4"><span>4</span>
 									</label>
 								</div>
-								<input id="rating5" type="radio" name="rating" value="5">
+								<input id="rating5" type="radio" name="rating" value="5" disabled>
 								<label for="rating5"><span>5</span>
 								</label>
 							</div>
@@ -307,7 +285,7 @@
 					<tr>
 						<td id="noteslabel">Notes:</td>
 						<td>
-							<textarea name="note" id="notes">No Notes</textarea>
+							<textarea name="note" id="notes" readonly>No Notes</textarea>
 						</td>
 					</tr>
 					<tr>
@@ -321,24 +299,14 @@
 						<td id="pubDate">
 						</td>
 					</tr>
-                    <tr>
-                        <td><div id="edit_title">
-                            <input id="newTitle" type="text" value="Edit Title" />
-                            </div>
-                        </td>
-                        <td><div id="add_tags">
-                            <input id="newTags" type="text" value="Add Tags" />
-                            </div>
-                        </td>
-                    </tr>
 
 				</table>
 
 
 
 				<div id="interaction">
-					<a href="editMeme.html" class="button" onclick="updateParse()">Edit</a>
-					<a href="#" class="button">Delete</a>
+					<a href="editMeme.html" id="editButton" class="button">Edit</a>
+					<a href="#" class="button">N/A</a>
 				</div>
 			</div>
 
