@@ -118,6 +118,28 @@
             
         
     </style>
+    
+    <script>
+        function getImage(){
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            query.get("m617bRVW6a", {
+                success: function(images){
+                }
+                error: function(object,error){
+                }
+            }
+        }
+        
+        function getPrev(){
+                
+        }
+        
+        function getNext(){
+            
+        }
+    </script>
+    
 </head>
 
 <body>
@@ -147,33 +169,33 @@
                 <br>
                 <h3>Most Recently Added </h3>
                 <ul>
-                    <li><a href="" class="arrows">&lt;</a></li>
-                    <li><a href="viewMeme.html"><img src="images/meme_master.jpg" class="meme" alt="meme"></a><br/>Meme Master</li>
+                    <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
+                    <li><a href="viewMeme.html"><img onload="getImage();" src="" class="meme" alt="meme"></a><br/>Meme Master</li>
                     <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Heaving Breathing Cat</li>
                     <li><a href="viewMeme.html"><img src="images/download.jpeg" class="meme" alt="meme"></a><br/>Asian Meme Master</li>
-                    <li><a href="" class="arrows">&gt;</a></li>
+                    <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
                 </ul>
 
                 <br>
                 <h3>Highest Rated </h3>
                 <div class="memes">
                 <ul>
-                    <li><a href="" class="arrows">&lt;</a></li>
+                    <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
                     <li>
                         <a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" alt="meme"></a><br/>Pokemon Master</li>
                     <li><a href="viewMeme.html"><img src="images/troll.jpg" class="meme" alt="meme"></a><br/>Troll</li>
                     <li><a href="viewMeme.html"><img src="images/willy.jpg" class="meme" alt="meme"></a><br/>Willy Wonka</li>
-                    <li><a href="" class="arrows">&gt;</a></li>
+                    <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
                 </ul>
                     
                 <br>
                 <h3>Alphabetically, By Title</h3>
                 <ul>
-                    <li><a href="" class="arrows">&lt;</a></li>
+                    <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
                     <li><a href="viewMeme.html"><img src="images/pokemon_master.jpg" class="meme" alt="meme"></a><br/>Pokemon Master</li>
                     <li><a href="viewMeme.html"><img src="images/Kevin_1.gif" class="meme" alt="meme"></a><br/>Bully Goat</li>
                     <li><a href="viewMeme.html"><img src="images/Alex_1.jpg" class="meme" alt="meme"></a><br/>SpongeBob</li>
-                    <li><a href="" class="arrows">&gt;</a></li>
+                    <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
                 </ul>
             </div>
             <!--table>
