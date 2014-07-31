@@ -5,7 +5,7 @@
 	<title>View Your Meme</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 	<style type="text/css">
 		#main_area {
 			text-align: center;
@@ -213,6 +213,9 @@
             window.history.back()
         }
         
+        function btn_onclick(){
+            window.location.href = "explore.html";   
+        }
 	</script>
 
 </head>
@@ -233,7 +236,7 @@
 		</ul>
 		<form style="float: right;">
 			<input type="search" class="searchBox" name="query" placeholder="I'm searching for..." autofocus/>
-			<input type="image" class="searchButton" src="images/search.png" alt="Search" />
+			<input type="button" class="searchButton" onClick = "return btn_onclick()" value="Search" />
 		</form>
 	</div>
 

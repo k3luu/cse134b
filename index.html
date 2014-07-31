@@ -123,7 +123,7 @@
                             var actualImage = meme.get("file");
                             var imgURL = actualImage.url();
 
-                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'></a><br/>"+meme.get("title");
                             document.getElementById(str+i).src = imgURL;
                         }
                     },
@@ -142,7 +142,7 @@
                             var actualImage = meme.get("file");
                             var imgURL = actualImage.url();
 
-                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'></a><br/>"+meme.get("title");
                             document.getElementById(str+i).src = imgURL;
                         }
                     },
@@ -162,7 +162,7 @@
                             var actualImage = meme.get("file");
                             var imgURL = actualImage.url();
 
-                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'></a><br/>"+meme.get("title");
                             document.getElementById(str+i).src = imgURL;
                         }
                     },
@@ -200,7 +200,7 @@
                 var actualImage = meme.get("file");
                 var imgURL = actualImage.url();
                 
-                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'></a><br/>"+meme.get("title");
                         document.getElementById(which+i).src = imgURL;
             }
         }
@@ -232,7 +232,7 @@
                 var actualImage = meme.get("file");
                 var imgURL = actualImage.url();
                 
-                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'></a><br/>"+meme.get("title");
                         document.getElementById(which+i).src = imgURL;
                 }
                 catch(err){
@@ -240,6 +240,20 @@
                 }
                 
             }
+        }
+        
+        /*
+        function searchByTitle(){
+            var searchKeyword = document.getElementsByClassName("searchByTitle").value;
+            
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            
+            
+        }*/
+        
+        function btn_onclick(){
+            window.location.href = "explore.html";   
         }
     </script>
     
@@ -260,8 +274,8 @@
             <li><a href="memeTnew.html">Team Page</a></li>
         </ul>
         <form style= "float: right;">
-            <input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
-            <input type="image" class="searchButton" src="images/search.png" alt="Search" />
+            <input type="search" class="searchBox searchByTitle" name="query" placeholder="I'm searching for..." autofocus/>
+            <input type="button" class="searchButton" onClick = "return btn_onclick()" value="Search" />
         </form>
     </div>
 	<script type="text/javascript">
@@ -288,7 +302,7 @@
                 <h3>Highest Rated </h3>
                 <div class="memes">
                     <ul>
-                        <li onClick="getPrev('highest');" class="arrows">&lt </li>
+                        <li onClick="getPrev('highest');" class="arrows">&lt; </li>
                         <li id="highestTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest0" alt="meme"></a></li>
                         <li id="highestTitle1"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest1" alt="meme"></a></li>
                         <li id="highestTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest2" alt="meme"></a></li>

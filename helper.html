@@ -60,6 +60,10 @@
             }
             return false;
         }
+        
+        function btn_onclick(){
+            window.location.href = "explore.html";   
+        }
     </script>
 
 
@@ -81,7 +85,7 @@
         </ul>
         <form style= "float: right;">
             <input type="search" class="searchBox" name="query" value placeholder="I'm searching for..." autofocus/>
-            <input type="image" class="searchButton" src="images/search.png" alt="Search" />
+            <input type="button" class="searchButton" onClick = "return btn_onclick()" value="Search" />
         </form>
     </div>
 
@@ -120,9 +124,9 @@
         <br>
         <hr>
         <section id="extras">
+            <h4>Popular Meme Sites</h4>
             <div class="container">
                 <ul class="category">
-                    <li class="label">Popular Meme Sites</li>
                     <li>
                         <a href="http://www.memestache.com/">memestache</a>
                     </li>
