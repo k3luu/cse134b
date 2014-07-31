@@ -272,7 +272,6 @@
                         var fileSource = meme.get("file");
                         document.getElementById("memeImage").src = fileSource.url();
                         document.getElementById("pubDate").innerHTML = meme.createdAt;
-                        document.getElementById("done").href = "viewMeme.html#"+objectID;
                         document.getElementById("cancel").href = "viewMeme.html#"+objectID;
                         var rate = meme.get("rating");
                         document.getElementById("rating"+rate).checked = true;
@@ -286,6 +285,26 @@
                 
 				
 			}
+        function getRating() {
+            if(document.getElementById("rating5").checked) {
+		       return "5";
+	        }
+	        else if(document.getElementById("rating4").checked) {
+		       return "4";
+	        }
+	        else if(document.getElementById("rating3").checked) {
+               return "3";
+            }
+            else if(document.getElementById("rating2").checked) {
+               return "2";
+            }
+	        else if(document.getElementById("rating1").checked) {
+		       return "1";
+	        }
+	        else {
+               return "0";
+	        }	   
+        }
         
         function updateParse(event) {
             event.preventDefault();
@@ -303,7 +322,7 @@
                     meme.set("url", document.getElementById("newImageUrl").value);
                     meme.set("notes", document.getElementById("notes").value);
                     meme.set("tag", document.getElementById("tag").value);
-                    meme.set
+                    meme.set("rating", getRating());
                     meme.save().then(function(object) {
                         var thisPage = window.location.href;
                         window.location = thisPage.replace("editMeme.html#", "viewMeme.html#");
