@@ -8,28 +8,46 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
     
 	<style type="text/css">
-		#image {
-			margin-left: auto;
-			margin-right: auto;
-			display: inline-block;
-			width: 500px;
-			height: 500px;
-		}
-		#interaction {
-			float: right;
-			margin-right: 150px;
-			margin-top: 30px;
-		}
 		#main_area {
-			width: auto;
 			text-align: center;
+			width: 100%;
+		}
+		#image {
+			display: inline-block;
+		}
+		#image img {
+			border: 3px solid black;
+			height: auto;
+			max-width: 500px;
+			max-height: 500px;
 		}
 		#meme_info {
-			margin-left: auto;
-			margin-right: auto;
+			padding: 20px;
 			display: inline-block;
-			float: right;
+            max-width: 230px;
 			text-align: left;
+			vertical-align: top;
+		}
+		#interaction {
+			padding: 20px;
+			text-align: center;
+		}
+        #noteslabel{
+            padding-top: 5px;
+            vertical-align: top;   
+        }
+        #notes {
+            height: 100px;
+        }
+		table {
+			display: inline;
+			width: 100%;
+		}
+		table input {
+			width: 100%;
+		}
+		table tr td {
+			padding: 5px 0px;
 		}
 		.starRating {
 			display: inline-block;
@@ -72,22 +90,6 @@
 		.starRating:hover input:hover + label {
 			background: url('images/stars1.png') repeat-x 0 -48px;
 		}
-		img {
-			border: 3px solid black;
-			height: auto;
-			max-width: 100%;
-		}
-		table {
-			display: inline;
-			margin-left: auto;
-			width: 400px;
-		}
-		table input {
-			width: 200px;
-		}
-		table tr td {
-			padding: 5px 0px;
-		}
 		.button {
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -122,6 +124,19 @@
 			position: relative;
 			top: 1px;
 		}
+        
+        @media screen and (max-width : 600px){
+            #image img {
+            max-width: 400px;
+			max-height: 400px;
+            }
+        }
+        @media screen and (max-width : 480px){
+            #image img {
+            max-width: 300px;
+			max-height: 300px;
+            }
+        }
 	</style>
 
 
@@ -140,7 +155,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img src="images/placeholder.png" id="imagePlaceholder" alt="Tony_stark">
+				<img src="images/placeholder.png" alt="no picture available">
 			</div>
 
 			<div id="meme_info">
@@ -149,7 +164,7 @@
 						<th>*Title:</th>
 						<td>
 							<form name="page">
-								<input type="text" id="title" name="title">
+								<input type="text" id="title" name="title" onKeyPress="return submitenter(this,event)">
 							</form>
 						</td>
 					</tr>
@@ -157,7 +172,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" id="newImageUrl" name="url">
+								<input type="text" id="newImageUrl" name="url" onKeyPress="return submitenter(this,event)" onchange="loadImage()">
 							</form>
 						</td>
 					</tr>
@@ -196,13 +211,13 @@
 					<tr>
 						<th>&nbsp;Tags:</th>
 						<td>
-							<input type="text" id="tag" name="tag">
+							<input type="text" name="tag" onKeyPress="return submitenter(this,event)">
 						</td>
 					</tr>
 					<tr>
-						<th>&nbsp;Notes:</th>
+						<th id="noteslabel">&nbsp;Notes:</th>
 						<td>
-							<input type="text" name="note" id="note" placeholder="Write something about this meme...">
+                            <textarea name="note" id="notes" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -214,9 +229,8 @@
 				</table>
 
 				<div id="interaction">
-<input type="button" id="donee" class="button" value="done">
-
-					<a href="index.html" class="button">Cancel</a>
+					<a href="../viewMeme.html" id="done" class="button" onclick="return checkForm()">Done</a>
+					<a href="../index.html" class="button">Cancel</a>
 				</div>
 
 			</div>
