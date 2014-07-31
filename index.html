@@ -112,59 +112,135 @@
         function getImage(curr, str) {
             var Meme = Parse.Object.extend("Meme");
             var query = new Parse.Query(Meme);
-            if(str == "recent")
+            if(str == "recent"){
                 query.descending("createdAt");
-            else if(str == "highest")
-                query.descending("rating");
-            query.find({
-                success: 
-                function(images){
-                    allImages = images;
-                    for(var i=0; i< 3; i++){
-                        var meme = images[curr + i];
-                        var actualImage = meme.get("file");
-                        var imgURL = actualImage.url();
-                       
-                        document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
-                        document.getElementById(str+i).src = imgURL;
+            
+                query.find({
+                    success: function(recent){
+                        allRImages = recent;
+                        for(var i=0; i< 3; i++){
+                            var meme = recent[curr + i];
+                            var actualImage = meme.get("file");
+                            var imgURL = actualImage.url();
+
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+i).src = imgURL;
+                        }
+                    },
+                    error: function(){
+                        alert("Error");
                     }
-                },
-                error: function(){
-                    alert("Error");
-                }
-            })
+                })
+            } else if(str == "highest"){
+                query.descending("rating");
+            
+                query.find({
+                    success: function(highest){
+                        allHImages = highest;
+                        for(var i=0; i< 3; i++){
+                            var meme = highest[curr + i];
+                            var actualImage = meme.get("file");
+                            var imgURL = actualImage.url();
+
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+i).src = imgURL;
+                        }
+                    },
+                    error: function(){
+                        alert("Error");
+                    }
+                })
+            }else{
+                //query.ascending("title");   
+            
+                query.find({
+                    success: 
+                    function(alpha){
+                        //lowercase, then sort
+                        
+                        allAImages = alpha;
+                        for(var i=0; i< 3; i++){
+                            var meme = alpha[curr + i];
+                            var actualImage = meme.get("file");
+                            var imgURL = actualImage.url();
+
+                            document.getElementById(str+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+str+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                            document.getElementById(str+i).src = imgURL;
+                        }
+                    },
+                    error: function(){
+                        alert("Error");
+                    }
+                })
+            }
         }
         
         function getPrev(which){
-            if(which == "recent"){
-                recentIndex -= 3;
-            } else if (which == "highest"){
-                highestIndex -= 3;
-            } else {
-                alphaIndex -= 3;
-            }  
-        }
-        
-        function getNext(which){
+            
             var index;
-            if(which == "recent"){
-                index = recentIndex + 3;
-                recentIndex +=3;
-            } else if (which == "highest"){
-                index = highestIndex + 3;
-                highestIndex +=3;
-            } else {
-                index = alphaIndex + 3;
-                alphaIndex +=3;
-            }
+            if(which == "recent" && recentIndex != 0){
+                index = recentIndex - 3;
+                recentIndex -= 3;
+            } else if (which == "highest" && highestIndex != 0){
+                index = highestIndex - 3;
+                highestIndex -= 3;
+            } else if (which == "alpha" && alphaIndex != 0) {
+                index = alphaIndex - 3;
+                alphaIndex -= 3;
+            } else
+                return;
             
             for(var i=0; i<3; i++){
-                var meme = allImages[index + i];
+                if(which == "recent"){
+                    var meme = allRImages[index + i];
+                } else if (which == "highest"){
+                    var meme = allHImages[index + i];
+                } else {
+                    var meme = allAImages[index + i];
+                }
+                
                 var actualImage = meme.get("file");
                 var imgURL = actualImage.url();
                 
                 document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
                         document.getElementById(which+i).src = imgURL;
+            }
+        }
+        
+        function getNext(which){
+            var index;
+            
+            if(which == "recent" ){
+                recentIndex +=3;
+                index = recentIndex;
+            } else if (which == "highest"){
+                highestIndex +=3;
+                index = highestIndex;
+            } else {
+                alphaIndex +=3;
+                index = alphaIndex;
+            }
+            
+            for(var i=0; i<3; i++){
+                if(which == "recent"){
+                    var meme = allRImages[index + i];
+                } else if (which == "highest"){
+                    var meme = allHImages[index + i];
+                } else {
+                    var meme = allAImages[index + i];
+                }
+                
+                try{
+                var actualImage = meme.get("file");
+                var imgURL = actualImage.url();
+                
+                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                        document.getElementById(which+i).src = imgURL;
+                }
+                catch(err){
+                    document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'></a>";
+                }
+                
             }
         }
     </script>
