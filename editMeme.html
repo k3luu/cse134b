@@ -171,10 +171,40 @@
 				alert("Broken link. Please enter a valid image URL.");
 				return false;
 			}
-
-
-			//URL is valid, save the URL
-
+			
+			
+			/*URL is valid, gotta save the title, url, tags, rating and notes*/
+			
+			//preparing data from input
+			var tag = document.getElementById("tag").value;
+			var note = document.getElementById("notes").value;
+			var star = 0;
+			
+			//still need to check star ratings
+			if(document.getElementById("rating5").checked) {
+				alert("star rating 5");
+				star = 5;
+			}
+			else if(document.getElementById("rating4").checked) {
+				alert("star rating 4");
+				star = 4;
+			}
+			else if(document.getElementById("rating3").checked) {
+				alert("star rating 3");
+				star = 3;
+			}
+			else if(document.getElementById("rating2").checked) {
+				alert("star rating 2");
+				star = 2;
+			}
+			else if(document.getElementById("rating1").checked) {
+				alert("star rating 1");
+				star = 1;
+			}
+			else {
+				star = 0;
+			}
+			
 			return true;
 		}
 
