@@ -3347,6 +3347,7 @@ function checkForm() {
 
 	var nameField = document.forms["page"]["title"].value;
 	var urlField = document.forms["link"]["url"].value;
+	alert(nameField);
 
 	if (nameField.length == 0 || nameField == "" || urlField.length == 0 || urlField == "") {
 		alert("Please fill out all fields marked with an asterisk (*).");
@@ -3381,4 +3382,5 @@ function today() {
 	var year = (yy < 1000) ? yy + 1900 : yy;
 
 	document.write(day + " " + months[month] + " " + year);
+	document.getElementById("date").value = day + " " + months[month] + " " + year
 }
