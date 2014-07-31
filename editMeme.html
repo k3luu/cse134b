@@ -7,7 +7,6 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-	<script src="addPage.js"></script>
 	<style type="text/css">
 		#main_area {
 			text-align: center;
@@ -256,18 +255,57 @@
 				return true;
 		}
 
-		function getInfo() {
-			var str = "some info";
+		
 			window.onload = function () {
-				document.getElementById("title").value = str;
-				document.getElementById("newImageUrl").value = "http://10funnypictures.us/wp-content/uploads/meme-faces-white-background-epic-win-win-hd-ipad-wallpapers-from-20140610191311-5396f657d9ecf.jpg";
-				document.getElementById("tag").value = str;
-				document.getElementById("notes").value = str;
+                Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
 				
-				var foo = document.getElementById("newImageUrl").value;
-				document.getElementById("image").innerHTML = "<img src='" + foo + "' alt=''/>";
+                var Meme = Parse.Object.extend("Meme");
+                var query = new Parse.Query(Meme);
+                var objectID = window.location.hash.substring(1);
+                query.get(objectID, {
+                    success: function(meme) {
+                        //success
+                        document.getElementById("title").value = meme.get("title");
+				        document.getElementById("notes").value = meme.get("notes");
+				        document.getElementById("newImageUrl").value = meme.get("url");
+				        document.getElementById("tag").value = meme.get("tag");
+                        var fileSource = meme.get("file");
+                        document.getElementById("memeImage").src = fileSource.url();
+                        document.getElementById("pubDate").innerHTML = meme.createdAt;
+                        document.getElementById("done").href = "viewMeme.html#"+objectID;
+                        document.getElementById("cancel").href = "viewMeme.html#"+objectID;
+                    },
+                    error: function(object, error) {
+                        //error
+                    }
+                });
+				
+				
 			}
-		}
+        
+        function updateParse() {
+            Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            console.log("inside update method");
+            var objectID = window.location.hash.substring(1);
+            console.log(objectID);
+            query.get(objectID, {
+                success: function(meme) {
+                    //set
+                    meme.set("title", document.getElementById("title").value);
+                    console.log("title "+document.getElementById('title').value);
+                    meme.set("url", document.getElementById("newImageUrl").value);
+                    meme.set("notes", document.getElementById("notes").value);
+                    meme.set("tag", document.getElementById("tag").value);
+                    meme.save();
+                },
+                error: function(object, error) {
+                    //error
+                    console.log("ERROR "+error.message+" "+error.code);
+                }
+            });
+        }
 	</script>
 
 </head>
@@ -302,7 +340,7 @@
 		<div id="main_area">
 
 			<div id="image">
-				<img src="images/placeholder.png" alt="some picture">
+				<img id="memeImage" src="images/placeholder.png" alt="some picture">
 			</div>
 
 			<div id="meme_info">
@@ -371,18 +409,16 @@
 					</tr>
 					<tr>
 						<th>&nbsp;Published:</th>
-						<td>//meme date
+						<td id="pubDate">
 						</td>
 					</tr>
-					<script>
-						getInfo();
-					</script>
+
 
 				</table>
 
 				<div id="interaction">
-					<a href="viewMeme.html" id="done" class="button" onclick="return checkForm()">Done</a>
-					<a href="viewMeme.html" class="button">Cancel</a>
+					<a href="viewMeme.html" id="done" class="button" onclick="updateParse()">Done</a>
+					<a href="viewMeme.html" id="cancel" class="button">Cancel</a>
 				</div>
 
 			</div>
