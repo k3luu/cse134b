@@ -113,21 +113,6 @@ function submitenter(myfield, e) {
 
 	function checkForm() {
 
-			function ValidURL(str) {
-				//var str = document.getElementById("newImageURL").value;
-				var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-					'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-					'((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-					'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-					'(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-					'(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-				if (!pattern.test(str)) {
-					return false;
-				} else {
-					return true;
-				}
-			}
-
 			var nameField = document.forms["page"]["title"].value;
 			var urlField = document.forms["link"]["url"].value;
 			
@@ -135,15 +120,7 @@ function submitenter(myfield, e) {
 				alert("Please fill out all fields marked with an asterisk (*).");
 				return false;
 			}
-			
-			if (!ValidURL(urlField)) {
-				alert("Broken link. Please enter a valid image URL.");
-				return false;
-			}
-			
-			
-			//URL is valid, save the URL
-			
+
 			alert("Your meme has been successfully added to your library!");
 			return true;
 		}
