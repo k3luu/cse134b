@@ -165,19 +165,72 @@
 	</style>
 
 	<script>
-		function getInfo() {
-			var str = "some info";
+
 			window.onload = function () {
+                Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
 				
-				//also need to get picture info
-				//and get date info
+                var Meme = Parse.Object.extend("Meme");
+                var query = new Parse.Query(Meme);
+                var objectID = window.location.hash.substring(1);
+                query.get(objectID, {
+                    success: function(meme) {
+                        //success
+                        document.getElementById("title").innerHTML = meme.get("title");
+				        document.getElementById("notes").value = meme.get("notes");
+				        document.getElementById("url").value = meme.get("url");
+				        parseTags(meme.get("tag"));
+                        var fileSource = meme.get("file");
+                        document.getElementById("memeImage").src = fileSource.url();
+                        document.getElementById("pubDate").innerHTML = meme.get("createdAt");
+                    },
+                    error: function(object, error) {
+                        //error
+                    }
+                });
 				
-				document.getElementById("title").innerHTML = str;
-				document.getElementById("notes").value = str;
-				document.getElementById("url").value = "www.com";
-				document.getElementById("tag1").innerHTML = str;	//ehhh 
+				
 			}
-		}
+        
+        function parseTags(allTags) {
+            var listContainer = document.createElement("ul");
+            document.getElementById("tagList").appendChild(listContainer);
+            var splitTags = allTags.split(" ");
+            for(var i = 0; i < splitTags.length; i++) {
+                var listItem = document.createElement("li");
+                var linkItem = document.createElement("a");
+                linkItem.innerHTML = splitTags[i];
+                linkItem.href = "explore.html";
+                linkItem.id = "tag"+i;
+                linkItem.name = "tagList";
+                listItem.appendChild(linkItem);
+                listContainer.appendChild(listItem);
+            }
+        }
+        
+        function updateParse() {
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            query.get(objectID, {
+                success: function(meme) {
+                    //set
+                    meme.set("title", document.getElementById("title"));
+                    meme.set("url", document.getElementById("url"));
+                    meme.set("notes", document.getElementById("notes"));
+                    var tagList = document.getElementsByName("tagList");
+                    var newTag = "";
+                    for(i=0; i<tagList.length; i++)
+                    {
+                        newTag += tagList[i];
+                        newTag += " ";
+                    }
+                    meme.set("tags", newTag);
+                    meme.save();
+                },
+                error: function(object, error) {
+                    //error
+                }
+            });
+        }
 	</script>
 
 </head>
@@ -207,10 +260,10 @@
 		<hr>
 		<section id="main_area">
 
-			<h3 id="title">"Tony Stark - Meme Man"</h3>
+			<h3 id="title">Error!</h3>
 
 			<div id="image">
-				<img src="images/mememaster.jpg" alt="Tony_stark">
+				<img id="memeImage" src="images/placeholder.png" alt="placeholder">
 			</div>
 
 			<div id="meme_info">
@@ -247,49 +300,33 @@
 					</tr>
 					<tr>
 						<td>Tags:</td>
-						<td class="tags">
-							<ul>
-								<li><a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
-								</li>
-								<li><a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
-								</li>
-								<li><a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a>
-								</li>
-								<li><a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a>
-								</li>
-								<li><a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a>
-								</li>
-							</ul>
+						<td id="tagList" class="tags">
 						</td>
 					</tr>
 					<tr>
 						<td id="noteslabel">Notes:</td>
 						<td>
-							<textarea name="note" id="notes">how bout now</textarea>
+							<textarea name="note" id="notes">No Notes</textarea>
 						</td>
 					</tr>
 					<tr>
 						<td>URL:</td>
 						<td>
-							<input class="textbox" id="url" readonly value="http://www.quickmeme.com/img/dd/dd66a8a6f64cf11d9d63912ffad5c0c8642c0e08edcc47a70db0297c6ca0ab23.jpg">
+							<input class="textbox" id="url" />
 						</td>
 					</tr>
 					<tr>
 						<td>Published:</td>
-						<td>
-							<i>July 18th, 2014</i>
+						<td id="pubDate">
 						</td>
 					</tr>
 
-					<script>
-						getInfo();
-					</script>
 				</table>
 
 
 
 				<div id="interaction">
-					<a href="editMeme.html" class="button">Edit</a>
+					<a href="editMeme.html" class="button" onclick="updateParse()">Edit</a>
 					<a href="#" class="button">Delete</a>
 				</div>
 			</div>
