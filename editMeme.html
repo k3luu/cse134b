@@ -172,7 +172,6 @@
 				return false;
 			}
 			
-			
 			/*URL is valid, gotta save the title, url, tags, rating and notes*/
 			
 			//preparing data from input
@@ -207,6 +206,38 @@
 			
 			return true;
 		}
+		
+		function loadImage() {
+
+			function ValidURL(str) {
+				//var str = document.getElementById("newImageURL").value;
+				var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+					'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+					'((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+					'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+					'(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+					'(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+				if (!pattern.test(str)) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			var foo = document.getElementById("newImageUrl").value;
+			IsValidImageUrl(foo, myCallback);
+			
+			if (foo == '') {
+				document.getElementById("image").innerHTML = "<img src='images/placeholder.png' alt=''/>";
+				return false;
+			} else if (ValidURL(foo)) {
+				document.getElementById("image").innerHTML = "<img src='" + foo + "' alt=''/>";
+				return true;
+			} else {
+				document.getElementById("image").innerHTML = "<img src='images/brokenImage.png'alt=''/>";
+				return false;
+			}
+		}
 
 		function submitenter(myfield, e) {
 			var keycode;
@@ -229,9 +260,12 @@
 			var str = "some info";
 			window.onload = function () {
 				document.getElementById("title").value = str;
-				document.getElementById("newImageUrl").value = "www.com";
+				document.getElementById("newImageUrl").value = "http://10funnypictures.us/wp-content/uploads/meme-faces-white-background-epic-win-win-hd-ipad-wallpapers-from-20140610191311-5396f657d9ecf.jpg";
 				document.getElementById("tag").value = str;
 				document.getElementById("notes").value = str;
+				
+				var foo = document.getElementById("newImageUrl").value;
+				document.getElementById("image").innerHTML = "<img src='" + foo + "' alt=''/>";
 			}
 		}
 	</script>
