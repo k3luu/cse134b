@@ -76,16 +76,33 @@ function today() {
 function addPageDone()
 {
  	console.log("Inside");
-	var Meme = Parse.Object.extend("Meme");
-	var meme = new Meme();
+//	var Meme = Parse.Object.extend("Meme");
+//	var meme = new Meme();
 
-	meme.set("title", document.getElementById("title").value);
-	meme.set("url", document.getElementById("newImageUrl").value);
-	meme.set("tag", document.getElementById("tag").value);
-	console.log(localStorage.getItem("urll"));
-	meme.set("file", localStorage.getItem("urll"));
-	meme.save();
+	//meme.set("title", document.getElementById("title").value);
+	//meme.set("url", document.getElementById("newImageUrl").value);
+//	meme.set("tag", document.getElementById("tag").value);
+//	console.log(localStorage.getItem("urll"));
+	//meme.set("file", localStorage.getItem("urll"));
+	//meme.save();
 	console.log("Done?");
+	
+	
+	
+	
+
+
+
+	var yml = new XMLHttpRequest();
+	yml.open('POST', 'https://api.parse.com/1/classes/Meme');
+    yml.setRequestHeader("X-Parse-Application-Id", "8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ");
+    yml.setRequestHeader("X-Parse-REST-API-Key", "AUVrB3v6VV2utjGmJifyWeBaZHIDbfdvR7NM30VA");
+    yml.setRequestHeader("Content-Type", "application/json");
+    var s = '{"title": "'+document.getElementById("title").value + '","url": "'+document.getElementById("newImageUrl").value+ 
+    '", "tag": "'+ document.getElementById("tag").value +'", "file":{"name": "'+localStorage.getItem("urll")+
+    '", "__type": "File"}}';
+    yml.send(s)
+    console.log(s);
 
 }
 
