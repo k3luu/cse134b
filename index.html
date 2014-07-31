@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>MemeMaster Homepage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-	<script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <style>
         #existingMemes h3 {
             margin-left: 56px;
@@ -92,7 +92,7 @@
     </style>
     
     <script>
-        function getImage(){
+        window.onload = function(){
             var Meme = Parse.Object.extend("Meme");
             var query = new Parse.Query(Meme);
             query.find({
@@ -100,13 +100,14 @@
                     alert("Successfully retrieved " +images.length+" images");
                     for(var i=0; i<images.length; i++){
                         var meme = images[i];
+                        document.getElementsByClassName("meme").innerHTML("src='"+ meme +"'");
                     }
                         
-                }
-                error: function(object,error){
+                },
+                error: function(){
                     alert("Error");
                 }
-            }
+            })
         }
         
         function getPrev(){
@@ -153,12 +154,12 @@
                 <h3>Most Recently Added </h3>
                 <ul>
                     <li><a href="" onClick="getPrev();" class="arrows">&lt;</a></li>
-                    <li><a href="viewMeme.html"><img onload="getImage();" src="images/meme_master.jpg" class="meme" alt="meme"></a><br/>Meme Master</li>
+                    <li><a href="viewMeme.html"><img src="images/meme_master.jpg" class="meme" alt="meme"></a><br/>Meme Master</li>
                     <li><a href="viewMeme.html"><img src="images/heavy-breathing-cat-animated.gif" class="meme" alt="meme"></a><br/>Heaving Breathing Cat</li>
                     <li><a href="viewMeme.html"><img src="images/download.jpeg" class="meme" alt="meme"></a><br/>Asian Meme Master</li>
                     <li><a href="" onClick="getNext();" class="arrows">&gt;</a></li>
                 </ul>
-
+                
                 <br>
                 <h3>Highest Rated </h3>
                 <div class="memes">
