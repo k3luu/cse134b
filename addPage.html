@@ -16,6 +16,9 @@
 		#image {
 			display: inline-block;
 		}
+		#title {
+			text-transform: capitalize;
+		}
 		#image img {
 			border: 3px solid black;
 			height: auto;
@@ -148,11 +151,15 @@
 		
 		
 		function handleFileSelect() {
+		if(document.getElementById("title").value != "")
+		{
 event.preventDefault();
     var Meme = Parse.Object.extend("Meme");
 	var meme = new Meme();
-
-	meme.set("title", document.getElementById("title").value);
+	var c = document.getElementById("title").value;
+	c = c.charAt(0).toUpperCase() + c.slice(1);
+	console.log(c);
+	meme.set("title", c);
 	meme.set("notes", document.getElementById("notes").value);
 	meme.set("tag", document.getElementById("tag").value);
 	
@@ -186,7 +193,7 @@ event.preventDefault();
   	meme.save().then(function(){
   	
   	var thisPage = window.location.href;
-  	window.location = thisPage.replace("addPage.html", "index.html");
+  //	window.location = thisPage.replace("addPage.html", "index.html");
   	},function(error) {
 console.log(error);}
 );
@@ -195,7 +202,7 @@ console.log(error);
 });
 
 	
-
+}
   }
 
  // document.getElementById('files').addEventListener('change', handleFileSelect, false);
@@ -393,7 +400,7 @@ console.log(error);
 				</table>
 
 				<div id="interaction">
-					<button id="done" class="button" onclick="handleFileSelect()">Done</button>
+					<a href="addPage.html" id="done" class="button" onclick="handleFileSelect()">Done</a>
 					<a href="index.html" class="button">Cancel</a>
 				</div>
 
