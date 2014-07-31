@@ -242,18 +242,16 @@
             }
         }
         
-        /*
+        
         function searchByTitle(){
-            var searchKeyword = document.getElementsByClassName("searchByTitle").value;
+            var searchKeyword = document.getElementById("searchByTitle").value;
+            return searchKeyword;
             
-            var Meme = Parse.Object.extend("Meme");
-            var query = new Parse.Query(Meme);
-            
-            
-        }*/
+        }
         
         function btn_onclick(){
-            window.location.href = "explore.html";   
+            var keyword = searchByTitle();
+            window.location.href = "explore.html#"+keyword;   
         }
     </script>
     
@@ -274,7 +272,7 @@
             <li><a href="memeTnew.html">Team Page</a></li>
         </ul>
         <form style= "float: right;">
-            <input type="search" class="searchBox searchByTitle" name="query" placeholder="I'm searching for..." autofocus/>
+            <input type="search" class="searchBox" id="searchByTitle" name="query" placeholder="I'm searching for..." autofocus/>
             <input type="button" class="searchButton" onClick = "return btn_onclick()" value="Search" />
         </form>
     </div>

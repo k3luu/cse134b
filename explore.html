@@ -126,6 +126,26 @@
                     alert("Error");
                 }
             })
+           /* 
+            Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
+
+            var Meme = Parse.Object.extend("Meme");
+            var query = new Parse.Query(Meme);
+            var keyword = window.location.hash.substring(1);
+            query.get(keyword, {
+                success: function(meme) {
+                    for(var i=0; i< meme.length; i++){
+                            var res = meme[i];
+                
+                    document.getElementById("resultString").innerHTML = res.get("title");
+                    var result = document.getElementById('resultString');
+                    result.innerHTML = meme.get("title");
+                    }
+                },
+                error: function(object, error) {
+                    //error
+                }
+            })*/
         };
         </script>
 
