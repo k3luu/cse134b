@@ -209,6 +209,9 @@
                 listContainer.appendChild(listItem);
             }
         }
+        function goBack() {
+            window.history.back()
+        }
         
 	</script>
 
@@ -306,7 +309,7 @@
 
 				<div id="interaction">
 					<a href="editMeme.html" id="editButton" class="button">Edit</a>
-					<a href="#" class="button">N/A</a>
+					<a class="button" onclick="goBack()">Back</a>
 				</div>
 			</div>
 
