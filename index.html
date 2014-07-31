@@ -251,6 +251,10 @@
             
             
         }*/
+        
+        function btn_onclick(){
+            window.location.href = "explore.html";   
+        }
     </script>
     
 </head>
@@ -271,8 +275,7 @@
         </ul>
         <form style= "float: right;">
             <input type="search" class="searchBox searchByTitle" name="query" placeholder="I'm searching for..." autofocus/>
-            <!--button class="searchButton" onClick="window.location.href = ' explore.html'"><img src="images/search.png" alt="search"/></button-->
-            <input type="image" class="searchButton" src="images/search.png" alt="Search" />
+            <input type="button" class="searchButton" onClick = "return btn_onclick()" value="Search" />
         </form>
     </div>
 	<script type="text/javascript">
