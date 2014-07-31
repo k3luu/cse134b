@@ -22,12 +22,13 @@
         #image img {
 			border: 3px solid black;
 			height: auto;
-            max-width: 400px;
-			max-height: 400px;
+            max-width: 500px;
+			max-height: 500px;
 		}
 		#meme_info {
-            padding: 50px;
+            padding: 20px;
 			display: inline-block;
+            max-width: 230px;
 			text-align: left;
             vertical-align: top;
 		}
@@ -46,7 +47,7 @@
 		table tr td {
 			padding: 5px 0px;
 		}
-		td a {
+		table .tags a {
 			border-radius: 5px;
             background-color: #B6CBDD;
             color: white;
@@ -92,6 +93,18 @@
 			top: 1px;
 		}
 		
+        @media screen and (max-width : 600px){
+            #image img {
+            max-width: 400px;
+			max-height: 400px;
+            }
+        }
+        @media screen and (max-width : 480px){
+            #image img {
+            max-width: 300px;
+			max-height: 300px;
+            }
+        }
 	</style>
 </head>
 
@@ -116,7 +129,7 @@
     </div>
 
 	<div class="content">
-		<h1>VIEWING YOUR MEME</h1>
+		<h1>VIEW YOUR MEME</h1>
         <hr>
 		<section id="main_area">
 
@@ -136,7 +149,7 @@
 					</tr>
 					<tr>
 						<td>Tags:</td>
-						<td>
+						<td class = "tags">
 							<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
 					<a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
 					<a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a>
