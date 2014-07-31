@@ -92,15 +92,20 @@
     </style>
     
     <script>
-        var recentIndex = 0;
-        var highestIndex = 0;
-        var alphaIndex = 0;
+        var recentIndex;
+        var highestIndex;
+        var alphaIndex;
+        var allImages;
         
         window.onload = function(){
             
-            getImage(recentIndex,"recent");
-            getImage(highestIndex, "highest");
-            getImage(alphaIndex, "alpha");
+            recentIndex = 0;
+            highestIndex = 0;
+            alphaIndex = 0;
+            
+            getImage(0,"recent");
+            getImage(0, "highest");
+            getImage(0, "alpha");
            
         };
         
@@ -112,6 +117,7 @@
             query.find({
                 success: 
                 function(images){
+                    allImages = images;
                     for(var i=0; i< 3; i++){
                         var meme = images[curr + i];
                         var actualImage = meme.get("file");
@@ -138,13 +144,25 @@
         }
         
         function getNext(which){
+            var index;
             if(which == "recent"){
-                recentIndex += 3;
-                getImage(recentIndex);
+                index = recentIndex + 3;
+                recentIndex +=3;
             } else if (which == "highest"){
-                highestIndex += 3;
+                index = highestIndex + 3;
+                highestIndex +=3;
             } else {
-                alphaIndex += 3;
+                index = alphaIndex + 3;
+                alphaIndex +=3;
+            }
+            
+            for(var i=0; i<3; i++){
+                var meme = allImages[index + i];
+                var actualImage = meme.get("file");
+                var imgURL = actualImage.url();
+                
+                document.getElementById(which+"Title"+i).innerHTML = "<a href='viewMeme.html#"+meme.id+"'><img src='images/placeholder.png' class='meme' id='"+which+i+"' alt='meme'><br/>"+meme.get("title")+"</a>";
+                        document.getElementById(which+i).src = imgURL;
             }
         }
     </script>
@@ -183,32 +201,32 @@
                 <br>
                 <h3>Most Recently Added </h3>
                 <ul>
-                    <li><a href="" onClick="getPrev('recent');" class="arrows">&lt;</a></li>
+                    <li onClick="getPrev('recent');" class="arrows">&lt;</li>
                     <li id="recentTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="recent0" alt="meme"></a></li>
                     <li id="recentTitle1"><a href="viewMeme.html" ><img src="images/placeholder.png" class="meme" id="recent1" alt="meme"></a></li>
                     <li id="recentTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="recent2" alt="meme"></a></li>
-                    <li><a href="" onClick="getNext('recent');" class="arrows">&gt;</a></li>
+                    <li onClick="getNext('recent');" class="arrows">&gt;</li>
                 </ul>
                 
                 <br>
                 <h3>Highest Rated </h3>
                 <div class="memes">
                     <ul>
-                        <li><a href="" onClick="getPrev('highest');" class="arrows">&lt;</a></li>
+                        <li onClick="getPrev('highest');" class="arrows">&lt </li>
                         <li id="highestTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest0" alt="meme"></a></li>
                         <li id="highestTitle1"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest1" alt="meme"></a></li>
                         <li id="highestTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="highest2" alt="meme"></a></li>
-                        <li><a href="" onClick="getNext('highest');" class="arrows">&gt;</a></li>
+                        <li onClick="getNext('highest');" class="arrows">&gt;</li>
                     </ul>
 
                     <br>
                     <h3>Alphabetically, By Title</h3>
                     <ul>
-                        <li><a href="" onClick="getPrev('alpha');" class="arrows">&lt;</a></li>
+                        <li onClick="getPrev('alpha');" class="arrows">&lt;</li>
                         <li id="alphaTitle0"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha0" alt="meme"></a></li>
                         <li id="alphaTitle1"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha1" alt="meme"></a></li>
                         <li id="alphaTitle2"><a href="viewMeme.html"><img src="images/placeholder.png" class="meme" id="alpha2" alt="meme"></a></li>
-                        <li><a href="" onClick="getNext('alpha');" class="arrows">&gt;</a></li>
+                        <li onClick="getNext('alpha');" class="arrows">&gt;</li>
                     </ul>
                 </div>
             </div>
