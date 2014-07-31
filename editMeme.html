@@ -272,7 +272,7 @@
                         var fileSource = meme.get("file");
                         document.getElementById("memeImage").src = fileSource.url();
                         document.getElementById("pubDate").innerHTML = meme.createdAt;
-                        document.getElementById("done").href = "viewMeme.html#"+objectID;
+                        //document.getElementById("done").href = "viewMeme.html#"+objectID;
                         document.getElementById("cancel").href = "viewMeme.html#"+objectID;
                     },
                     error: function(object, error) {
@@ -280,10 +280,13 @@
                     }
                 });
 				
+                document.getElementById("done").addEventListener('click', updateParse, false);
+                
 				
 			}
         
-        function updateParse() {
+        function updateParse(event) {
+            event.preventDefault();
             Parse.initialize("8lnVjjPew8kds7OwHV3j0VDtO7eqiQXNtv1mwACQ", "SNQrS54MtLfaswRMDE574zvjfKyMhppxOw4LDrse");
             var Meme = Parse.Object.extend("Meme");
             var query = new Parse.Query(Meme);
@@ -298,7 +301,12 @@
                     meme.set("url", document.getElementById("newImageUrl").value);
                     meme.set("notes", document.getElementById("notes").value);
                     meme.set("tag", document.getElementById("tag").value);
-                    meme.save();
+                    meme.save().then(function(object) {
+                        var thisPage = window.location.href;
+                        window.location = thisPage.replace("editMeme.html#", "viewMeme.html#");
+                    }, function(error) {
+                        //failure
+                    });
                 },
                 error: function(object, error) {
                     //error
@@ -359,7 +367,7 @@
 						<th>*URL:</th>
 						<td>
 							<form name="link">
-								<input type="text" id="newImageUrl" name="url" readonly>
+								<input type="text" id="newImageUrl" name="url">
 							</form>
 						</td>
 					</tr>
@@ -417,7 +425,7 @@
 				</table>
 
 				<div id="interaction">
-					<a href="viewMeme.html" id="done" class="button" onclick="updateParse()">Done</a>
+					<a href="viewMeme.html" id="done" class="button">Done</a>
 					<a href="viewMeme.html" id="cancel" class="button">Cancel</a>
 				</div>
 
