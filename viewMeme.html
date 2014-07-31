@@ -171,14 +171,17 @@
 				
                 var Meme = Parse.Object.extend("Meme");
                 var query = new Parse.Query(Meme);
+                var objectID = window.location.hash.substring(1);
                 query.get(objectID, {
                     success: function(meme) {
                         //success
                         document.getElementById("title").innerHTML = meme.get("title");
 				        document.getElementById("notes").value = meme.get("notes");
 				        document.getElementById("url").value = meme.get("url");
-				        parseTage(meme.get("tags"));
-                        document.getElementById("memeImage").src = meme.get("file").url();
+				        parseTags(meme.get("tag"));
+                        var fileSource = meme.get("file");
+                        document.getElementById("memeImage").src = fileSource.url();
+                        document.getElementById("pubDate").innerHTML = meme.get("createdAt");
                     },
                     error: function(object, error) {
                         //error
@@ -298,7 +301,6 @@
 					<tr>
 						<td>Tags:</td>
 						<td id="tagList" class="tags">
-							No tags!
 						</td>
 					</tr>
 					<tr>
@@ -315,8 +317,7 @@
 					</tr>
 					<tr>
 						<td>Published:</td>
-						<td>
-							<i>July 18th, 2014</i>
+						<td id="pubDate">
 						</td>
 					</tr>
 
