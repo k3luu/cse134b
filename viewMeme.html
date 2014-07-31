@@ -82,8 +82,42 @@
 		span {
 			font-size: 16pt;	
 		}
-        
-		.classname {
+		.starRating {
+			display: inline-block;
+			position: relative;
+			height: 24px;
+			background: url('images/stars1.png') repeat-x 0 0;
+			vertical-align: bottom;
+		}
+		.starRating div {
+			float: left;
+			position: relative;
+			height: 24px;
+		}
+		.starRating input {
+			position: relative;
+			z-index: 1;
+			width: 24px;
+			height: 24px;
+			margin: 0;
+			padding: 0;
+			opacity: 0;
+		}
+		.starRating label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 24px;
+		}
+		.starRating span {
+			display: none;
+		}
+		.starRating input:checked + label,
+		.starRating:hover input:checked:hover + label {
+			background: url('images/stars1.png') repeat-x 0 -24px;
+		}
+		.button{
 			-moz-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			-webkit-box-shadow: inset -50px -50px 0px 50px #5f8ec7;
 			box-shadow: inset -50px -50px 0px 50px #5f8ec7;
@@ -131,6 +165,14 @@
             }
         }
 	</style>
+	
+	<script>
+		function invokeCSS() {
+			document.write('<style></style>');	
+		}
+	
+	</script>
+	
 </head>
 
 <body>
@@ -158,7 +200,7 @@
         <hr>
 		<section id="main_area">
 
-			<h3 id="title">"Tony Stark - Meme Man"</h3>
+			<h3 id="title" value="Yes">"Tony Stark - Meme Man"</h3>
 
 			<div id="image">
 				<img src="images/mememaster.jpg" alt="Tony_stark">
@@ -169,7 +211,31 @@
 					<tr>
 						<td>Rating:</td>
 						<td>
-							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+							<div class="starRating">
+								<div>
+									<div>
+										<div>
+											<div>
+												<input id="rating1" type="radio" name="rating" value="1">
+												<label for="rating1"><span>1</span>
+												</label>
+											</div>
+											<input id="rating2" type="radio" name="rating" value="2">
+											<label for="rating2"><span>2</span>
+											</label>
+										</div>
+										<input id="rating3" type="radio" name="rating" value="3">
+										<label for="rating3"><span>3</span>
+										</label>
+									</div>
+									<input id="rating4" type="radio" name="rating" value="4">
+									<label for="rating4"><span>4</span>
+									</label>
+								</div>
+								<input id="rating5" type="radio" name="rating" value="5">
+								<label for="rating5"><span>5</span>
+								</label>
+							</div>
 						</td>
 					</tr>
 					<tr>
@@ -205,8 +271,8 @@
 				</table>
 				
 				<div id="interaction">
-					<a href="addPage.html" class="classname">Edit</a>
-					<a href="#" class="classname">Delete</a>
+					<a href="editMeme.html" class="button">Edit</a>
+					<a href="#" class="button">Delete</a>
 				</div>
 			</div>
 			
