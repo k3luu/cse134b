@@ -25,6 +25,7 @@
 		#meme_info {
 			padding: 20px;
 			display: inline-block;
+            max-width: 230px;
 			text-align: left;
 			vertical-align: top;
 		}
@@ -32,6 +33,13 @@
 			padding: 20px;
 			text-align: center;
 		}
+        #noteslabel{
+            padding-top: 5px;
+            vertical-align: top;   
+        }
+        #notes {
+            height: 100px;
+        }
 		table {
 			display: inline;
 			width: 100%;
@@ -306,9 +314,9 @@
 						</td>
 					</tr>
 					<tr>
-						<th>&nbsp;Notes:</th>
+						<th id="noteslabel">&nbsp;Notes:</th>
 						<td>
-							<input type="text" name="note" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)">
+                            <textarea name="note" id="notes" placeholder="Write something about this meme..." onKeyPress="return submitenter(this,event)"></textarea>
 						</td>
 					</tr>
 					<tr>

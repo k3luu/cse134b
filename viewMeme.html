@@ -36,6 +36,13 @@
             padding: 20px;
             text-align: center;
 		}
+        #noteslabel{
+            padding-top: 5px;
+            vertical-align: top;   
+        }
+        #notes {
+            height: 100px;
+        }
         
         table {
 			display: inline;
@@ -47,7 +54,25 @@
 		table tr td {
 			padding: 5px 0px;
 		}
+        .tags ul{
+            padding: 0;
+            margin: 0;   
+            list-style-type: none;
+        }
+        .tags ul li{
+            float: left; 
+            display: inline-block;
+            margin: 2px;
+        }
+        .tags ul li a:link {
+            text-decoration: none;
+        }
+        .tags ul li a:hover {
+            text-decoration: underline;
+        }
 		table .tags a {
+            display: block;
+            text-align: center;
 			border-radius: 5px;
             background-color: #B6CBDD;
             color: white;
@@ -150,17 +175,19 @@
 					<tr>
 						<td>Tags:</td>
 						<td class = "tags">
-							<a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a>
-					<a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a>
-					<a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a>
-					<a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a>
-					<a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a>
+                            <ul>
+                                <li><a href="explore.html" id="tag1" onclick="javascript:searchTag(1)">tony stark</a></li>
+                                <li><a href="explore.html" id="tag2" onclick="javascript:searchTag(1)">meme</a></li>
+                                <li><a href="explore.html" id="tag3" onclick="javascript:searchTag(1)">master</a></li>
+                                <li><a href="explore.html" id="tag4" onclick="javascript:searchTag(1)">epic</a></li>
+                                <li><a href="explore.html" id="tag5" onclick="javascript:searchTag(1)">funny</a></li>
+                            </ul>
 						</td>
 					</tr>
 					<tr>
-						<td>Notes:</td>
+						<td id="noteslabel">Notes:</td>
 						<td>
-							<input class="textbox" readonly value="lahdeedah I am the meme master">
+							<textarea name="note" id="notes">Ladeeda I am the meme master</textarea>
 						</td>
 					</tr>
 					<tr>
